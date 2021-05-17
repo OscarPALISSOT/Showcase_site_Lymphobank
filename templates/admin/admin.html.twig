@@ -23,7 +23,7 @@
                 <span class="mx-2">Tableau de bord</span>
                 </li>
                 <hr class="sidebar-divider my-0">
-                <!-- Menu déroulant users -->
+                <!-- Menu déroulant test -->
                 <li>
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item">
@@ -34,44 +34,21 @@
                             </h2>
                             <div id="flush-collapseUser" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body">
-                                <a href={{path ('gestion_administrateurs')}} class="nav-link"><i class="fas fa-user-shield"></i>Admins</a>
-                                <a href={{path ('gestion_donneurs')}} class="nav-link"><i class="fas fa-tint"></i>Donneurs</a>  
+                                <a href="#" class="nav-link"><i class="fas fa-user-shield"></i>Admins</a>
+                                <a href="#" class="nav-link"><i class="fas fa-tint"></i>Donneurs</a>  
                             </div>
                         </div>    
                     </div>
                 </li>
-                <!-- /Menu déroulant users -->
+                <!-- /Menu déroulant test -->
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_clients')}} class="nav-link"><i class="fas fa-shopping-cart"></i>Clients</a>
+                    <a href="#" class="nav-link"><i class="fas fa-shopping-cart"></i>Clients</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_ProjetClients')}} class="nav-link"><i class="fas fa-lightbulb"></i>Projets</a>
+                    <a href="#" class="nav-link"><i class="fas fa-lightbulb"></i>Projets</a>
                 </li>
-                <hr class="sidebar-divider my-0">
-                
-                <hr class="sidebar-divider my-0">
-                <!-- Menu déroulant production -->
-                <li>
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                <i class="fas fa-box-open"></i>Production
-                            </button>
-                            </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                            <div class="accordion-body">
-                                <a href={{ path ('gestion_lots')}} class="nav-link"><i class="fas fa-flask"></i>Lots</a>
-                                <a href={{ path ('gestion_contenants')}} class="nav-link"><i class="fas fa-vial"></i>Contenants</a>
-                                <a href={{ path ('gestion_prod')}} class="nav-link"><i class="fas fa-cogs"></i>Gestion de la production</a>
-
-                            </div>
-                        </div>    
-                    </div>
-                </li>
-                <!-- /Menu déroulant production -->
                 <hr class="sidebar-divider my-0">
                 <li href="#" class="nav-link">
                 <span class="mx-2">toujours un test</span>
@@ -93,25 +70,7 @@
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!--Bouton de logout si connecté-->
-                    <ul class="navbar-nav ms-auto">
-                        {% if app.user %}
-                            <li class="nav-item dropdown">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <i class="fas fa-user"></i> {{loggedUser.username}}
-                                </button>
-
-                                <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li class="nav-item">
-                                        <i class="fas fa-sign-out-alt"></i>
-                                        <a href={{path ('logout')}}>Se déconnecter</a>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </li>
-                        {% endif %}
-                    </ul>
+                    
                 </div>  
             </nav>
             <!--End Top Nav -->

@@ -4,22 +4,24 @@ namespace App\Entity;
 
 use DateTime;
 use App\Repository\AdminsRepository;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=AdminsRepository::class)
+ * @ORM\Table(name="admins")
+ * @ORM\Entity(repositoryClass="App\Repository\AdminsRepository")
  */
-class Admins
+class Admins implements UserInterface,\Serializable
 {
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="username", type="string", length=255)
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
 
@@ -31,7 +33,7 @@ class Admins
     private $roles;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $created_at;
 

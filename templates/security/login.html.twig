@@ -13,6 +13,7 @@
         {% if error %}
             <div class="alert alert-danger">
                 {{error.messageKey | trans(error.messagedata, 'security')}}
+                {{error}}
             </div>
         {% endif %}
         
