@@ -1,0 +1,29 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Se connecter{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        {% if error %}
+            <div class="alert alert-danger">
+                {{error.messageKey | trans(error.messagedata, 'security')}}
+            </div>
+        {% endif %}
+        
+
+        <form action={{path('login')}} method="post">
+            <input type="text" id="username" name="_username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={{lastUsername}}>
+
+            <input type="password" class="form-control" name="_password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+
+            <button type="submit" class="btn btn-primary">S'authentifier</button>
+        </form>
+    </div>
+
+{% endblock %}
