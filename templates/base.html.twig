@@ -9,16 +9,28 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2" />
  
     </head>
-    <body class="grid">
-        <div class="header">
-            le header
+    <body>
+        <div class="grid">
+            <div class="header">
+            là c'est le header
+                <a class="nav-link" href="#" >F.A.Q</a>
+                <a class="nav-link" href="#" > Quand ?</a>
+                <a class="nav-link" href="#" >Où ?</a>
+                <a class="nav-link" href="#" >Comment ?</a>
+                <a class="nav-link" href="#" >Pourquoi ?</a>
+                <a class="nav-link" href="#" >Qu'est ce que le don de sang placentaire ?</a>
+                <a class="nav-link" href="#" >Qui sommes nous ?</a>
+            </div>
+            <div class="main">
+                {% block body %}{% endblock %}
+            </div>
+            <div class="footer">
+                le footer
+            </div>
         </div>
-        <div class="main">
-            {% block body %}{% endblock %}
-        </div>
-        <div class="footer">
-            le footer
-        </div>
+        
+        <!--fontAwesome--> 
+        <script src="https://kit.fontawesome.com/695ef1a9d2.js" crossorigin="anonymous"></script>
     </body>
 
     {% block javascripts %}
