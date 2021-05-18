@@ -34,7 +34,11 @@ html, body{
     background-color: chocolate;
 }
 
-.header a{
+#logo{
+    float: left;
+}
+
+.nav-link{
     float: right;
     text-align: center;
     padding: 14px 16px;

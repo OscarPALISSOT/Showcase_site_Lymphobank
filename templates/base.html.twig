@@ -13,13 +13,16 @@
         <div class="grid">
             <div class="header">
             là c'est le header
+
+                <a id="logo" class="nav-link" href="/" >Logo</a>
+
                 <a class="nav-link" href="#" >F.A.Q</a>
                 <a class="nav-link" href="#" > Quand ?</a>
                 <a class="nav-link" href="#" >Où ?</a>
                 <a class="nav-link" href="#" >Comment ?</a>
                 <a class="nav-link" href="#" >Pourquoi ?</a>
                 <a class="nav-link" href="#" >Qu'est ce que le don de sang placentaire ?</a>
-                <a class="nav-link" href="#" >Qui sommes nous ?</a>
+                <a class="nav-link" href={{path ('about')}} >Qui sommes nous ?</a>
             </div>
             <div class="main">
                 {% block body %}{% endblock %}
