@@ -1,14 +1,14 @@
 
 {% extends "admin/admin.html.twig" %}
 
-{% block title %}Créer un établissement{% endblock %}
+{% block title %}Créer une actualité{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
 {% block body %}
     <div class="container mt-4">
-        <h1>Créer un nouvel établissement</h1>
-        {{ include ("admin/etablissements/FormEtablissement.html.twig", {form: form, button: 'Créer'}) }}
+        <h1>Créer une nouvelle actualité</h1>
+        {{ include ("admin/actus/FormActu.html.twig", {form: form, button: 'Créer'}) }}
     </div>
 
 {% endblock %}

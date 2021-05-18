@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ActuRepository;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +37,11 @@ class Actu
      * @ORM\Column(type="datetime")
      */
     private $created_at;
+
+    public function __construct()
+    {
+        $this->created_at = new DateTime();
+    }
 
     public function getId(): ?int
     {
