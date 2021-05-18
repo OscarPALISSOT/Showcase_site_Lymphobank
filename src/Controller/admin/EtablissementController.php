@@ -27,7 +27,7 @@ class EtablissementController extends AbstractController
     {
 
         $etablissements = $paginator->paginate(
-            $this->repository->findAll(),
+            $this->repository->findBy(array(), array('created_at' => 'DESC')),
             $request->query->getInt('page', 1),
             10
         );
