@@ -1,0 +1,24 @@
+.grid{
+    background-color: aqua;
+    display: grid;
+    grid-template: [header-start] ". header ." 60px [header-end]
+                    [main-start] ". main ."  [main-end]
+                    [footer-start] ". footer ." 60px [footer-end]
+                    / 12% auto 12%;
+}
+
+
+.header{
+    grid-area: header;
+    background-color: blue;
+}
+
+.main{
+    grid-area: main;
+    background-color: blueviolet;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: chocolate;
+}
