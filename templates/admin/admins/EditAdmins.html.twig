@@ -1,13 +1,13 @@
 
 {% extends "admin/admin.html.twig" %}
 
-{% block title %}Modifier l'établissement{% endblock %}
+{% block title %}Modifier l'administrateur{% endblock %}
 
 {% block stylesheets %}{% endblock %}
 
 {% block body %}
     <div class="container mt-4">
-        <h1>Modifier les informations de l'établissement</h1>
+        <h1>Modifier les informations de l'administrateur</h1>
         {{ include ("admin/admins/FormAdmins.html.twig", {form: form, button: 'Enregistrer'}) }}
     </div>
 
