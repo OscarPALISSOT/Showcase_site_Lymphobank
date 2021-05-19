@@ -7,25 +7,44 @@
         {% block stylesheets %}{% endblock %}
         {{ encore_entry_link_tags('/scss/base') }}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
  
     </head>
     <body>
         <div class="grid">
             <div class="header">
-            là c'est le header
 
-                <a id="logo" class="nav-link" href="/" >Logo</a>
+                <nav>
+                    <ul class="menuItems">
 
-                <a class="nav-link" href={{path ('faq')}} >FAQ</a>
-                <a class="nav-link" href={{path ('quand')}} > Quand ?</a>
-                <a class="nav-link" href="#" >Où ?</a>
-                <a class="nav-link" href={{path ('comment')}} >Comment ?</a>
-                <a class="nav-link" href="#" >Pourquoi ?</a>
-                <a class="nav-link" href="#" >Qu'est ce que le don de sang placentaire ?</a>
-                <a class="nav-link" href={{path ('about')}} >Qui sommes nous ?</a>
+                        <li><a id="logo" class="nav-link" href="/" >Logo</a></li>
+                        
+                        <li><a href={{path ('faq')}} data-item="FAQ">FAQ</a></li>
+                        <li><a href={{path ('quand')}} data-item="Quand ?"> Quand ?</a></li>
+                        <li><a href="#" data-item="Où ?">Où ?</a></li>
+                        <li><a href={{path ('comment')}} data-item="Comment ?">Comment ?</a></li>
+                        <li><a href="#" data-item="Pourquoi ?">Pourquoi ?</a></li>
+                        <li><a href="#" data-item="Qu'est ce que le don de sang placentaire ?">Qu'est ce que le don de sang placentaire ?</a></li>
+                        <li><a href={{path ('about')}} data-item="Qui sommes nous ?" >Qui sommes nous ?</a></li>
+                    </ul>
+                    
+                </nav>
+
+                
             </div>
             <div class="main">
-                {% block body %}{% endblock %}
+                <h1>Lorem ipsum dolor sit amet</h1>
+
+                <h2>Lorem ipsum dolor sit amet</h2>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+                
+                
+                
+            {% block body %}{% endblock %}
             </div>
             <div class="footer">
                 le footer
