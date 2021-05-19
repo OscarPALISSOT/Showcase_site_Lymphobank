@@ -1,94 +1,94 @@
 html, body{
-    margin: 0;
-    height: 100%;
-    width: 100%;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
 
 
 .grid{
-    background-color: aqua;
-    display: grid;
-    min-height: 100%;
-    grid-template: [header-start] ". header ." auto [header-end]
-                    [main-start] ". main ." 1fr [main-end]
-                    [footer-start] ". footer ." auto [footer-end]
-                    / 12% auto 12%;
+  background-color: aqua;
+  display: grid;
+  min-height: 100%;
+  grid-template: [header-start] ". header ." auto [header-end]
+                  [main-start] ". main ." 1fr [main-end]
+                  [footer-start] ". footer ." auto [footer-end]
+                  / 12% auto 12%;
 }
 
 
 .header{
-    height: 60px;
-    grid-area: header;
-    background-color: blue;
-    overflow: hidden;
+  height: 60px;
+  grid-area: header;
+  background-color: blue;
+  overflow: hidden;
 }
 
 .main{
-    grid-area: main;
-    background-color: blueviolet;
+  grid-area: main;
+  background-color: blueviolet;
 }
 
 .footer{
-    height: 60px;
-    grid-area: footer;
-    background-color: chocolate;
+  height: 60px;
+  grid-area: footer;
+  background-color: chocolate;
 }
 
 #logo{
-    float: left;
+  float: left;
 }
 
 .nav-link{
-    float: right;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    color: lightcoral;
-    border: 1px solid green;
+  float: right;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  color: lightcoral;
+  border: 1px solid green;
 }
 
 
 
 nav {
-    margin: 25px;
-    background: #f9f9f9;
-    padding: 16px;
-    .menuItems {
-      list-style: none;
-      display: flex;
-      li {
-        margin: 50px;
-  
-        a {
-          text-decoration: none;
-          color: #8f8f8f;
-          font-size: 24px;
-          font-weight: 400;
-          transition: all 0.5s ease-in-out;
-          position: relative;
-          text-transform: uppercase;
-  
+  margin: 25px;
+  background: #f9f9f9;
+  padding: 16px;
+  .menuItems {
+    list-style: none;
+    display: flex;
+    li {
+      margin: 50px;
+
+      a {
+        text-decoration: none;
+        color: #8f8f8f;
+        font-size: 24px;
+        font-weight: 400;
+        transition: all 0.5s ease-in-out;
+        position: relative;
+        text-transform: uppercase;
+
+        &::before {
+          content: attr(data-item);
+          transition: 0.5s;
+          color: #8254ff;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          width: 0;
+          overflow: hidden;
+        }
+
+        &:hover {
           &::before {
-            content: attr(data-item);
-            transition: 0.5s;
-            color: #8254ff;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            width: 0;
-            overflow: hidden;
-          }
-  
-          &:hover {
-            &::before {
-              width: 100%;
-              transition: all 0.5s ease-in-out;
-            }
+            width: 100%;
+            transition: all 0.5s ease-in-out;
           }
         }
       }
     }
   }
+}
