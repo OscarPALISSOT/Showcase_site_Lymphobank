@@ -15,40 +15,30 @@
     <body>
         <div class="grid">
             <div class="header">
-
                 <nav>
                     <ul class="menuItems">
 
                         <li><a id="logo" class="nav-link" href="/" >Logo</a></li>
                         
-                        <li><a href={{path ('faq')}} data-item="FAQ">FAQ</a></li>
-                        <li><a href={{path ('quand')}} data-item="Quand ?"> Quand ?</a></li>
-                        <li><a href="#" data-item="Où ?">Où ?</a></li>
-                        <li><a href={{path ('comment')}} data-item="Comment ?">Comment ?</a></li>
-                        <li><a href="#" data-item="Pourquoi ?">Pourquoi ?</a></li>
-                        <li><a href="#" data-item="Qu'est ce que le don de sang placentaire ?">Qu'est ce que le don de sang placentaire ?</a></li>
-                        <li><a href={{path ('about')}} data-item="Qui sommes nous ?" >Qui sommes nous ?</a></li>
+                        <li><a href={{path ('faq')}}>FAQ</a></li>
+                        <li><a href={{path ('quand')}}> Quand ?</a></li>
+                        <li><a href="#">Où ?</a></li>
+                        <li><a href={{path ('comment')}}>Comment ?</a></li>
+                        <li><a href="#">Pourquoi ?</a></li>
+                        <li><a href="#">Qu'est ce que le don de sang placentaire ?</a></li>
+                        <li><a href={{path ('about')}}>Qui sommes nous ?</a></li>
                     </ul>
-                    
                 </nav>
-
-                
             </div>
             <div class="main">
-                <h1>Lorem ipsum dolor sit amet</h1>
-
-                <h2>Lorem ipsum dolor sit amet</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-                
-                
-                
-            {% block body %}{% endblock %}
+                {% block body %}{% endblock %}
             </div>
             <div class="footer">
-                le footer
+                <div class="footer-grid">
+                    le footer
+                </div>
             </div>
+            
         </div>
         
         <!--fontAwesome--> 
