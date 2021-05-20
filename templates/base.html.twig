@@ -14,29 +14,28 @@
     </head>
     <body>
         <div class="grid">
-            <div class="header">
-                <nav>
-                    <ul class="menuItems">
+            <div class="header"></div>
+            <nav>
+                <ul class="menuItems">
 
-                        <li><a id="logo" class="nav-link" href="/" >Logo</a></li>
-                        
-                        <li><a href={{path ('faq')}}>FAQ</a></li>
-                        <li><a href={{path ('quand')}}> Quand ?</a></li>
-                        <li><a href="#">Où ?</a></li>
-                        <li><a href={{path ('comment')}}>Comment ?</a></li>
-                        <li><a href="#">Pourquoi ?</a></li>
-                        <li><a href="#">Qu'est ce que le don de sang placentaire ?</a></li>
-                        <li><a href={{path ('about')}}>Qui sommes nous ?</a></li>
-                    </ul>
-                </nav>
-            </div>
+                    <li><a id="logo" class="nav-link" href="/" >Logo</a></li>
+                    
+                    <li><a href={{path ('faq')}}>FAQ</a></li>
+                    <li><a href={{path ('quand')}}> Quand ?</a></li>
+                    <li><a href="#">Où ?</a></li>
+                    <li><a href={{path ('comment')}}>Comment ?</a></li>
+                    <li><a href="#">Pourquoi ?</a></li>
+                    <li><a href="#">Qu'est ce que le don de sang placentaire ?</a></li>
+                    <li><a href={{path ('about')}}>Qui sommes nous ?</a></li>
+                </ul>
+            </nav>
+            
             <div class="main">
                 {% block body %}{% endblock %}
             </div>
-            <div class="footer">
-                <div class="footer-grid">
-                    le footer
-                </div>
+            <div class="footer"></div>
+            <div class="footerContent">
+                le footer
             </div>
             
         </div>
