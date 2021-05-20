@@ -35,14 +35,16 @@
             <div class="main">
                 {% block body %}{% endblock %}
             </div>
+
             <div class="footer"></div>
             <div class="footerContent">
                 <a href={{path ('about')}}>Qui sommes nous ?</a>
                 <a href="#">Mentions légales</a>
-                <a href="#">Politique de confidentialité des données</a>
+                <a href="#">Politique de confidentialité</a>
                 <a href="#">Conditions d’utilisation</a>
                 <a href="#">Nous contacter</a>
                 <a href={{path ('faq')}}>F.A.Q</a>
+                <p>&copy Lymphobank</p>
             </div>
             
         </div>
@@ -50,7 +52,25 @@
         <!--fontAwesome--> 
         <script src="https://kit.fontawesome.com/695ef1a9d2.js" crossorigin="anonymous"></script>
     </body>
+    
+    <script>
+    // accordéons
+    var acc = document.getElementsByClassName("accordion");
+    var i;
 
+    for (i = 0; i < acc.length; i++) {
+    acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+        } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+        } 
+    });
+    }
+    // fin accordéons
+</script>
     {% block javascripts %}
         {#{{ encore_entry_script_tags('app') }}#}
     {% endblock %}
