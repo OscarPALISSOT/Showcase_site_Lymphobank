@@ -121,7 +121,7 @@ html, body{
       margin-left: 0.5em;
       a{
         font-family: 'Karla', sans-serif;
-        font-size: 1.4em;
+        font-size: 1.8em;
         display: inline-block;
         position: relative;
         color: black;
@@ -149,9 +149,11 @@ html, body{
 }
 
 .accordion {
-  padding-top: 10px;
-  background-color: $fond;
+  background-color: transparent;
   cursor: pointer;
+  border: none;
+  outline: none;
+  height: 43px;
   width: 25%;
   padding: 0;
   text-align: left;
@@ -160,6 +162,13 @@ html, body{
   font-size: 1.25em;
   font-weight: bold;
   position: relative;
+}
+
+.accordionTitle{
+  margin-bottom: 5px;
+  position: absolute;
+  left: 5px;
+  top: -5px;
 }
 
 .accordion:hover{
@@ -177,17 +186,22 @@ html, body{
   transition: transform 0.35s ease-out;
   transform-origin: bottom right;
   transform: scaleX(0);
+  z-index: 0;
 }
 .accordion:hover:before { 
   transform: scaleX(1);
   transform-origin: bottom left; 
+  z-index: 0;
 }
 
 .accordion:after {
   content: '+';
   color: black;
-  float: right;
   margin-right: 5px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
 .active:after {
@@ -202,3 +216,4 @@ html, body{
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
+
