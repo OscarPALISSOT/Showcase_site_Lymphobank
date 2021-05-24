@@ -15,28 +15,6 @@ html, body{
   width: 100%;
 }
 
-/* Works on Firefox */
-* {
-  scrollbar-width: thin;
-  scrollbar-color: $pastel $fond;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 20px;
-}
-
-*::-webkit-scrollbar-track {
-  background: $fond;
-  border: 3px solid $pastel;
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: $pastel;
-  border-radius: 20px;
-  
-}
-
 
 .grid{
   background-color: $fond;
@@ -50,12 +28,34 @@ html, body{
   height: 150px;
   grid-area: 1 / 1 / 2 / 4;
   background-color: $pastel;
-  overflow: hidden;
   border-bottom: solid 3px black;
 }
 
-.main{
+/* Works on Firefox */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: $pastel $fond;
+}
+
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 20px;
+}
+
+*::-webkit-scrollbar-track {
+  background: $fond;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $pastel;
+  border-radius: 20px;
   
+}
+
+.main{
+  overflow-y: scroll;
+  height: 80vh;
   grid-area: 2 / 2 / 3 / 3;
   margin-top: 2em;
   margin-bottom: 2em;
@@ -63,10 +63,12 @@ html, body{
   font-size: 400;
   line-height: 20px;
   font-family: 'Hind Siliguri', sans-serif;
+  
   h1{
     font-family: 'Karla', sans-serif;
     font-size: 2.5em;
     margin-bottom: 1.5em;
+    margin-top: 1em;
   }
   h2{
     font-family: 'Karla', sans-serif;
