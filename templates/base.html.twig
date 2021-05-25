@@ -23,6 +23,9 @@
             
             </div>
             <a href="/" id="logo"><img src={{asset ('baby-boy.png')}}></a>
+            <div class="menu-btn">
+                <div class="menu-btn-burger"></div>
+            </div>
                 <ul class="menuItems">
                     
                     <li><a href="#">Qu'est ce que le don ?</a></li>
@@ -40,17 +43,18 @@
 
             <div class="footer"></div>
             <div class="footerContent">
-                <div class="footerContent1">
+                <span>
                     <a href={{path ('about')}}>Qui sommes nous ?</a>
                     <a href="#">Mentions légales</a>
                     <a href="#">Politique de confidentialité</a>
-                </div>
-                <div class="footerContent1">
+                </span>
+                <span>
                     <a href="#">Conditions d’utilisation</a>
                     <a href="#">Nous contacter</a>
                     <a href={{path ('faq')}}>F.A.Q</a>
-                </div>
-                <p>&copy Lymphobank</p>
+                </span>
+            
+                <p>&copyLymphobank</p>
             </div>
             
         </div>
@@ -76,7 +80,23 @@
     });
     }
     // fin accordéons
-</script>
+    </script>
+
+    <script>
+    //btn menu burger
+    const menuBtn  = document.querySelector('.menu-btn');
+    let menuOpen = false;
+    menuBtn.addEventListener('click', ()=> {
+        if(!menuOpen){
+            menuBtn.classList.add('open');
+            menuOpen = true;
+        } else {
+            menuBtn.classList.remove('open');
+            menuOpen = false;
+        }
+    });
+    // fin btn menu burger
+    </script>
     {% block javascripts %}
         {#{{ encore_entry_script_tags('app') }}#}
     {% endblock %}
