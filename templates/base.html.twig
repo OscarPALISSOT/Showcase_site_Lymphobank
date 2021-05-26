@@ -13,7 +13,9 @@
  
     </head>
     <body>
+        
         <div class="grid">
+            <input id="NavToggle" type="checkbox">
             <div class="header"></div>
             <nav class="navbar">
             <div class="network">
@@ -23,12 +25,11 @@
             
             </div>
             <a href="/" id="logo"><img src={{asset ('baby-boy.png')}}></a>
-            <div class="menu-btn">
-                <input id="page-nav-toggle" class="nav-toggle" type="checkbox">
-                <label for="page-nav-toggle">
+            <label id="nav-btn" for="NavToggle">
+                <div class="menu-btn">
                     <div class="menu-btn-burger"></div>
-                </label>
-            </div>
+                </div>
+            </label>
                 <ul class="menuItems">
                     
                     <li><a href="#">Qu'est ce que le don ?</a></li>
@@ -89,7 +90,7 @@
     //btn menu burger
     const menuBtn  = document.querySelector('.menu-btn');
     let menuOpen = false;
-    document.querySelector('#page-nav-toggle').addEventListener('change', ()=> {
+    document.querySelector('#NavToggle').addEventListener('change', ()=> {
         if(!menuOpen){
             menuBtn.classList.add('open');
             menuOpen = true;
