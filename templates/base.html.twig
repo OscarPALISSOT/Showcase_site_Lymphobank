@@ -24,7 +24,10 @@
             </div>
             <a href="/" id="logo"><img src={{asset ('baby-boy.png')}}></a>
             <div class="menu-btn">
-                <div class="menu-btn-burger"></div>
+                <input id="page-nav-toggle" class="nav-toggle" type="checkbox">
+                <label for="page-nav-toggle">
+                    <div class="menu-btn-burger"></div>
+                </label>
             </div>
                 <ul class="menuItems">
                     
@@ -86,7 +89,7 @@
     //btn menu burger
     const menuBtn  = document.querySelector('.menu-btn');
     let menuOpen = false;
-    menuBtn.addEventListener('click', ()=> {
+    document.querySelector('#page-nav-toggle').addEventListener('change', ()=> {
         if(!menuOpen){
             menuBtn.classList.add('open');
             menuOpen = true;

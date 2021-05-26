@@ -135,50 +135,8 @@ html, body{
   transform: translateX(-100%);
   transition: transform 0.25s;
   z-index: 1;
+  border-bottom: solid 3px black;
 
-  /* &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $pastel;
-    transform-origin: 0 50%;
-    z-index: -1;
-  } */
-
-  #logo{
-    position: absolute;
-    left: 100%;
-    bottom: 0;
-    height: 100px;
-    width: 100px;
-    margin: 1.5em;
-    object-fit: cover;
-    img{
-      width: 100%;
-      height: auto;
-    }
-  }
-  .network{
-    display: none;
-  }
-  ul{
-    display: none;
-  }
-
-}
-/* .main-navigation {
-  
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-100%);
-  transition: transform 0.25s;
-  z-index: 1;
-  
   &:after {
     content: '';
     position: absolute;
@@ -190,13 +148,28 @@ html, body{
     transform-origin: 0 50%;
     z-index: -1;
   }
-  
-  ul {
-    font-size: 12vmin;
-    font-family: var(--font-heading);
+
+  #logo{
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    height: 100px;
+    width: 100px;
+    margin: 0;
+    margin-bottom: 1.5em;
+    object-fit: cover;
+    img{
+      width: 100%;
+      height: auto;
+    }
+  }
+  .network{
+    display: none;
+  }
+  ul{
     width: 100%;
   }
-  
+
   li {
     --border-size: 1vmin;
     display: flex;
@@ -210,26 +183,62 @@ html, body{
       bottom: 0;
       left: 0;
       width: 100%;
-      height: var(--border-size);
-      background-color: var(--color-secondary);
+      height: 1vmin;
+      background-color: $pastel;
       transform-origin: 0 50%;
       transform: translateX(-100%) skew(15deg);
     }
   }
   
-  a {
+  /* a {
     display: inline-block;
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    color: var(--color-secondary);
+    color: $fond;
     line-height: 1;
     text-decoration: none;
     user-select: none;
-    padding: var(--space) calc(var(--space) * 2) calc(var(--space) + var(--border-size) / 2);
+    padding: 1rem 2rem 1rem;
     transform: translateY(100%);
+  } */
+
+}
+
+.nav-toggle:checked {
+  
+  ~ .header{
+    background-color: blue;
   }
-} */
+  ~ .main{
+    transform: translateX(10%);
+  }
+  
+  ~ .navbar {
+    transition-duration: 0s;
+    transform: translateX(0);
+    
+    &:after {
+      animation: nav-bg 0.25s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+    
+    li:after {
+      animation: nav-line 1s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+    
+    a {
+      animation: link-appear 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+    }
+    
+    @for $i from 1 through 4 {
+      li:nth-child(#{$i}) {
+        &:after, a {
+          animation-delay: calc((var(--duration) / 2) * #{$i} * 0.125);
+        }
+      }
+    }
+  }
+}
 
 .menu-btn{
   position: absolute;
@@ -237,12 +246,26 @@ html, body{
   right: -100%;
   height: 80px;
   width: 80px;
-  margin: 1.5em;
+  margin: 0;
+  margin-bottom: 1.5em;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   transition: all .5s ease-in-out;
+  #page-nav-toggle{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    height: 50px;
+    width: 50px;
+    background-color: transparent;
+    opacity: 0;
+    cursor: pointer;
+    margin: 1em;
+  }
+  
 }
 
 .menu-btn-burger{
@@ -263,6 +286,7 @@ html, body{
   border-radius: 5px;
   transition: all .5s ease-in-out;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  cursor: pointer;
 }
 .menu-btn-burger::before{
   transform: translateY(-16px);
@@ -290,7 +314,7 @@ html, body{
   border: none;
   outline: none;
   height: 43px;
-  width: 25%;
+  width: 250px;
   padding: 0;
   text-align: left;
   border-top: solid 3px black;
@@ -298,7 +322,7 @@ html, body{
   box-shadow: -2px 4px 3px rgba(0, 0, 0, 0.1);
   border-radius: 0 15px 0 0 ;
   font-family: 'Karla', sans-serif;
-  font-size: 1.25em;
+  font-size: 1em;
   font-weight: bold;
   position: relative;
   overflow: hidden;
@@ -387,6 +411,11 @@ html, body{
     justify-content: space-between;
     
   }
+
+  .accordion{
+    width: 300px;
+    font-size: 1.25em;
+  }
   
 }
 
@@ -397,7 +426,15 @@ html, body{
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-  
+  .navbar{
+    #logo{
+      margin: 1.5em;
+    }
+  }
+
+  .menu-btn{
+    margin: 1.5em;
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)
@@ -438,6 +475,7 @@ html, body{
       padding: 0;
       margin: 0;
       list-style: none;
+      width: auto;
       li{
         float: left;
         margin-bottom: 1.5em;
