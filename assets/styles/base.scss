@@ -426,6 +426,16 @@ p.accordionTitle{
     margin: 0;
     margin-bottom: 15px;
   }
+  .illustrationAccordeon{
+    margin: 2em;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    height: auto;
+    float: left;
+    border-radius: 15px;
+    box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+  }
 }
 
 .panel::before{
@@ -458,6 +468,13 @@ p.accordionTitle{
   .accordion{
     width: 400px;
     font-size: 1.25em;
+  }
+
+  //contenu déroullant
+  .panel {
+    .illustrationAccordeon{
+      width: 300px;
+    }
   }
   
 }
