@@ -4,7 +4,9 @@
 {% block title %}Qu'est ce que le don ?{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/cestQuoi') }}
+{% endblock %}
 
 {% block body %}
     <p>Le sang de cordon provient du placenta (d’où l’appellation également rencontrée « sang placentaire »). Le cordon ombilical contient un sang particulièrement riche en cellules souches hématopoïétiques . 
@@ -27,12 +29,27 @@
     <div class="panel">
         <p>Les cellules souches hématopoïétiques vont être injectées dans un patient pouvant être atteint de différentes maladies. Ce traitement a pour but de permettre aux cellules souches du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet de greffon contre la tumeur. Elles ont également d’autres rôles : traiter intensivement les cellules cancéreuses restantes, diminuant ainsi la probabilité d’un retour de la maladie, d’inactiver le système immunitaire pour réduire les probabilités de rejet du greffon, de permettre aux cellules du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet du greffon contre la tumeur.</p>
     </div>
-    <div class="card">
-        <div class="card-pic">
-            <img src={{ asset ('img/hosto_icon.jpg')}}>
+    <div class="cardsHosto">
+        <div class="card">
+            <div class="card-pic">
+                <img src={{ asset ('img/hosto_icon.jpg')}}>
+            </div>
+            <div class="card-title"><h2>Maternité qui ne prélève pas de SDC</h2></div>
         </div>
-        <div class="card-title"><h2>Maternité qui ne prélève pas de SDC</h2></div>
+        <div class="card">
+            <div class="card-pic">
+                <img src={{ asset ('img/hosto_icon.jpg')}}>
+            </div>
+            <div class="card-title"><h2>Maternité qui prélève le SDC pour usage thérapeutique</h2></div>
+        </div>
+        <div class="card">
+            <div class="card-pic">
+                <img src={{ asset ('img/hosto_icon.jpg')}}>
+            </div>
+            <div class="card-title"><h2>Maternité qui prélève le SDC pour usage scientifique </h2></div>
+        </div>
     </div>
+    
 
 {% endblock %}
 
