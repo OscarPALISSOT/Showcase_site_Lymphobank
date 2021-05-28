@@ -194,12 +194,25 @@ html, body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    li{
+      list-style: none;
+      margin-left: 15%;
+      margin-top: 1em;
+      a{
+        font-family: 'Karla', sans-serif;
+        font-size: 1.5em;
+        text-decoration: none;
+        color: $fond;
+      }
+    }
   }
 }
 
-
 //affichage menu navigation
+.no-scroll{
+  overflow: hidden;
+}
 #NavToggle{
   display: none;
   
@@ -231,9 +244,6 @@ html, body{
 #NavToggle:checked {
   display: none;
 
-  ~ html{
-    overflow: hidden;
-  }
   ~ .main{
     transform: translateX(-10%);
     transition: all .35s ease-in-out;
@@ -253,7 +263,7 @@ html, body{
       z-index: 2;
       .menu-btn{
         position: fixed;
-        right: 12%;
+        right: calc(12% + 13px);
         margin-top: 35px;
         transform: translateX(0);
         transition: transform .35s ease-in-out;
@@ -330,7 +340,7 @@ html, body{
   border: none;
   outline: none;
   height: 43px;
-  width: 280px;
+  width: 200px;
   padding: 0;
   text-align: left;
   border-top: solid 3px black;
@@ -352,7 +362,7 @@ html, body{
   top: 15px; 
 }
 p.accordionTitle{
-  font-size: 1em;
+  font-size: 0.7em;
 } 
 
 //animation déroullant
@@ -431,6 +441,17 @@ p.accordionTitle{
 
 //responsive
 
+// X-Small devices (portrait phones, 360px and up)
+@media (min-width: 360px) {
+  .accordion{
+    width: 280px;
+  }
+  p.accordionTitle{
+    font-size: 1em;
+  } 
+  
+}
+
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
   .footer{
@@ -452,7 +473,7 @@ p.accordionTitle{
   .panel {
     .illustrationAccordeon{
       width: 380px;
-      margin-right: 2.5em;
+      margin-right: calc(768px - 380px - 12% - 1em);
     }
   }
   
@@ -473,6 +494,13 @@ p.accordionTitle{
     }
     .illustrated{
       min-height:290px;
+    }
+  }
+
+  //contenu déroullant
+  .panel {
+    .illustrationAccordeon{
+      margin-right: 2.5em;
     }
   }
 }
@@ -554,7 +582,7 @@ p.accordionTitle{
           text-decoration: none;
           padding-bottom: 4px;
         }
-        a:before {    
+       a:before {    
           content: "";
           display: block;
           height: 3px;
