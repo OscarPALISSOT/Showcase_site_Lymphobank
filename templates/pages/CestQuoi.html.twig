@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Qu'est ce que le don ?{% endblock %}
+
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <p>Le sang de cordon provient du placenta (d’où l’appellation également rencontrée « sang placentaire »). Le cordon ombilical contient un sang particulièrement riche en cellules souches hématopoïétiques . 
+    Le don de sang placentaire est un acte gratuit, anonyme et volontaire. 
+    Cet acte se produit lors de l’accouchement, immédiatement après la naissance de l’enfant et une fois le cordon coupé, on prélève le sang issu du cordon ombilical. 
+    Une fois le prélèvement réalisé, il sera traité et stocké par LYMPHOBANK puis envoyé aux laboratoires de recherche partenaires français dans le but d’être utilisé pour faire avancer la recherche.
+    Votre don de sang de cordon servira <strong>uniquement</strong> pour un usage scientifique.
+    </p>
+    <h1>Que peut-on donner ?</h1>
+    <p>Faire schéma</p>
+    <h1>Quel usage pour ce don ?</h1>
+    <p>Le don de sang placentaire peut servir pour 2 usages :</p>
+    <h2>Faire schéma</h2>
+    <p>Il existe deux types de greffes :</p>
+    <button class="accordion"><p class="accordionTitle">L’autogreffe</p></button>
+    <div class="panel">
+        <p>Les cellules souches hématopoïétiques vont être prélevées et congelées dans des banques autologues afin d’être réinjectées par la suite en cas de besoin. Cet acte est interdit en France et ne montre pas grande utilité puisque la réaction immunitaire potentielle appelée « effet de greffon » déclenchée par les lymphocytes T  du greffon lorsqu’ils reconnaissent et attaquent les cellules malignes sont beaucoup plus faibles.</p>
+    </div>
+    <button class="accordion"><p class="accordionTitle">L’allogreffe</p></button>
+    <div class="panel">
+        <p>Les cellules souches hématopoïétiques vont être injectées dans un patient pouvant être atteint de différentes maladies. Ce traitement a pour but de permettre aux cellules souches du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet de greffon contre la tumeur. Elles ont également d’autres rôles : traiter intensivement les cellules cancéreuses restantes, diminuant ainsi la probabilité d’un retour de la maladie, d’inactiver le système immunitaire pour réduire les probabilités de rejet du greffon, de permettre aux cellules du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet du greffon contre la tumeur.</p>
+    </div>
+    <div class="card">
+        <div class="card-pic">
+            <img src={{ asset ('img/hosto_icon.jpg')}}>
+        </div>
+        <div class="card-title"><h2>Maternité qui ne prélève pas de SDC</h2></div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
