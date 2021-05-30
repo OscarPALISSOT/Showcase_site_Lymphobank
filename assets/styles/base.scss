@@ -71,6 +71,12 @@ html, body{
   margin-bottom: 2em;
   background-color: $fond;
   font-family: 'Hind Siliguri', sans-serif;
+  .titlePage{
+    p{
+      font-size: 1.25em;
+      line-height: 25px;
+    }
+  }
   h1{
     font-family: 'Karla', sans-serif;
     font-size: 2.5em;
