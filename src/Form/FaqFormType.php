@@ -2,7 +2,7 @@
 
 namespace App\Form;
 
-use App\Entity\FAQ;
+use App\Entity\Faq;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -14,13 +14,14 @@ class FaqFormType extends AbstractType
         $builder
             ->add('question')
             ->add('reponse')
+            ->add('ordre')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => FAQ::class,
+            'data_class' => Faq::class,
         ]);
     }
 }
