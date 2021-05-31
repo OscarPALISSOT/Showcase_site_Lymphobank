@@ -1,0 +1,18 @@
+
+{% extends "admin/admin.html.twig" %}
+
+{% block title %}Modifier la question{% endblock %}
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h1>Modifier les informations de la question</h1>
+        {{ include ("admin/faqs/FormFaq.html.twig", {form: form, button: 'Enregistrer'}) }}
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}
