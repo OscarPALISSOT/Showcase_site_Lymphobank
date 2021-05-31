@@ -446,20 +446,81 @@ p.accordionTitle{
 
 //cards
 .card{
-  height: 480px;
+  max-height: 480px;
+  min-height: 480px;
   width: 300px;
   border-radius: 15px;
-  border: 1px solid rgba(0,0,0,0.2);
-  box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+  border: 2px solid rgba(0,0,0,0.2);
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: max-height 0.35s ease-out;
+  .card-title{
+    height: 84px;
+    text-align: center;
+  }
   .card-pic{
+    width: 296px;
+    height: 296px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     img{
-      border-radius: 15px 15px 0 0;
-      width: 298px;
+      width: 75%;
       height: auto;
     }
   }
-  .card-title{
-    margin-left: .5em;
+}
+
+.btnCard{
+  width: 280px;
+  background-color: $pastel;
+  border-radius: 15px;
+  text-align: left;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 15px;
+  margin-top: 1em;
+  p{
+    font-size: 1em;
+    margin: 0;
+  }
+}
+
+.btnCard:after {
+  font-size: 1.5em;
+  content: '+';
+  color: black;
+  margin-right: 15px;
+  margin-left: 30px;
+  display: block;
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+}
+
+.activeCard:after {
+  content: "-";
+}
+
+//contenu déroullant card
+.panelCard {
+  padding: 0;
+  margin: 1em;
+  background-color: $fond;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  position: relative;
+  p{
+    text-align: center;
+    margin-bottom: 0;
   }
 }
 
