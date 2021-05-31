@@ -446,36 +446,54 @@ p.accordionTitle{
 
 //cards
 .card{
-  max-height: 480px;
+  width: 200px;
+  min-height: 340px;
+  max-height: 340px;
+  /* width: 240px;
+  min-height: 420px;
+  max-height: 420px; */
+  /* max-height: 480px;
   min-height: 480px;
-  width: 300px;
+  width: 300px; */
   border-radius: 15px;
   border: 2px solid rgba(0,0,0,0.2);
-  margin: 2em;
+  margin: 1em 0;
+  /* margin: 1em; */
+  /* margin: 2em; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   transition: max-height 0.35s ease-out;
   .card-title{
-    height: 84px;
+    font-size: 0.6em;
+    height: 50px;
+    /* font-size: 0.8em;
+    height: 84px; */
     text-align: center;
+    h2{
+      margin: 0 0.5em;
+    }
   }
   .card-pic{
-    width: 296px;
-    height: 296px;
+    width: 196px;
+    height: 196px;
+    /* width: 236px;
+    height: 236px; */
+    /* width: 296px;
+    height: 296px; */
     display: flex;
     justify-content: center;
     align-items: center;
     img{
-      width: 75%;
+      width: 70%;
       height: auto;
     }
   }
 }
 
 .btnCard{
-  width: 280px;
+  width: 60%;
   background-color: $pastel;
   border-radius: 15px;
   text-align: left;
@@ -488,9 +506,14 @@ p.accordionTitle{
   padding: 15px;
   margin-top: 1em;
   p{
-    font-size: 1em;
+    font-size: 0.8em;
+    /* font-size: 1em; */
     margin: 0;
   }
+}
+
+.btnCard:hover{
+  box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
 }
 
 .btnCard:after {
@@ -542,6 +565,27 @@ p.accordionTitle{
           font-size: 1.5em;
         }
       }
+    }
+  }
+
+  //cards
+  .card{
+    width: 240px;
+    min-height: 420px;
+    max-height: 420px;
+    margin: 1em;
+    .card-title{
+      font-size: 0.8em;
+      height: 84px;
+    }
+    .card-pic{
+      width: 236px;
+      height: 236px;
+    }
+  }
+  .btnCard{
+    p{
+      font-size: 1em;
     }
   }
 }
@@ -629,6 +673,37 @@ p.accordionTitle{
     margin: 1.5em;
   }
   
+  //cards
+  .card{
+    max-height: 480px;
+    min-height: 480px;
+    width: 300px;
+    margin: 2em;
+    .card-title{
+      font-size: 0.6em;
+      height: 50px;
+      font-size: 0.8em;
+      height: 84px;
+      text-align: center;
+      h2{
+        margin: 0 0.5em;
+      }
+    }
+    .card-pic{
+      width: 296px;
+      height: 296px;
+      img{
+        width: 70%;
+        height: auto;
+      }
+    }
+  }
+
+  .btnCard{
+    p{
+      font-size: 1em;
+    }
+  }
 }
 
 // X-Large devices (large desktops, 1200px and up)

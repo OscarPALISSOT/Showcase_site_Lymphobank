@@ -28,10 +28,10 @@
                 {% for faq in faqs %}
                     <tr>
                         <th scope="row">
-                            {{faq.temoin}}
+                            {{faq.question}}
                         </th>
                         <th>
-                            {{faq.metierTemoin}}
+                            {{faq.ordre}}
                         </th>
                         <td>
                             <a href={{ path ('edit_faq', {id: faq.id})}} type="button" class="btn btn-warning"><i class="fas fa-cog"></i></a>
@@ -47,7 +47,7 @@
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">
-                                                    <strong>Voulez vous vraiment supprimer l'témoignage' ?</strong>
+                                                    <strong>Voulez vous vraiment supprimer la question' ?</strong>
                                                 </h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
@@ -55,7 +55,7 @@
                                                         <div class="modal-body">
                                                             <h5>Identifiant : {{faq.id}}</h5>
                                                             <br>
-                                                            <h5>Nom de l'témoignage : {{faq.temoin}}</h5>
+                                                            <h5>Question : {{faq.temoin}}</h5>
                                                             <br>
                                                             <h5><strong>Cette action est irréversible</strong></h5>
                                                             <input type="hidden" name="_method" value="DELETE">
