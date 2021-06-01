@@ -449,17 +449,9 @@ p.accordionTitle{
   width: 200px;
   min-height: 340px;
   max-height: 340px;
-  /* width: 240px;
-  min-height: 420px;
-  max-height: 420px; */
-  /* max-height: 480px;
-  min-height: 480px;
-  width: 300px; */
   border-radius: 15px;
   border: 2px solid rgba(0,0,0,0.2);
   margin: 1em 0;
-  /* margin: 1em; */
-  /* margin: 2em; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -468,8 +460,6 @@ p.accordionTitle{
   .card-title{
     font-size: 0.6em;
     height: 50px;
-    /* font-size: 0.8em;
-    height: 84px; */
     text-align: center;
     h2{
       margin: 0 0.5em;
@@ -478,10 +468,6 @@ p.accordionTitle{
   .card-pic{
     width: 196px;
     height: 196px;
-    /* width: 236px;
-    height: 236px; */
-    /* width: 296px;
-    height: 296px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -507,7 +493,6 @@ p.accordionTitle{
   margin-top: 1em;
   p{
     font-size: 0.8em;
-    /* font-size: 1em; */
     margin: 0;
   }
 }
@@ -545,6 +530,40 @@ p.accordionTitle{
     text-align: center;
     margin-bottom: 0;
   }
+}
+
+/* Tooltip container */
+.tooltip {
+  display: inline-block;
+  font-weight: bold;
+  border-bottom: 2px solid $pastel;
+  cursor: pointer;
+}
+
+/* Tooltip text */
+.tooltip .tooltipText {
+  font-weight: 400;
+  visibility: hidden;
+  width: 300px;
+  background-color: $pastel;
+  color: $fond;
+  text-align: left;
+  padding: 15px;
+  border-radius: 6px;
+  transform: translateX(100%);
+  transition: all 0.35s ease-in-out;
+ 
+  /* Position the tooltip text */
+  position: absolute;
+  z-index: 1;
+  top: 33% ;
+  right: 0;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltipText {
+  visibility: visible;
+  transform: translateX(0);
 }
 
 
@@ -747,6 +766,7 @@ p.accordionTitle{
       position: absolute;
       top: 89px;
       right: 12%;
+      height: auto;
       padding: 0;
       margin: 0;
       list-style: none;

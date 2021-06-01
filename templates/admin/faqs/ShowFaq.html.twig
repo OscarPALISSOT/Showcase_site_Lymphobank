@@ -33,6 +33,9 @@
                         <th>
                             {{faq.ordre}}
                         </th>
+                        <th>
+                            {{faq.NomLien}}
+                        </th>
                         <td>
                             <a href={{ path ('edit_faq', {id: faq.id})}} type="button" class="btn btn-warning"><i class="fas fa-cog"></i></a>
                         </td>
@@ -55,7 +58,7 @@
                                                         <div class="modal-body">
                                                             <h5>Identifiant : {{faq.id}}</h5>
                                                             <br>
-                                                            <h5>Question : {{faq.temoin}}</h5>
+                                                            <h5>Question : {{faq.question}}</h5>
                                                             <br>
                                                             <h5><strong>Cette action est irréversible</strong></h5>
                                                             <input type="hidden" name="_method" value="DELETE">

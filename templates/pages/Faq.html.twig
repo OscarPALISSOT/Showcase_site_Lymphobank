@@ -1,12 +1,22 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}Quand{% endblock %}
+{% block title %}F.A.Q{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/faq') }}
+{% endblock %}
 
-{% block body %}Des questions{% endblock %}
+{% block body %}
+    {% for faq in faqs %}
+        <div class="cadre">
+        <h2 class="TitleCadre" >{{faq.ordre}}. {{faq.question}}</h2>
+        <p>{{faq.reponse}}</p>
+        <p>Plus d'information : <a href={{faq.lien}}>{{faq.NomLien}}</a></p>
+    </div>
+    {% endfor %}
+{% endblock %}
 
 {% block javascripts %}{% endblock %}
 

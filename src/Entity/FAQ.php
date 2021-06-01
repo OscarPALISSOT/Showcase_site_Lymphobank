@@ -32,6 +32,16 @@ class Faq
      */
     private $ordre;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $NomLien;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $lien;
+
 
     public function getId(): ?int
     {
@@ -70,6 +80,30 @@ class Faq
     public function setOrdre(int $ordre): self
     {
         $this->ordre = $ordre;
+
+        return $this;
+    }
+
+    public function getNomLien(): ?string
+    {
+        return $this->NomLien;
+    }
+
+    public function setNomLien(?string $NomLien): self
+    {
+        $this->NomLien = $NomLien;
+
+        return $this;
+    }
+
+    public function getLien(): ?string
+    {
+        return $this->lien;
+    }
+
+    public function setLien(?string $lien): self
+    {
+        $this->lien = $lien;
 
         return $this;
     }

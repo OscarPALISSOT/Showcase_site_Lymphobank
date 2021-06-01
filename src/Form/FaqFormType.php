@@ -15,6 +15,8 @@ class FaqFormType extends AbstractType
             ->add('question')
             ->add('reponse')
             ->add('ordre')
+            ->add('NomLien')
+            ->add('lien')
         ;
     }
 
