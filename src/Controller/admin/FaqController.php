@@ -27,7 +27,7 @@ class FaqController extends AbstractController
     {
 
         $faqs = $paginator->paginate(
-            $this->repository->findBy(array(), array('ordre' => 'DESC')),
+            $this->repository->findBy(array(), array('ordre' => 'ASC')),
             $request->query->getInt('page', 1),
             10
         );

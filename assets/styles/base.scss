@@ -550,20 +550,20 @@ p.accordionTitle{
   text-align: left;
   padding: 15px;
   border-radius: 6px;
-  transform: translateX(100%);
+  transform: scaleX(0);
+  transform-origin: right;
   transition: all 0.35s ease-in-out;
- 
   /* Position the tooltip text */
   position: absolute;
   z-index: 1;
-  top: 33% ;
+  top: 25% ;
   right: 0;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltipText {
   visibility: visible;
-  transform: translateX(0);
+  transform: scaleX(100%);
 }
 
 
