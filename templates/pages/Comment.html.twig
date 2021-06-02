@@ -1,12 +1,43 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}comment{% endblock %}
+{% block title %}Comment donner ?{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/comment') }}
+{% endblock %}
 
-{% block body %}Comment{% endblock %}
+{% block body %}
+    <p class="pageTitle">Pour faire un don de sang de cordon, les démarches sont simples et rapides. Si vous souhaitez vous inscrire, vous trouverez ci-joint les étapes à suivre pour réaliser ce don, ainsi que les explications relatives au prélèvement. Veuillez tenir compte des conditions indiquées pour effectuer un don.</p>
+    <h2>Avant l’accouchement</h2>
+    <p>Pour pouvoir donner votre sang de cordon pour un usage scientifique, voici les étapes à suivre afin de pouvoir vous inscrire dans cette démarche.</p>
+    <button class="accordion"><p class="accordionTitle">1.	Maternités partenaire de notre réseau</p></button>
+    <div class="panel">
+        <p>Adressez-vous à l’une des maternités partenaire de notre réseau, vous serez mise en relation avec une sage-femme qui pourra répondre à toutes vos questions et préoccupations.</p>
+    </div>
+    <button id="btn2" class="accordion"><p class="accordionTitle">2.	Documents fournis lors du RDV à la maternité</p></button>
+    <div class="panel">
+        <p>Lors de votre rendez-vous dans votre maternité, une sage-femme vous fournira une lettre d’information, qu’il s’agisse d’un don pour usage thérapeutique ou scientifique ; afin de vous renseigner au maximum sur ce don. Cette lettre d’information peut également se télécharger via un lien. 
+        Le formulaire de consentement vous sera fourni en trois exemplaires : pour la maternité, l’EFS et vous-même. 
+        </p>
+    </div>
+    <button class="accordion"><p class="accordionTitle">3.	Documents signés et complétés</p></button>
+    <div class="panel">
+        <p>Lors de votre accouchement, vous devrez apporter les trois exemplaires du formulaire de consentement, préalablement signés et complétés.  
+        Dans le cas où ceux-ci seraient oubliés ou perdus de votre part, un nouveau consentement vous sera remis.
+        </p>
+    </div>
+    <h2>Lors de l’accouchement </h2>
+    <p>Une fois l’accouchement terminé : le bébé est expulsé et le cordon coupé, l’équipe médicale passera au prélèvement de sang de cordon ombilical. C’est une procédure simple et rapide.</p>
+    <h2>Etapes du prélèvement :</h2>
+    <h2>Faire schéma</h2>
+    <h2>Après l’accouchement</h2>
+    <p>Votre bébé et vous-même êtes pris en charge par l’équipe médicale. En ce qui concerne votre prélèvement, voici son devenir : </p>
+    <h2>Faire schéma</h2>
+    <p>Si vous souhaitez connaître le devenir de votre don vous pourrez contacter l’EFS ou LYMPHOBANK, vous pourrez avoir des informations l’utilisation de votre prélèvement. </p>
+    
+{% endblock %}
 
 {% block javascripts %}{% endblock %}
 

@@ -543,7 +543,6 @@ p.accordionTitle{
 /* Tooltip text */
 .tooltip .tooltipText {
   font-weight: 400;
-  visibility: hidden;
   width: 300px;
   background-color: $pastel;
   color: $fond;
@@ -562,7 +561,6 @@ p.accordionTitle{
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltipText {
-  visibility: visible;
   transform: scaleX(100%);
 }
 
@@ -629,8 +627,8 @@ p.accordionTitle{
   //contenu déroullant
   .panel {
     .illustrationAccordeon{
-      width: 380px;
-      margin-right: calc(768px - 380px - 12% - 1em);
+      width: 300px;
+      margin-right: calc(768px - 300px - 12% - 1em);
     }
   }
 

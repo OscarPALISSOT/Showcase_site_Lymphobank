@@ -3,13 +3,17 @@ $pastelHover : #b499c3;
 
 $fond :#fffdf0;
 
-.cardsHosto, .cardRecherche{
+
+#btn2{
+    height: 65px;
+}
+.cardsConditions{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
-.cardRecherche{
+.cardConditions{
     .card{
         min-height: 0;
         height: 350px;
@@ -43,5 +47,3 @@ $fond :#fffdf0;
         }
     }
 }
-  
-  
