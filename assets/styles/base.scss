@@ -110,6 +110,14 @@ html, body{
     box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
   }
 
+  //icon gauche paragraphe
+  .illustrationLeftIcon{
+    margin-bottom: 2em;
+    width: 64px;
+    height: auto;
+    float: left;
+  }
+
   p{
     line-height: 20px;
     height: auto;
@@ -654,9 +662,17 @@ p.accordionTitle{
       margin-bottom: 1em;
       width: 400px;
       height: auto;
-      float: left;
       border-radius: 15px;
       box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+    }
+
+    //icon gauche paragraphe
+    .illustrationLeftIcon{
+      margin-bottom: 2em;
+      margin-bottom: 1em;
+      width: 128px;
+      height: auto;
+      float: left;
     }
     .illustrated{
       min-height:290px;

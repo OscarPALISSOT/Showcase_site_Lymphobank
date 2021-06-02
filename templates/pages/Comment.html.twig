@@ -9,12 +9,17 @@
 {% endblock %}
 
 {% block body %}
-    <p class="pageTitle">Pour faire un don de sang de cordon, les démarches sont simples et rapides. Si vous souhaitez vous inscrire, vous trouverez ci-joint les étapes à suivre pour réaliser ce don, ainsi que les explications relatives au prélèvement. Veuillez tenir compte des conditions indiquées pour effectuer un don.</p>
+    <div class="illustrated"><p class="pageTitle"><img class="illustrationLeft" src={{ asset ('img/salleDattente.PNG')}}>Pour faire un don de sang de cordon, les démarches sont simples et rapides. Si vous souhaitez vous inscrire, vous trouverez ci-joint les étapes à suivre pour réaliser ce don, ainsi que les explications relatives au prélèvement. Veuillez tenir compte des conditions indiquées pour effectuer un don.</p></div>
     <h2>Avant l’accouchement</h2>
     <p>Pour pouvoir donner votre sang de cordon pour un usage scientifique, voici les étapes à suivre afin de pouvoir vous inscrire dans cette démarche.</p>
-    <button class="accordion"><p class="accordionTitle">1.	Maternités partenaire de notre réseau</p></button>
-    <div class="panel">
-        <p>Adressez-vous à l’une des maternités partenaire de notre réseau, vous serez mise en relation avec une sage-femme qui pourra répondre à toutes vos questions et préoccupations.</p>
+    <div class="reseau">
+        <div id="deroullantMaternité">
+            <button class="accordion"><p class="accordionTitle">1.	Maternités partenaire de notre réseau</p></button>
+            <div class="panel">
+                <p>Adressez-vous à l’une des maternités partenaire de notre réseau, vous serez mise en relation avec une sage-femme qui pourra répondre à toutes vos questions et préoccupations. </p>  
+            </div>
+        </div>
+        <a href="/Ou"><button id="reseau">Découvrir notre Réseau</button></a>
     </div>
     <button id="btn2" class="accordion"><p class="accordionTitle">2.	Documents fournis lors du RDV à la maternité</p></button>
     <div class="panel">
@@ -36,7 +41,34 @@
     <p>Votre bébé et vous-même êtes pris en charge par l’équipe médicale. En ce qui concerne votre prélèvement, voici son devenir : </p>
     <h2>Faire schéma</h2>
     <p>Si vous souhaitez connaître le devenir de votre don vous pourrez contacter l’EFS ou LYMPHOBANK, vous pourrez avoir des informations l’utilisation de votre prélèvement. </p>
+    <div class="cardsConditions">
+        <div class="card">
+            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement a lieu :</h2></div>
+            <div class="contentCard">
+                <ul>
+                    <li>Le bébé n’est pas prématuré (37 semaines d’aménorrhées respectées)</li>
+                    <li>Lors d’une césarienne programmée (le prélèvement aura lieu une fois le placenta ait été expulsé)</li>
+                    <li>Lors d’un accouchement par voie basse (soit en attendant que le placenta soit expulsé soit lorsqu’il est déjà sorti)</li>
+                    <li>Une fois que le cordon ombilical est coupé</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement ne peut avoir lieux :</h2></div>
+            <div class="contentCard">
+                <ul>
+                    <li>Les 37 semaines d’aménorrhées ne sont pas respectées (bébé prématuré)</li>
+                    <li>Césarienne non programmée (en urgence)</li>
+                    <li>Toutes situations considérées par l’équipe médicale pouvant présenter potentiellement un risque direct ou indirect pour la maman ou pour l’enfant.
+                    Ex : l’équipe n’a pas le temps de réaliser le prélèvement à cause du nombre élevé d’accouchement le même jour)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="consentement"><p>Ainsi, même si l’équipe médicale détient votre consentement pour le prélèvement, c’est elle qui décide s’il doit avoir lieu ou non.</p></div>
     
+
 {% endblock %}
 
 {% block javascripts %}{% endblock %}

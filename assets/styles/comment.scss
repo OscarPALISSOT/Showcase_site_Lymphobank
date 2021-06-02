@@ -11,12 +11,14 @@ $fond :#fffdf0;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin-bottom: 4em;
 }
 
-.cardConditions{
+.cardsConditions{
     .card{
         min-height: 0;
-        height: 350px;
+        width: 100%;
+        height: auto;
         background-color: $pastel;
         box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
         .card-title{
@@ -25,9 +27,9 @@ $fond :#fffdf0;
             }
         }
         .contentCard{
-            font-size: .8em;
+            font-size: .6em;
             font-weight: bold;
-            margin: 0 4em;
+            margin: 4em;
             height: 100%;
             display: flex;
             align-items: center;
@@ -35,15 +37,86 @@ $fond :#fffdf0;
     }
 }
 
+#consentement{
+    border-radius: 0 0 0 15px;
+    border-bottom: 4px solid $pastel;
+    border-left: $pastel 4px solid;
+    width: auto;
+    margin-bottom: 1em;
+    p{
+        font-weight: bold;
+        margin: 1em;
+        width: auto;
+    }
+}
+
+#reseau{
+    position: static;
+    width: auto;
+    margin-top: 20px;
+    padding: 0 0.5em;
+    background-color: $pastel;
+    border-radius: 15px;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 3em;
+}
+
+#reseau:hover{
+    box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
+  }
+
+.reseau{
+    width: 100%;
+    position: relative;
+}
+
 //responsive
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-    .cardRecherche{
+// X-Small devices (portrait phones, 360px and up)
+@media (min-width: 390px) {
+    .cardsConditions{
         .card{
+            .contentCard{
+                font-size: .75em;
+            }
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .cardsConditions{
+        .card{
+            height: 400px;
+            .contentCard{
+                font-size: 1em;
+                margin: 0 4em;
+            }
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .cardsConditions{
+        .card{
+            width: 500px;
             .contentCard{
                 font-size: 1em;
             }
         }
+    }
+
+    #reseau{
+        position: absolute;
+        top: 0;
+        left: calc(400px + 2em);
     }
 }
