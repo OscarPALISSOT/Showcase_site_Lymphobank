@@ -10,10 +10,11 @@
 
 {% block body %}
     {% for faq in faqs %}
-        <div class="cadre">
-        <h2 class="TitleCadre" >{{faq.ordre}}. {{faq.question}}</h2>
-        <p>{{faq.reponse}}</p>
-        <p>Plus d'information : <a href={{faq.lien}}>{{faq.NomLien}}</a></p>
+        <button class="accordion"><p class="accordionTitle">{{faq.ordre}}. {{faq.question}}</p></button>
+        <div class="panel">
+            <p>{{faq.reponse}}</p>
+            <p>Plus d'information : <a href={{faq.lien}}>{{faq.NomLien}}</a></p>
+        </div>
     </div>
     {% endfor %}
 {% endblock %}
