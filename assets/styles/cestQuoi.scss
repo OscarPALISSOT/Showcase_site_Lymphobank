@@ -10,6 +10,7 @@ $fond :#fffdf0;
 }
 
 .cardRecherche{
+    margin-bottom: 2em;
     .card{
         min-height: 0;
         height: 350px;
@@ -31,6 +32,9 @@ $fond :#fffdf0;
     }
 }
 
+#cardRechercheTitle{
+    margin-top: 2em;
+}
 //responsive
 
 // Large devices (desktops, 992px and up)
