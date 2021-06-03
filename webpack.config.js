@@ -21,7 +21,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addStyleEntry('scss/base', './assets/styles/base.scss')
-    .addStyleEntry('scss/admin', './assets/styles/admin.scss')
+    .addStyleEntry('scss/admin', './assets/styles/admin/admin.scss')
     .addStyleEntry('scss/home', './assets/styles/home.scss')
     .addStyleEntry('scss/pourquoi', './assets/styles/pourquoi.scss')
     .addStyleEntry('scss/cestQuoi', './assets/styles/cestQuoi.scss')
