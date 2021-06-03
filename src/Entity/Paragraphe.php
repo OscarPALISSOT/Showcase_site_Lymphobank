@@ -33,13 +33,12 @@ class Paragraphe
     private $ordre;
 
     /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $relation;
-
-    /**
-     * @ORM\OneToOne(targetEntity=Page::class, cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
+     * @var \Page
+     * 
+     * @ORM\ManyToOne(targetEntity="Page")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="idPage", referencedColumnName="idPage")
+     * })
      */
     private $idPage;
 
@@ -92,27 +91,16 @@ class Paragraphe
         return $this;
     }
 
-    public function getRelation(): ?string
-    {
-        return $this->relation;
-    }
-
-    public function setRelation(string $relation): self
-    {
-        $this->relation = $relation;
-
-        return $this;
-    }
-
     public function getIdPage(): ?Page
     {
         return $this->idPage;
     }
 
-    public function setIdPage(Page $idPage): self
+    public function setIdPage(?Page $idPage): self
     {
         $this->idPage = $idPage;
 
         return $this;
     }
+
 }

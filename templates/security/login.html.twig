@@ -1,30 +1,44 @@
 
-{% extends "base.html.twig" %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Se connecter{% endblock %}</title> 
+        {{ encore_entry_link_tags('scss/login') }}
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}?v=2" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap" rel="stylesheet">
+ 
+    </head>
+    <body>
 
-{% block title %}Se connecter{% endblock %}
-
-{% block stylesheets %}{% endblock %}
-
-{% block javascripts %}{% endblock %}
-
-{% block body %}
-
-    <div class="container">
-        {% if error %}
-            <div class="alert alert-danger">
-                {{error.messageKey | trans(error.messagedata, 'security')}}
-                {{error}}
+        <div class="log">
+            <div class="logTitle">
+                <h2>Se connecter</h2>
             </div>
-        {% endif %}
+            {% if error %}
+                <div class="error">
+                    {{error.messageKey | trans(error.messagedata, 'security')}}
+                </div>
+            {% endif %}
+            
+
+            <form action={{path('login')}} method="post">
+                <input type="text" id="username" name="_username" class="input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={{lastUsername}}>
+
+                <input type="password" class="input" name="_password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
+
+                <button class="btn" type="submit" class="btn btn-primary">S'authentifier</button>
+            </form>
+        </div>
         
+        <!--fontAwesome--> 
+        <script src="https://kit.fontawesome.com/695ef1a9d2.js" crossorigin="anonymous"></script>
+    </body>
+    
+</html>
 
-        <form action={{path('login')}} method="post">
-            <input type="text" id="username" name="_username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value={{lastUsername}}>
 
-            <input type="password" class="form-control" name="_password" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1">
-
-            <button type="submit" class="btn btn-primary">S'authentifier</button>
-        </form>
-    </div>
-
-{% endblock %}

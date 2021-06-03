@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\PageRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -14,7 +15,7 @@ class Page
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
+     * @ORM\Column(name="idPage", type="integer")
      */
     private $idPage;
 
@@ -48,8 +49,4 @@ class Page
         return $this;
     }
 
-    public function getParagraphe(): ?Paragraphe
-    {
-        return $this->paragraphe;
-    }
 }

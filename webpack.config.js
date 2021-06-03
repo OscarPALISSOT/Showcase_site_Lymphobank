@@ -27,6 +27,7 @@ Encore
     .addStyleEntry('scss/cestQuoi', './assets/styles/cestQuoi.scss')
     .addStyleEntry('scss/faq', './assets/styles/faq.scss')
     .addStyleEntry('scss/comment', './assets/styles/comment.scss')
+    .addStyleEntry('scss/login', './assets/styles/login.scss')
     .addEntry('js/base', './assets/js/base.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)

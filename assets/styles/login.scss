@@ -1,0 +1,89 @@
+$pastel : #cec0d6;
+$pastelHover : #b499c3;
+$fond :#fffdf0;
+
+*, ::before, ::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  background-color: $fond;
+  overflow-x: hidden;
+}
+
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.log{
+  min-height: 0;
+  height: 400px;
+  width: 400px;
+  background-color: $pastel;
+  box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+  border: 4px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  .logTitle{
+    h2{
+      font-family: 'Karla', sans-serif;
+      font-size: 2em;
+      margin-top: 1em;
+    }
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    .input{
+      margin: 1em 0;
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+  }
+  .contentLog{
+      font-size: .8em;
+      font-weight: bold;
+      margin: 0 4em;
+      height: 100%;
+      display: flex;
+      align-items: center;
+  }
+
+  .btn{
+    width: auto;
+    height: auto;
+    background-color: $pastel;
+    border-radius: 15px;
+    text-align: left;
+    font-family: 'Karla', sans-serif;
+    font-weight: bold;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    border: solid 3px $fond;
+    padding: 15px;
+    margin-top: 1em;
+    p{
+      font-size: 0.8em;
+      margin: 0;
+    }
+  }
+  
+  .btn:hover{
+    box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
+  }
+}
