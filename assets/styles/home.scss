@@ -12,3 +12,42 @@ $fond :#fffdf0;
         object-fit: cover;
     }
 }
+
+.homeTitle{
+    margin-top: 2em;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline $pastel 4px solid;
+}
+
+.underline{
+    text-decoration: underline $pastel 3px solid;
+    text-align: center;
+}
+
+.main{
+    p{
+        text-align: center;
+        font-size: 1.2em;
+    }
+    .schemaGeant{
+        margin: 3em 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        #pregnantIcon{
+            transform: scaleX(-1);
+        }
+        h2{
+            margin-top: 0;
+        }
+        i{
+            transform: translateY(28.8px);
+        }
+    }
+}
+
+
+
+

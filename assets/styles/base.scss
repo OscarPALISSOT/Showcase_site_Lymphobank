@@ -576,22 +576,13 @@ p.accordionTitle{
 
 //go to top btn
 .gotoTop{
-  position: fixed;
-  right: 6%;
-  bottom: 2em;
-  transform: translateX(50%);
-  .linktoTop{
-    .btntoTop{
-      outline: none;
-      background: transparent;
-      color: $pastel;
-      border: none;
-      cursor: pointer;
-    }
-    .btntoTop:hover{
-      color: $pastelHover;
-    }
-  }
+  visibility: hidden;
+}
+
+//icons size
+.icon{
+  width: 128px;
+  height: auto;
 }
 
 
@@ -757,6 +748,27 @@ p.accordionTitle{
   .btnCard{
     p{
       font-size: 1em;
+    }
+  }
+
+  //go to top btn
+  .gotoTop{
+    visibility: visible;
+    position: fixed;
+    right: 6%;
+    bottom: 2em;
+    transform: translateX(50%);
+    .linktoTop{
+      .btntoTop{
+        outline: none;
+        background: transparent;
+        color: $pastel;
+        border: none;
+        cursor: pointer;
+      }
+      .btntoTop:hover{
+        color: $pastelHover;
+      }
     }
   }
 }
