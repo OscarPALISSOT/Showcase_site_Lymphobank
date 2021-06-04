@@ -19,10 +19,6 @@ $fond :#fffdf0;
     font-weight: bold;
 }
 
-.underline{
-    text-align: center;
-}
-
 .main{
     p{
         text-align: center;
@@ -49,24 +45,32 @@ $fond :#fffdf0;
         i{
             transform: translateY(28.8px);
         }
+        .tooltipGeant{
+            position: relative;
+        }
         .tooltipGeant .tooltipGeantText {
-            visibility: hidden;
             width: 120px;
             background-color: black;
             color: #fff;
             text-align: center;
             padding: 5px 0;
             border-radius: 6px;
-           
+            transform: scaleY(0);
             /* Position the tooltip text - see examples below! */
             position: absolute;
             z-index: 1;
-          }
-          
-          /* Show the tooltip text when you mouse over the tooltip container */
-          .tooltipGeant:hover .tooltipGeantText {
-            visibility: visible;
-          }
+            width: 120px;
+            top: 100%;
+            left: 50%;
+            margin-left: -60px;
+            transition: all 0.35s ease-in-out;
+            transform-origin: 50% 0;
+        }
+        
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltipGeant:hover .tooltipGeantText {
+            transform: scaleY(100%);
+        }
     }
 }
 
