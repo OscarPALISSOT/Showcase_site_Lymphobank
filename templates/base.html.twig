@@ -13,7 +13,7 @@
  
     </head>
     <body class="body">
-        
+        <div id="top"></div>
         <div class="grid">
             <input id="NavToggle" type="checkbox">
             <div class="header"></div>
@@ -43,7 +43,14 @@
             
             <div class="main">
                 {% block body %}{% endblock %}
+                <div class="gotoTop">
+                <a href="#top" class="linktoTop">
+                    <button class="btntoTop"><i class="fas fa-arrow-circle-up fa-4x"></i></button>
+                </a>
             </div>
+            </div>
+
+            
 
             <div class="footer"></div>
             <div class="footerContent">
