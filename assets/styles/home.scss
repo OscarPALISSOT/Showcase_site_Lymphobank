@@ -25,11 +25,11 @@ $fond :#fffdf0;
         font-size: 1.2em;
     }
     .schemaGeant{
-        margin: 3em 1em;
+        margin: 2em 1em;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: space-around;
         #pregnantIcon{
             transform: scaleX(-1);
         }
@@ -43,7 +43,7 @@ $fond :#fffdf0;
             }
         }
         i{
-            transform: translateY(28.8px);
+            transform: rotate(90deg);
         }
         .tooltipGeant{
             position: relative;
@@ -74,6 +74,96 @@ $fond :#fffdf0;
     }
 }
 
+//icons size
+.icon{
+    width: 128px;
+    height: auto;
+}
+
+//responsive
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+    .main{
+        .schemaGeant{
+            margin: 3em 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            #pregnantIcon{
+                transform: scaleX(-1);
+            }
+            h2{
+                margin-top: 0;
+                font-size: 1em;
+                .underline{
+                    text-decoration: underline $pastel 5px solid;
+                    display: inline;
+                    font-weight: bold;
+                    font-size: 1.5em;
+                }
+            }
+            i{
+                transform: translateY(12.8px);
+                font-size: 2.5em;
+            }
+        }
+    }
+    //icons size
+    .icon{
+        width: 80px;
+        height: auto;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    .main{
+        .schemaGeant{
+            h2{
+                font-size: 1.5em;
+            }
+            i{
+                transform: translateY(28.8px);
+                font-size: 3.25em;
+            }
+        }
+    }
+    //icons size
+    .icon{
+        width: 90px;
+        height: auto;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    //icons size
+    .icon{
+        width: 128px;
+        height: auto;
+    }
+
+    .main{
+        .schemaGeant{
+            i{
+                font-size: 4em;
+            }
+        }
+    }
+}
 
 
 
