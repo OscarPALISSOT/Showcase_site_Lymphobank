@@ -35,6 +35,22 @@ $fond :#fffdf0;
 #cardRechercheTitle{
     margin-top: 2em;
 }
+
+.schemaCard{
+    margin-top: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    i{
+        transform: rotate(90deg);
+    }
+}
+
+.icon{
+    width: 128px;
+    height: auto;
+}
 //responsive
 
 // Large devices (desktops, 992px and up)
