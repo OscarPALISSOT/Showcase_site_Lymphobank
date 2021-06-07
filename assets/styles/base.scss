@@ -754,10 +754,10 @@ p.accordionTitle{
   //go to top btn
   .gotoTop{
     visibility: visible;
-    position: fixed;
-    right: 6%;
+    position: sticky;
+    float: right;
     bottom: 2em;
-    transform: translateX(50%);
+    margin-right: -12%;
     .linktoTop{
       .btntoTop{
         outline: none;
