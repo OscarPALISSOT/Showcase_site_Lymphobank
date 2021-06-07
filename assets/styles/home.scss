@@ -5,12 +5,12 @@ $fond :#fffdf0;
 .homeBanner{
     margin: 0 -12vw;
     margin-top: -32px;
-    background-image: url("homeBanner.jpeg");
-    min-height: 250px;
+    background-image: url("homeBanner.png");
+    min-height: 150px;
     background-attachment: fixed;
-    background-position: center;
+    background-position: top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100vw;
 }
 
 .homeTitle{
@@ -86,7 +86,6 @@ $fond :#fffdf0;
     width: 100%;
     position: relative;
     margin: auto;
-    min-height:150px;
     .title{
         text-align: center;
         position: absolute;
@@ -94,7 +93,6 @@ $fond :#fffdf0;
     }
     .text {
         color: black;
-        font-size: 15px;
         position: absolute;
         top: 50%;
         width: 100%;
@@ -214,6 +212,10 @@ background-color: $pastelHover;
     .icon{
         width: 80px;
         height: auto;
+    }
+
+    .homeBanner{
+        min-height: 250px;
     }
 }
 
