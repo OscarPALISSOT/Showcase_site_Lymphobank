@@ -57,6 +57,7 @@
     cellulaire.</p>
 
     <h2>Témoignages :</h2>
+    
 
     <!-- Slideshow container -->
     <div class="slideshow-container">
@@ -100,7 +101,7 @@
     
     <script>
         //carousel
-        
+
         var slideIndex = 1;
         showSlides(slideIndex);
 
@@ -129,6 +130,28 @@
         slides[slideIndex-1].style.display = "block";
         dots[slideIndex-1].className += " active";
         }
+
+        //timer
+        var slideIndex = 0;
+        showSlidesTimer();
+
+        function showSlidesTimer() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlidesTimer, 5000); // Change image every 2 seconds
+        }
+
     </script>
 
 {% endblock %}
