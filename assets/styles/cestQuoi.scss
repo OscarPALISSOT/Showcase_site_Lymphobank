@@ -43,14 +43,75 @@ $fond :#fffdf0;
     align-items: center;
     justify-content: space-around;
     i{
+        margin-bottom: 0.5em;
         transform: rotate(90deg);
+    }
+    .icon{
+        margin: 1em 0;
+    }
+    h2{
+        text-align: center;
     }
 }
 
+.prelevement, .doubleSchema{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    width: 100%;
+}
+
 .icon{
-    width: 128px;
+    width: 64px;
     height: auto;
 }
+
+.conforme, .pasConforme{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    .icon{
+        width: 64px;
+        height: auto;
+    }
+    p{
+        margin-bottom: 1em;
+    }
+    i{
+        margin: 0;
+    }
+}
+
+
+#arrowConforme{
+    transform: rotate(90deg)
+}
+
+#conforme{
+    transform: rotate(135deg);
+}
+
+#pasConforme{
+    transform: rotate(45deg);
+}
+
+#logolbk{
+    height: auto;
+    width: 180px;
+}
+
+#cordon{
+    box-shadow: none;
+    transform: rotate(45deg);
+    width: 80px;
+    height: auto;
+    margin-top: 2em;
+}
+
+
 //responsive
 
 // Large devices (desktops, 992px and up)
@@ -61,6 +122,21 @@ $fond :#fffdf0;
                 font-size: 1em;
             }
         }
+    }
+
+    .icon{
+        width: 128px;
+    }
+
+    .schemaCard{
+        h2{
+            font-size: 1.5em;
+        }
+    }
+
+    #logolbk{
+        height: auto;
+        width: 250px;
     }
 }
   

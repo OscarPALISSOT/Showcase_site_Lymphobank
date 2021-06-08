@@ -25,6 +25,7 @@
     Le sang de cordon est systématiquement utilisé pour produire des cellules souches hématopoïétiques, des cellules immunitaires, du sérum ou du plasma. Les cellules souches hématopoïétiques servent par exemple à tester des vaccins ou des biomédicaments (médicaments d’origine biologique) pour le traitement de cancers ou de maladies auto-immunes. Les cellules immunitaires sont une source de biomédicaments anti-tumoraux et le sérum placentaire, supplément indispensable dans les milieux de culture cellulaire, remplace le sérum d’origine animale.</p>
     <button class="accordion"><p class="accordionTitle">Le cordon ombilical</p></button>
     <div class="panel">
+        <img id="cordon" class="illustrationAccordeon" src={{ asset ('img/icons/cordon.svg')}}>
         <p>
         Le cordon ombilical permet d’isoler différents types de cellules telles que les cellules souches mésenchymateuses ou les cellules endothéliales . Les cellules souches mésenchymateuses sont utilisées pour le développement d’approches innovantes de thérapie cellulaire régénératrices, car elles jouent un rôle dans la réparation des tissus osseux, cartilagineux, adipeux ou musculaires. Les cellules endothéliales servent de modèle d’étude in vitro de néoangiogénèse (processus de création de vaisseaux sanguins impliqués par exemple dans l’alimentation des tumeurs), de cicatrisation ou de remodelage du tissu osseux.
         </p>
@@ -87,8 +88,11 @@
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
                 <div class="schemaCard">
-                    <img class="icon" src={{ asset ('img/icons/hopital.png')}}>
+                    <img class="icon" src={{ asset ('img/icons/cordon.svg')}}>
+                    <h2>Cordon ombilical</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <img class="icon" src={{ asset ('img/icons/recycling-bin.svg')}}>
+                    <h2>Destruction du cordon</h2>
                 </div>
             </div>
         </div>
@@ -99,7 +103,38 @@
             <div class="card-title"><h2>Maternité qui prélève pour usage thérapeutique</h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
-                <p>Un schéma explicatif à faire dsxvpsdkjvpsdpv également d’autres rôles : traiter intensivement les cellules cancéreuses restantes, diminuant ainsi la probabilité d’un retour de la maladie, d’inactiver le système immunitaire pour réduire les probabilités de rejet du greffon, de permettre aux cellules du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet du greffon con</p>
+                <div class="schemaCard">
+                    <img class="icon" src={{ asset ('img/icons/event.svg')}}>
+                    <h2>RDV préalable et questionnaire médical</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <div class="prelevement">
+                        <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
+                        <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
+                    </div>
+                    <h2>Prélèvement de sang de cordon et prise de sang de la maman</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
+                    <h2>Anonymisation et traitement de la poche par L'EFS</h2>
+                    <div class="doubleArrow">
+                        <i id="conforme" class="fas fa-long-arrow-alt-right fa-4x"></i>
+                        <i id="pasConforme" class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    </div>
+                    <div class="doubleSchema">
+                        <div class="conforme">
+                            <p>Conforme</p>
+                            <img class="icon" src={{ asset ('img/icons/blood-bank.svg')}}>
+                            <p>Banque de sang placentaire</p>
+                            <i id="arrowConforme" class="fas fa-long-arrow-alt-right fa-4x"></i>
+                            <img class="icon" src={{ asset ('img/icons/hospitalisation.svg')}}>
+                            <p>Greffe hématopoïétique au patient</p>
+                        </div>
+                        <div class="pasConforme">
+                            <p>Non conforme</p>
+                            <img class="icon" src={{ asset ('img/icons/recycling-bin.svg')}}>
+                            <p>Destruction de la poche</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="card">
@@ -109,13 +144,35 @@
             <div class="card-title"><h2>Maternité qui prélève pour usage scientifique </h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
-                <p>Un schéma explicatif <br> à faire</p>
+                <div class="schemaCard">
+                    <div class="prelevement">
+                        <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
+                        <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
+                    </div>
+                    <h2>Prélèvement de sang de cordon et prise de sang de la maman</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <img id="logolbk" class="icon" src={{ asset ('img/icons/LogoLymphobank.png')}}>
+                    <h2>Traitement de la poche par Lymphobank</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <img class="icon" src={{ asset ('img/icons/blood-sample.svg')}}>
+                    <h2>Isolement des cellules sanguines</h2>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <img class="icon" src={{ asset ('img/icons/laboratory.svg')}}>
+                    <h2>Laboratoires de recherche</h2>
+                </div>
             </div>
         </div>
     </div>
 
     <div>Icônes conçues par <a href="https://www.flaticon.com/fr/auteurs/prosymbols" title="Prosymbols">Prosymbols</a> from <a href="https://www.flaticon.com/fr/" title="Flaticon">www.flaticon.com</a></div>
-    
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://creativemarket.com/Becris" title="Becris">Becris</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/flat-icons" title="Flat Icons">Flat Icons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.flaticon.com/authors/photo3idea-studio" title="photo3idea_studio">photo3idea_studio</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+    <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 {% endblock %}
 
