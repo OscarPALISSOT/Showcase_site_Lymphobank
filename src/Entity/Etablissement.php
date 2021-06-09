@@ -43,6 +43,16 @@ class Etablissement
      */
     private $created_at;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lat;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $lon;
+
     public function __construct()
     {
         $this->created_at = new DateTime();
@@ -109,6 +119,30 @@ class Etablissement
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getLat(): ?string
+    {
+        return $this->lat;
+    }
+
+    public function setLat(string $lat): self
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    public function getLon(): ?string
+    {
+        return $this->lon;
+    }
+
+    public function setLon(string $lon): self
+    {
+        $this->lon = $lon;
 
         return $this;
     }

@@ -2,6 +2,7 @@ $pastel : #cec0d6;
 $pastelHover : #b499c3;
 $fond :#fffdf0;
 
+
 .homeBanner{
     margin: 0 -12vw;
     margin-top: -32px;
@@ -20,6 +21,7 @@ $fond :#fffdf0;
 }
 
 .main{
+    margin-bottom: 0;
     p{
         text-align: center;
         font-size: 1.2em;
@@ -49,9 +51,9 @@ $fond :#fffdf0;
             position: relative;
         }
         .tooltipGeant .tooltipGeantText {
-            width: 120px;
-            background-color: black;
-            color: #fff;
+            width: 128px;
+            background-color: $pastel;
+            color: $fond;
             text-align: center;
             padding: 5px 0;
             border-radius: 6px;
@@ -86,6 +88,7 @@ $fond :#fffdf0;
     width: 100%;
     position: relative;
     margin: auto;
+    height: 150px;
     .title{
         text-align: center;
         position: absolute;
@@ -163,6 +166,20 @@ background-color: $pastelHover;
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
+}
+
+
+//map
+.map{
+    margin: 0 -12vw;
+    background-color: blue;
+    width: 100vw;
+    height: 350px;
+}
+
+.gotoTop{
+    visibility: hidden;
+    height: 0;
 }
 
 

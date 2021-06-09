@@ -29,6 +29,7 @@ Encore
     .addStyleEntry('scss/comment', './assets/styles/comment.scss')
     .addStyleEntry('scss/login', './assets/styles/login.scss')
     .addEntry('js/base', './assets/js/base.js')
+    .addEntry('js/map', './assets/js/map.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
