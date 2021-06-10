@@ -34,6 +34,7 @@ class UsersController extends AbstractController
 
         return $this->render('admin/admins/ShowAdmins.html.twig', [
             'admins' => $admins,
+            'loggedUser' => $this->getUser()
         ]);
     }
 
@@ -43,20 +44,23 @@ class UsersController extends AbstractController
      */
     public function createAdmins(Request $request){
 
-        $admin = new Admins;
-        $form = $this->createForm(AdminsFormType::class, $admin);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()){
+        $NewAdmin = new Admins;
+        $login = $request->request->get('username');
+        $pwd = bin2hex(random_bytes(5));
+        $NewAdmin->setUsername($login);
+        $NewAdmin->setPassword($this->encoder->encodePassword($NewAdmin, $pwd));
+        $NewAdmin->setRoles(['ROLE_ADMIN']);
+        if ($this->isCsrfTokenValid("createAdmin", $request->get('_token'))){
             $em = $this->getDoctrine()->getManager();
-            $em->persist($admin);
+            $em->persist($NewAdmin);
             $em->flush();
-            return $this->redirectToRoute('gestion_admins');
         }
-        return $this->render('admin/admins/CreateAdmins.html.twig', [
-            'admin' => $admin,
-            'form' => $form->createView(),
-        ]);
+
+        $jsonData = array(
+            'login' => $login,
+            'pwd' => $pwd,
+        );
+        return $this->json($jsonData, 200);
     }
 
 
@@ -76,6 +80,7 @@ class UsersController extends AbstractController
         return $this->render('admin/admins/EditAdmins.html.twig', [
             'admin' => $admin,
             'form' => $form->createView(),
+            'loggedUser' => $this->getUser()
         ]);
     }
 

@@ -1,0 +1,26 @@
+
+{% extends "admin/admin.html.twig" %}
+
+{% block title %}Mon espace{% endblock %}
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/monEspace') }}
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-4">
+        <div class="modif">
+            <h1>Modifier mes informations</h1>
+            {{ form_start (form)}}
+                {{ form_row (form.username)}}
+                {{ form_row (form.password)}}
+                <button class="btn btn-primary mt-4">{{button|default('Enregistrer')}}</button>
+            {{ form_end (form)}}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock %}

@@ -8,11 +8,11 @@
 {% block body %}
     <div class="container">
 
-        <!-- creer établissement-->
-        <a class="btn btn-outline-primary" href={{ path ('create_admin')}}>
-            <i class="fas fa-plus"></i>Créer un administrateur
-        </a>
-        <!-- /creer établissement-->
+        <!-- Boutton premier modal create-->
+        <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#modal" id="newadmin">
+            <i class="fas fa-plus"></i>Créer un utilisateur
+        </button>
+        <!-- /Button premier modal create -->
 
         <table class="table table-striped">
             <thead>
@@ -76,6 +76,52 @@
             {{ knp_pagination_render(admins) }}
         </div>
     </div>
+
+    <!-- First modal dialog create-->
+    <div class="modal fade" id="modal" data-bs-focus="true" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalLabel">Entrez un identifiant</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action={{ path ('create_admin')}} method="post">
+                    <div class="modal-body">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">@</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" id="username">
+                        </div>
+                        <input type="hidden" id="_token" value={{ csrf_token ('createAdmin')}}>
+                    </div>
+                    <div class="modal-footer">
+                        <!-- envoi requete-->
+                        <button id="submit" class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal">Enregistrer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second modal create -->
+    <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title" id="modalLabel2">Nouvel administrateur ajouté</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="ajax-modal"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <!-- close second create -->
+                    <button onClick="window.location.reload();" class="btn btn-primary" data-bs-target="#modal2" data-bs-toggle="modal" data-bs-dismiss="modal2"><i class="fas fa-check"></i> Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ encore_entry_script_tags('js/addAdmin') }}
     
 
 {% endblock %}
@@ -83,3 +129,5 @@
 {% block javascripts %}
 
 {% endblock %}
+
+
