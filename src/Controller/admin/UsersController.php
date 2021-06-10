@@ -10,12 +10,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class UsersController extends AbstractController
 {
-    public function __construct(AdminsRepository $repository)
+    public function __construct(AdminsRepository $repository, UserPasswordEncoderInterface $encoder)
     {
         $this->repository = $repository;
+        $this->encoder = $encoder;
     }
 
 
@@ -65,7 +67,7 @@ class UsersController extends AbstractController
 
 
     /**
-     * @Route ("/Admin/Admins/{id}", name="edit_admin")
+     * @Route ("/Admin/Admins/{id}", name="edit_admin", methods="GET|POST")
      * @return Response
      */
     public function editAdmins(Admins $admin, Request $request){
@@ -85,7 +87,7 @@ class UsersController extends AbstractController
     }
 
     /**
-     * @Route ("/Admin/Admins/{id}", name="delete_admin", methods="DELETE")
+     * @Route ("/Admin/Admins/{id}", name="delete_admin",  methods="DELETE")
      * @return Response
      */
     public function deleteAdmins(Admins $admin, Request $request){

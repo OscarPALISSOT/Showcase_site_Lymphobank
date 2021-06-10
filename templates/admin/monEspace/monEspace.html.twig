@@ -11,11 +11,13 @@
     <div class="container mt-4">
         <div class="modif">
             <h1>Modifier mes informations</h1>
-            {{ form_start (form)}}
-                {{ form_row (form.username)}}
-                {{ form_row (form.password)}}
-                <button class="btn btn-primary mt-4">{{button|default('Enregistrer')}}</button>
-            {{ form_end (form)}}
+            <form action={{ path ('monEspace', {id: loggedUser.username})}} method="post">
+                <input type="text" class="form-control" id="username">
+                <input type="text" class="form-control" id="password">
+                <input type="hidden" id="_token" value={{ csrf_token ('editAdmin')}}>
+                <!-- envoi requete-->
+                <button id="submit" class="btn btn-primary">Enregistrer</button>
+            </form>
         </div>
     </div>
 

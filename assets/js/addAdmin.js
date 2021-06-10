@@ -5,7 +5,7 @@ $("#submit").click(function AddAdmin() {
     var pattern = new RegExp ("^[<>/&$]$","g");
     if(!pattern.test(username) && username!=""){
         $.ajax({
-        url: "/Admin/Admins",
+        url: "/Admin/NouveauAdmins",
         type: "POST",
         data:{
             username: $('#username').val(),
