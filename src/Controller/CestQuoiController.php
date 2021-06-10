@@ -24,7 +24,7 @@ class CestQuoiController extends AbstractController
      */
     public function index() : Response{
 
-        return new Response(content: $this->twig->render('pages/cestquoi.html.twig', [
+        return new Response(content: $this->twig->render('pages/Cestquoi.html.twig', [
             
         ]));
     }
