@@ -10,14 +10,15 @@
 {% block body %}
     <div class="container mt-4">
         <div class="modif">
-            <h1>Modifier mes informations</h1>
-            <form action={{ path ('monEspace', {id: loggedUser.username})}} method="post">
-                <input type="text" class="form-control" id="username">
-                <input type="text" class="form-control" id="password">
-                <input type="hidden" id="_token" value={{ csrf_token ('editAdmin')}}>
-                <!-- envoi requete-->
-                <button id="submit" class="btn btn-primary">Enregistrer</button>
-            </form>
+        <h1>Modifier mes informations</h1>
+            <div class="name">
+            <h5>Changer d'identifiant</h5>
+                {{ include ("admin/admins/FormAdmins.html.twig", {form: form, button: 'Enregistrer'}) }}
+            </div>
+            <div class="pwd">
+            <h5>Changer de mot de passe</h5>
+                {{form (formPwd)}}
+            </div>
         </div>
     </div>
 
