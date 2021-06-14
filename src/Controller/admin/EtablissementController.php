@@ -49,10 +49,33 @@ class EtablissementController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+
+            $address = $form["adresse"]->getData() .',' . $form["ville"]->getData() . ',' . $form["codePostal"]->getData();
+
+            $queryString = http_build_query([
+                'access_key' => '31add3370807e163542a5d5c67d10a57',
+                'query' => $address,
+                'output' => 'json',
+                'limit' => 1,
+            ]);
+            
+            $ch = curl_init(sprintf('%s?%s', 'http://api.positionstack.com/v1/forward', $queryString));
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            
+            $json = curl_exec($ch);
+            
+            curl_close($ch);
+            
+            $apiResult = json_decode($json, true);
+
+            $etablissement->setLat($apiResult['data'][0]['latitude']);
+            $etablissement->setLon($apiResult['data'][0]['longitude']);
+
             $em = $this->getDoctrine()->getManager();
             $em->persist($etablissement);
             $em->flush();
             return $this->redirectToRoute('gestion_etablissements');
+            return $this->json($apiResult, 200);
         }
         return $this->render('admin/etablissements/CreateEtablissement.html.twig', [
             'etablissement' => $etablissement,

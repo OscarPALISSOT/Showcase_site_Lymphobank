@@ -1,0 +1,24 @@
+$pastel : #cec0d6;
+$pastelHover : #b499c3;
+$fond :#fffdf0;
+
+
+
+.leaflet-popup-content-wrapper{
+    background-color: $pastel !important;
+    border-radius: 15px !important;
+    border: black solid 2px;
+    padding: 0 !important;
+    .leaflet-popup-content{
+        text-align: center;
+        p{
+            font-weight: bold;
+            margin: 0;
+        } 
+    }
+}
+
+.leaflet-popup-tip{
+    background-color: $pastel !important;
+    border: black solid 2px;
+}

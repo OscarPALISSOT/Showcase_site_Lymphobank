@@ -29,6 +29,8 @@ Encore
     .addStyleEntry('scss/comment', './assets/styles/comment.scss')
     .addStyleEntry('scss/login', './assets/styles/login.scss')
     .addStyleEntry('scss/monEspace', './assets/styles/admin/monEspace.scss')
+    .addStyleEntry('scss/ou', './assets/styles/ou.scss')
+    .addStyleEntry('scss/map', './assets/styles/map.scss')
     .addEntry('js/base', './assets/js/base.js')
     .addEntry('js/map', './assets/js/map.js')
     .addEntry('js/addAdmin', './assets/js/addAdmin.js')

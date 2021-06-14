@@ -4,9 +4,39 @@
 {% block title %}Notre réseau{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+{{ encore_entry_link_tags('scss/ou') }}
+    {{ encore_entry_link_tags('scss/map') }}
+    {# leaflet map #}
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
+{% endblock %}
 
-{% block body %}Notre Réseau{% endblock %}
+{% block body %}
 
-{% block javascripts %}{% endblock %}
+    <h1>Où donner ?</h1>
+
+    <p class="titlePage">En France, toutes les maternités ne sont pas habilitées au prélèvement de sang placentaire. Seules quelques-unes, publiques ou privées, ont reçu l’autorisation par l’Agende de la Biomédecine pour effectuer ce type de prélèvement.
+    <br> 
+    Ces maternités sont rattachées à des banques de sang placentaire réparties sur le territoire français, où elles enverront les prélèvements effectués. L’ensemble des maternités et des banques de sang placentaire constitue un réseau spécifique appelé le Réseau Français de Sang Placentaire.
+    </p>
+
+
+    {% for etablissement in etablissements %}
+        <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
+    {% endfor %}
+
+    <div id="map"></div>
+    {# map #}
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/map') }}
+{% endblock %}
 
