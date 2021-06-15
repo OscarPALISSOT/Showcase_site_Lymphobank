@@ -564,7 +564,7 @@ p.accordionTitle{
   transform-origin: right;
   transition: all 0.35s ease-in-out;
   /* Position the tooltip text */
-  position: absolute;
+  position: fixed;
   z-index: 1;
   top: 25% ;
   right: 0;

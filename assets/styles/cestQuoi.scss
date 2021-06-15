@@ -111,6 +111,52 @@ $fond :#fffdf0;
 }
 
 
+//schema que peut on donner ?
+.schemaDon{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    .schemaDonStart{
+        display: flex;
+        input{
+            height: 128px;
+            width: 128px;
+            z-index: 1;
+            opacity: 0;
+            cursor: pointer;
+            transform: translateX(50%);
+        }
+        #pregnantIcon{
+            transform: translateX(-50%) scaleX(-1);
+        }
+    }
+    
+    .doubleFleche{
+        display: flex;
+        justify-content: center;
+        height: 128px;
+        i{
+            margin: 0.2em;
+        }
+        #sangFleche{
+            transform: rotate(135deg);
+        }
+        #cordonFleche{
+            transform: rotate(45deg);
+        }
+    }
+    .sangCordon{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        #cordonIcon{
+            transform: translateY(50%) rotate(45deg);
+        }
+    }
+}
+
+
 //responsive
 
 // Large devices (desktops, 992px and up)
