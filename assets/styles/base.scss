@@ -35,36 +35,6 @@ html, body{
   z-index: 3;
 }
 
-
-
-//scrollbar
-/* Works on Firefox */
-*{
-  scrollbar-width: thin;
-  scrollbar-color: $pastel $fond;
-}
-
-/* Works on Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-  width: 15px;
-  
-}
-
-*::-webkit-scrollbar-track {
-  background: $fond;
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-}
-
-*::-webkit-scrollbar-thumb {
-  background-color: $pastel;
-  border-radius: 15px;
-}
-
-*::-webkit-scrollbar-thumb:hover{
-  background-color: $pastelHover;
-}
-
-
 //main div
 .main{
   grid-area: 2 / 2 / 3 / 3;
@@ -698,6 +668,34 @@ p.accordionTitle{
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
+
+  //scrollbar
+  /* Works on Firefox */
+  *{
+    scrollbar-width: thin;
+    scrollbar-color: $pastel $fond;
+  }
+
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 15px;
+    
+  }
+
+  *::-webkit-scrollbar-track {
+    background: $fond;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $pastel;
+    border-radius: 15px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover{
+    background-color: $pastelHover;
+  }
+  
   .navbar{
     #logo{
       height: 100px;

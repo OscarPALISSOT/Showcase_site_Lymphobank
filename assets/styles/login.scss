@@ -19,8 +19,16 @@ html, body{
 
 body{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+h1{
+  font-family: 'Karla', sans-serif;
+  font-size: 2.5em;
+  margin-bottom: 1.5em;
+  margin-top: 1em;
 }
 
 .log{

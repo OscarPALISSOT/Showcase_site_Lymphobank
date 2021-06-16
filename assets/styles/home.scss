@@ -2,17 +2,23 @@ $pastel : #cec0d6;
 $pastelHover : #b499c3;
 $fond :#fffdf0;
 
-
 .homeBanner{
+    position: sticky;
+    top: 0px;
     margin: 0 -12vw;
     margin-top: -32px;
-    background-image: url("homeBanner.png");
-    min-height: 150px;
-    background-attachment: fixed;
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: 100vw;
+    width: 100vw;
+    height:auto ;
 }
+
+.content{
+    margin: 0 -12vw;
+    padding: 0 12vw;
+    position: relative;
+    background-color: $fond;
+    z-index: 2;
+}
+
 
 .homeTitle{
     margin-top: 2em;
@@ -34,6 +40,10 @@ $fond :#fffdf0;
         align-items: space-around;
         #pregnantIcon{
             transform: scaleX(-1);
+        }
+        #goutte{
+            height: 128px;
+            width: auto;
         }
         h2{
             margin-top: 0;
@@ -158,6 +168,9 @@ background-color: $pastelHover;
     animation-duration: 1.5s;
 }
 
+
+
+
 @-webkit-keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
@@ -198,6 +211,7 @@ background-color: $pastelHover;
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
+
     .main{
         .schemaGeant{
             margin: 3em 1em;
@@ -207,6 +221,10 @@ background-color: $pastelHover;
             align-items: center;
             #pregnantIcon{
                 transform: scaleX(-1);
+            }
+            #goutte{
+                height: 80px;
+                width: auto;
             }
             h2{
                 margin-top: 0;
@@ -229,16 +247,20 @@ background-color: $pastelHover;
         width: 80px;
         height: auto;
     }
-
-    .homeBanner{
-        min-height: 250px;
-    }
 }
 
 // X-Large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
+
+    .homeBanner{
+        top: 20px;
+    }
     .main{
         .schemaGeant{
+            #goutte{
+                height: 90px;
+                width: auto;
+            }
             h2{
                 font-size: 1.5em;
             }
@@ -265,6 +287,10 @@ background-color: $pastelHover;
 
     .main{
         .schemaGeant{
+            #goutte{
+                height: 128px;
+                width: auto;
+            }
             i{
                 font-size: 4em;
             }

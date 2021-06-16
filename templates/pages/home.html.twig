@@ -14,85 +14,90 @@
 
 {% block body %}
     
-    <div class="homeBanner"></div>
+    <img class="homeBanner" src={{ asset ('img/homeBanner.png')}}>
+    
+    <div class="content">
+        <h1 class="homeTitle">Sauvez des vies ou aidez la recherche avec votre don de sang placentaire.</h1>
+        <h2 class="homeText">Lors de votre accouchement, faites le choix de faire un don de sang de cordon pour un usage thérapeutique ou
+        scientifique.</h2>
 
-    <h1 class="homeTitle">Sauvez des vies ou aidez la recherche avec votre don de sang placentaire.</h1>
-    <h2 class="homeText">Lors de votre accouchement, faites le choix de faire un
-    don de sang de cordon pour un usage thérapeutique ou
-    scientifique.</h2>
-
-    <div class="cadre">
-        <h2>Donner pour Lymphobank, c'est GÉANT !</h2>
-        <div class="schemaGeant">
-            <div class="geantLetter">
-                <h2><div class="underline">G</div>ratuit</h2>
-                <img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}>
-            </div>
-            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-            <div class="geantLetter">
-                <h2><div class="underline">E</div>thique</h2>
-                <img class="icon" src={{ asset ('img/icons/hospital.png')}}>
-            </div>
-            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-            <div class="geantLetter">
-                <h2><div class="underline">A</div>nonyme</h2>
-                <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
-            </div>
-            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-            <div class="geantLetter">
-                <h2><div class="underline">N</div>on-profit </h2>
-                <div class="tooltipGeant">
-                    <img class="icon" src={{ asset ('img/icons/centre-medical.png')}}>
-                    <span class="tooltipGeantText">Lymphobank est surveillé par un comité de surveillance
-                    et par le ministère de la santé.
-                    </span>
+        <div class="cadre">
+            <h2>Donner pour Lymphobank, c'est GÉANT !</h2>
+            <div class="schemaGeant">
+                <div class="geantLetter">
+                    <h2><div class="underline">G</div>ratuit</h2>
+                    <img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                <div class="geantLetter">
+                    <h2><div class="underline">E</div>thique</h2>
+                    <img class="icon" src={{ asset ('img/icons/hospital.png')}}>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                <div class="geantLetter">
+                    <h2><div class="underline">A</div>nonyme</h2>
+                    <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                <div class="geantLetter">
+                    <h2><div class="underline">N</div>on-profit </h2>
+                    <div class="tooltipGeant">
+                        <img id="goutte" class="icon" src={{ asset ('img/icons/LymphobankGoutte.png')}}>
+                        <span class="tooltipGeantText">Lymphobank est surveillé par un comité de surveillance
+                        et par le ministère de la santé.
+                        </span>
+                    </div>
+                </div>
+                <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                <div class="geantLetter">
+                    <h2><div class="underline">T</div>ransparent</h2>
+                    <img class="icon" src={{ asset ('img/icons/biology.png')}}>
                 </div>
             </div>
-            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-            <div class="geantLetter">
-                <h2><div class="underline">T</div>ransparent</h2>
-                <img class="icon" src={{ asset ('img/icons/biology.png')}}>
-            </div>
         </div>
+
+        <p>Lymphobank est une biotech qui a vocation à fournir des cellules sanguines adultes et
+        placentaires à usage de recherche et des prestations de services en immunothérapie
+        cellulaire.</p>
+
+        <h2>Témoignages :</h2>
+        
+        
+            <!-- Slideshow container -->
+            <div class="slideshow-container">
+                {% for temoignage in temoignages %}
+                <!-- Full-width images with number and caption text -->
+                <div class="mySlides fade">
+                    <div class="title"><h2>{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2></div>
+                    <div class="text"><p>{{temoignage.temoignage}}</p></div>
+                </div>
+                {% endfor %}
+                <!-- Next and previous buttons -->
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+                {% for temoignage in temoignages %}
+                    <span class="dot" onclick="currentSlide({{temoignage.id}})"></span>
+                {% endfor %}
+            </div>
+        
+        
+
+        <h2>Réseau de maternités de Lymphobank :</h2>
+
+        {% for etablissement in etablissements %}
+            <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
+        {% endfor %}
+        
+        <div id="map" class="map"></div>
     </div>
-
-    <p>Lymphobank est une biotech qui a vocation à fournir des cellules sanguines adultes et
-    placentaires à usage de recherche et des prestations de services en immunothérapie
-    cellulaire.</p>
-
-    <h2>Témoignages :</h2>
-    
-    
-        <!-- Slideshow container -->
-        <div class="slideshow-container">
-            {% for temoignage in temoignages %}
-            <!-- Full-width images with number and caption text -->
-            <div class="mySlides fade">
-                <div class="title"><h2>{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2></div>
-                <div class="text"><p>{{temoignage.temoignage}}</p></div>
-            </div>
-            {% endfor %}
-            <!-- Next and previous buttons -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
-        </div>
-        <br>
-        <!-- The dots/circles -->
-        <div style="text-align:center">
-            {% for temoignage in temoignages %}
-                <span class="dot" onclick="currentSlide({{temoignage.id}})"></span>
-            {% endfor %}
-        </div>
-    
     
 
-    <h2>Réseau de maternités de Lymphobank :</h2>
 
-    {% for etablissement in etablissements %}
-        <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
-    {% endfor %}
     
-    <div id="map" class="map"></div>
 
     {# map #}
     <!-- Make sure you put this AFTER Leaflet's CSS -->
