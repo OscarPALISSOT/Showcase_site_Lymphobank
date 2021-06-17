@@ -58,8 +58,7 @@
     <h2>Schéma explicatif (cliquez pour en savoir plus) :</h2>
     <div class="schemaDon">
         <div class="schemaDonStart">
-            <input type="checkbox">
-            <img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}>
+            <button id="schemaToogle"><img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}></button>
         </div>
         <div class="schemaDonSteep1">
             <div class="doubleFleche">
@@ -67,8 +66,14 @@
                 <i id="cordonFleche" class="fas fa-long-arrow-alt-right fa-4x"></i>
             </div>
             <div class="sangCordon">
-                <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
-                <img id="cordonIcon" class="icon" src={{ asset ('img/icons/cordon.svg')}}>
+                <div class="sangSteep1">
+                    <h2>Sang de cordon</h2>
+                    <img id="pocheIcon" class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
+                </div>
+                <div class="cordonSteep1">
+                    <h2>Cordon ombilical</h2>
+                    <img id="cordonIcon" class="icon" src={{ asset ('img/icons/cordon.svg')}}>
+                </div>
             </div>
         </div>
     </div>
@@ -78,7 +83,7 @@
     <p>Le don de sang placentaire peut servir pour 2 usages :</p>
     <h2>Un usage scientifique :</h2>
     <div class="illustrated"><p><img class="illustrationLeft" src={{ asset ('img/scientifique.PNG')}}>Les cellules de sang de cordon sont des cellules précieuses pour la recherche. Elles peuvent faire avancer la recherche biomédicale, notamment dans les domaines de l’infectiologie, l’immunologie, l’hématologie, l’oncologie et de la thérapie cellulaire. Elles permettent également de contribuer à la recherche pour des traitements innovants.</p></div>
-    <p id="cardsRechercheTitle">Recherches appliquées :</p>
+    <h2 id="cardsRechercheTitle">Recherches appliquées :</h2>
     <div class="cardRecherche">
         <div class="card">
             <div class="card-title"><h2>Pathologies adultes :</h2></div>
@@ -112,40 +117,26 @@
     <br>
     Celles-ci sont injectées dans la circulation sanguine du receveur et vont se diriger vers la moelle osseuse au sein de laquelle elles vont produire à nouveau les différents éléments du sang.
     </p></div>
-    <h2>Il existe deux types de greffes :</h2>
-    <button class="accordion"><p class="accordionTitle">L’autogreffe</p></button>
-    <div class="panel">
-        <p>Les cellules souches <span class="tooltip">hématopoïétiques <span class="tooltipText">Les cellules souches hématopoïétiques sont à l’origine de la production de cellules sanguines : <br><br>
-        -  Globules rouges : transportent l’oxygène des poumons vers les tissues et récupèrent le gaz carbonique afin de l’évacuer lors de l’expiration
-        <br><br>
-        -  Globules blancs : assurent la défense du corps contre les virus et les bactéries 
-        Plaquettes : aident le sang à coaguler</span></span> vont être prélevées et congelées dans des banques autologues afin d’être réinjectées par la suite en cas de besoin. Cet acte est interdit en France et ne montre pas grande utilité puisque la réaction immunitaire potentielle appelée « effet de greffon » déclenchée par les lymphocytes T  du greffon lorsqu’ils reconnaissent et attaquent les cellules malignes sont beaucoup plus faibles.</p>
-    </div>
-    <button class="accordion"><p class="accordionTitle">L’allogreffe</p></button>
-    <div class="panel">
-        <p>Les cellules souches <span class="tooltip">hématopoïétiques <span class="tooltipText">Les cellules souches hématopoïétiques sont à l’origine de la production de cellules sanguines : <br><br>
-        -  Globules rouges : transportent l’oxygène des poumons vers les tissues et récupèrent le gaz carbonique afin de l’évacuer lors de l’expiration
-        <br><br>
-        -  Globules blancs : assurent la défense du corps contre les virus et les bactéries 
-        Plaquettes : aident le sang à coaguler</span></span> vont être injectées dans un patient pouvant être atteint de différentes maladies. Ce traitement a pour but de permettre aux cellules souches du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet de greffon contre la tumeur. Elles ont également d’autres rôles : traiter intensivement les cellules cancéreuses restantes, diminuant ainsi la probabilité d’un retour de la maladie, d’inactiver le système immunitaire pour réduire les probabilités de rejet du greffon, de permettre aux cellules du donneur de se rendre à la moelle osseuse, où elles produiront des cellules sanguines et activeront l’effet du greffon contre la tumeur.</p>
-    </div>
+
+    <h2>Devenir du don selon la maternité :</h2>
     <div class="cardsHosto">
         <div class="card">
             <div class="card-pic">
                 <img src={{ asset ('img/icons/hospital.png')}}>
             </div>
-            <div class="card-title"><h2>Maternité qui prélève pour usage thérapeutique</h2></div>
+            <div class="card-title"><h2>Prélèvement à usage thérapeutique</h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
                 <div class="schemaCard">
                     <img class="icon" src={{ asset ('img/icons/event.svg')}}>
                     <h2>RDV préalable et questionnaire médical</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+                    <p>consentement</p>
                     <div class="prelevement">
                         <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
                         <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
                     </div>
-                    <h2>Prélèvement de sang de cordon et prise de sang de la maman</h2>
+                    <h2>Prise de sang à la maman et prélèvement de sang de cordon</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
                     <h2>Anonymisation et traitement de la poche par L'EFS</h2>
@@ -157,7 +148,7 @@
                         <div class="conforme">
                             <p>Conforme</p>
                             <img class="icon" src={{ asset ('img/icons/blood-bank.svg')}}>
-                            <p>Banque de sang placentaire</p>
+                            <p>Stockage par la banque de sang placentaire</p>
                             <i id="arrowConforme" class="fas fa-long-arrow-alt-right fa-4x"></i>
                             <img class="icon" src={{ asset ('img/icons/hospitalisation.svg')}}>
                             <p>Greffe hématopoïétique au patient</p>
@@ -175,7 +166,7 @@
             <div class="card-pic">
                 <img src={{ asset ('img/icons/hospital.png')}}>
             </div>
-            <div class="card-title"><h2>Maternité qui prélève pour usage scientifique </h2></div>
+            <div class="card-title"><h2>Prélèvement à usage scientifique </h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
                 <div class="schemaCard">
@@ -183,13 +174,15 @@
                         <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
                         <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
                     </div>
-                    <h2>Prélèvement de sang de cordon et prise de sang de la maman</h2>
+                    <h2>info</h2>
+                    <h2>consentement</h2>
+                    <h2>Prise de sang à la maman et prélèvement de sang de cordon</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <img id="logolbk" class="icon" src={{ asset ('img/icons/LogoLymphobank.png')}}>
                     <h2>Traitement de la poche par Lymphobank</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <img class="icon" src={{ asset ('img/icons/blood-sample.svg')}}>
-                    <h2>Isolement des cellules sanguines</h2>
+                    <h2>Stockage par Lymphobank</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <img class="icon" src={{ asset ('img/icons/laboratory.svg')}}>
                     <h2>Laboratoires de recherche</h2>
@@ -199,6 +192,8 @@
     </div>
 
 {% endblock %}
-
-{% block javascripts %}{% endblock %}
+    
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/schemaToogle') }}
+{% endblock %}
 

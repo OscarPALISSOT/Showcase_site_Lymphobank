@@ -13,7 +13,7 @@ $fond :#fffdf0;
 
 .content{
     margin: 0 -12vw;
-    padding: 0 12vw;
+    padding: 0.5em 12vw;
     position: relative;
     background-color: $fond;
     z-index: 2;
@@ -24,6 +24,10 @@ $fond :#fffdf0;
     margin-top: 2em;
     text-align: center;
     font-weight: bold;
+}
+
+.homeText{
+    text-align: center;
 }
 
 .main{

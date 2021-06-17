@@ -32,6 +32,7 @@ Encore
     .addStyleEntry('scss/ou', './assets/styles/ou.scss')
     .addStyleEntry('scss/map', './assets/styles/map.scss')
     .addEntry('js/base', './assets/js/base.js')
+    .addEntry('js/schemaToogle', './assets/js/schemaToogle.js')
     .addEntry('js/map', './assets/js/map.js')
     .addEntry('js/addAdmin', './assets/js/addAdmin.js')
 

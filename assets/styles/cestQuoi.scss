@@ -119,42 +119,58 @@ $fond :#fffdf0;
     justify-content: space-around;
     .schemaDonStart{
         display: flex;
-        input{
-            height: 128px;
-            width: 128px;
-            z-index: 1;
-            opacity: 0;
-            cursor: pointer;
-            transform: translateX(50%);
-        }
         #pregnantIcon{
-            transform: translateX(-50%) scaleX(-1);
+            transform: scaleX(-1);
         }
     }
     
-    .doubleFleche{
-        display: flex;
-        justify-content: center;
-        height: 128px;
-        i{
-            margin: 0.2em;
+
+    .schemaDonSteep1{
+        width: 100%;
+        .doubleFleche{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 128px;
+            i{
+                margin: 0.2em;
+            }
+            #sangFleche{
+                transform: rotate(135deg);
+                margin-right: 1em;
+            }
+            #cordonFleche{
+                transform: rotate(45deg);
+                margin-left: 1em;
+            }
         }
-        #sangFleche{
-            transform: rotate(135deg);
-        }
-        #cordonFleche{
-            transform: rotate(45deg);
+        .sangCordon{
+            display: flex;
+            justify-content: space-evenly;
+            .sangSteep1{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .cordonSteep1{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            h2{
+                vertical-align: top;
+            }
+            #cordonIcon{
+                transform: rotate(45deg);
+            }
+            .icon{
+                margin: 0 1em;
+            }
         }
     }
-    .sangCordon{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        #cordonIcon{
-            transform: translateY(50%) rotate(45deg);
-        }
-    }
+    
 }
+
 
 
 //responsive
