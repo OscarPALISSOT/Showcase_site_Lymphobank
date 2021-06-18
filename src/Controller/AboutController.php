@@ -24,7 +24,9 @@ class AboutController extends AbstractController
      */
     public function index() : Response{
 
-        return new Response(content: $this->twig->render('pages/about.html.twig'));
+        return new Response(content: $this->twig->render('pages/about.html.twig', [
+            
+        ]));
     }
 }
 ?>
