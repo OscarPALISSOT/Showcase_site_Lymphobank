@@ -58,7 +58,7 @@
     <h2>Schéma explicatif (cliquez pour en savoir plus) :</h2>
     <div class="schemaDon">
         <div class="schemaDonStart">
-            <button id="schemaToogle"><img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}></button>
+            <button class="schemaToogle"><img id="pregnantIcon" class="icon" src={{ asset ('img/icons/pregnant.png')}}></button>
         </div>
         <div class="schemaDonSteep1">
             <div class="doubleFleche">
@@ -72,7 +72,7 @@
                 </div>
                 <div class="cordonSteep1">
                     <h2>Cordon ombilical</h2>
-                    <img id="cordonIcon" class="icon" src={{ asset ('img/icons/cordon.svg')}}>
+                    <img id="cordonIcon" class="icon" src={{ asset ('img/icons/cordonIncline.png')}}>
                 </div>
             </div>
         </div>
@@ -131,7 +131,9 @@
                     <img class="icon" src={{ asset ('img/icons/event.svg')}}>
                     <h2>RDV préalable et questionnaire médical</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-                    <p>consentement</p>
+                    <h2>La maman donne son consentement</h2>
+                    <img class="icon" src={{ asset ('img/icons/contract.svg')}}>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <div class="prelevement">
                         <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
                         <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
@@ -170,12 +172,14 @@
             <button class="btnCard"><p>En savoir plus</p></button>
             <div class="panelCard">
                 <div class="schemaCard">
+                    <h2>info</h2>
+                    <h2>La maman donne son consentement</h2>
+                    <img class="icon" src={{ asset ('img/icons/contract.svg')}}>
+                    <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <div class="prelevement">
                         <img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
                         <img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
                     </div>
-                    <h2>info</h2>
-                    <h2>consentement</h2>
                     <h2>Prise de sang à la maman et prélèvement de sang de cordon</h2>
                     <i class="fas fa-long-arrow-alt-right fa-4x"></i>
                     <img id="logolbk" class="icon" src={{ asset ('img/icons/LogoLymphobank.png')}}>

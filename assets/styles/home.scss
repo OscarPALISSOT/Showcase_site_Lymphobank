@@ -13,18 +13,14 @@ $fond :#fffdf0;
 
 .content{
     margin: 0 -12vw;
-    padding: 0.5em 12vw;
+    padding: 0 12vw;
     position: relative;
     background-color: $fond;
     z-index: 2;
 }
 
 
-.homeTitle{
-    margin-top: 2em;
-    text-align: center;
-    font-weight: bold;
-}
+
 
 .homeText{
     text-align: center;
@@ -32,6 +28,12 @@ $fond :#fffdf0;
 
 .main{
     margin-bottom: 0;
+    .homeTitle{
+        padding-top: 1em;
+        margin-top: 0;
+        text-align: center;
+        font-weight: bold;
+    }
     p{
         text-align: center;
         font-size: 1.2em;

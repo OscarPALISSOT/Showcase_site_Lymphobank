@@ -126,6 +126,8 @@ $fond :#fffdf0;
     
 
     .schemaDonSteep1{
+        max-height: 0;
+        visibility: hidden;
         width: 100%;
         .doubleFleche{
             display: flex;
@@ -159,9 +161,6 @@ $fond :#fffdf0;
             }
             h2{
                 vertical-align: top;
-            }
-            #cordonIcon{
-                transform: rotate(45deg);
             }
             .icon{
                 margin: 0 1em;
