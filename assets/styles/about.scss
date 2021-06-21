@@ -9,18 +9,21 @@ $fond :#fffdf0;
     justify-content: space-evenly;
     margin-bottom: 2em;
     .card-title{
+        height: auto;
+        margin-bottom: 1em;
         h2{
             margin-top: 1em;
         }
     }
     .card{
         min-height: 0;
+        max-height: none;
         height: auto;
         width: auto;
         background-color: $pastel;
         box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
         align-items: flex-start;
-        justify-content: flex-start;
+        justify-content: space-between;
         .contentCard{
             font-size: .8em;
             font-weight: bold;
@@ -49,6 +52,17 @@ $fond :#fffdf0;
         height: auto;
         margin-bottom: 1em;
     }
+}
+.photo{
+    display: block;
+    align-items: center;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.equipe{
+    margin: 2em 10%;
 }
 
 
