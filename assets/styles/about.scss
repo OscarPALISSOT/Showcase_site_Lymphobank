@@ -1,0 +1,91 @@
+$pastel : #cec0d6;
+$pastelHover : #b499c3;
+$fond :#fffdf0;
+
+
+.valeurs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+    .card-title{
+        h2{
+            margin-top: 1em;
+        }
+    }
+    .card{
+        min-height: 0;
+        height: auto;
+        width: auto;
+        background-color: $pastel;
+        box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+        align-items: flex-start;
+        justify-content: flex-start;
+        .contentCard{
+            font-size: .8em;
+            font-weight: bold;
+            margin: 0 4em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            li{
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+
+.questions{
+    margin-left: 2em;
+}
+
+.iso{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    .isoIcon{
+        width: 128px;
+        height: auto;
+        margin-bottom: 1em;
+    }
+}
+
+
+
+
+//responsive
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .questions{
+        margin-left: 4em;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .iso{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        .isoIcon{
+            margin-bottom: 0;
+        }
+        .isoText{
+            margin-left: 3em;
+        }
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+    .valeurs{
+        .card{
+            .contentCard{
+                font-size: 1em;
+            }
+        }
+    }
+}

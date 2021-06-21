@@ -4,9 +4,62 @@
 {% block title %}À propos{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/about') }}
+{% endblock %}
 
-{% block body %}Des infos sur lymphobank{% endblock %}
+{% block body %}
+    <h1>Qui sommes-nous ?</h1>
+    <h2>Notre histoire</h2>
+    <p><a href="/">Mon-cordon-precieux.fr</a> est un site secondaire de la société LYMPHOBANK visant à vous informer sur le don de sang placentaire autrement appelé don de sang de cordon pour un usage scientifique.
+    <br><br>
+    LYMPHOBANK est une biotech française créée à Besançon en 2017 par Eric Robinet, ancien chercheur de l'Etablissement Français du Sang Bourgogne/Franche-Comté (EFS-BFC).
+    <br><br>
+    Dans le cadre de son activité <strong>Lymphobank Research</strong>, l’entreprise a vocation à fournir des cellules sanguines adultes et placentaires à usage de recherche et des prestations de services en immunothérapie cellulaire. <br>
+    L’utilisation de produits issus du sang Lymphobank est exclusivement réservée aux secteurs de la recherche, de l’enseignement ou de la fabrication de réactifs non diagnostiques.
+    Basée au sein des locaux de l'EFS-BFC à Besançon, Lymphobank fait bénéficier de son accès privilégié aux produits sanguins à usage de recherche et aux plateformes technologiques de l'EFS-BFC.
+    </p>
+    <h2>Notre mission</h2>
+    <p>Nous souhaitons être un partenaire de référence dans la réalisation de projets de recherche de nos associés en leur faisant gagner du temps et en les accompagnant dans la mise en efficience de leurs coûts de recherche.</p>
+    <h2>Nos valeurs</h2>
+    <div class="valeurs">
+        <div class="card">
+            <div class="card-title"><h2>Nos valeurs sont basées sur le don du sang :</h2></div>
+            <div class="contentCard">
+                <ul>
+                    <li>L’éthique</li>
+                    <li>La transparence</li>
+                    <li>L'anonymat</li>
+                    <li>La gratuité et le bénévolat</li>
+                    <li>Le non-profit personnel</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <p>Aujourd'hui, les biotechnologies constituent une des activités importantes des laboratoires de recherche en biologie. La rencontre de la recherche scientifique et des marchés où se côtoient les questions :</p>
+    <ul class="questions">
+        <li>De la gestion des risques</li>
+        <li>Du partage équitable des ressources</li>
+        <li>Du développement durable</li>
+    </ul>
+    <br>
+    <p>Les résultats de l'activité de notre entreprise Lymphobank Research seront totalement réinvestis dans notre activité Lymphobank Clinics.
+    Lymphobank Clinics a vocation à développer une activité R&D innovante d'immunothérapie adoptive allogénique du cancer.
+    </p>
+    <h2>Nos engagements</h2>
+    <p>Notre investissement envers nos partenaires se traduit par la mise en place d’une démarche Qualité ISO 9001, afin de garantir une qualité optimale de nos produits et services.
+    <br><br>
+    Cette démarche Qualité a été récompensée par l’obtention du niveau 2 de la certification AFAQ 9001 par étapes, délivrée par AFNOR Certification le 16 janvier 2020, pour notre activité de cession de cellules sanguines.
+    </p>
+    <div class="iso">
+        <img class="isoIcon" src={{ asset ('img/iso9001.png')}}>
+        <ul class="isoText">
+            <li>Niveau 1 : étape destinée à garantir la maîtrise de nos processus de production et de qualification des cellules</li>
+            <br>
+            <li>Niveau 2 : étape centrée sur la maîtrise de l'organisation interne : actions préventives et correctives, processus support</li>
+        </ul>
+    </div>
+{% endblock %}
 
 {% block javascripts %}{% endblock %}
 
