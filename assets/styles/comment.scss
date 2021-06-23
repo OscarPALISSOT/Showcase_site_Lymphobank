@@ -85,7 +85,7 @@ $fond :#fffdf0;
     flex-direction: column;
     align-items: center;
     .icon{
-        width: 128px;
+        width: 100px;
         height: auto;
     }
     .between{
@@ -102,8 +102,8 @@ $fond :#fffdf0;
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 256px;
-        margin: 0 1em;
+        width: 180px;
+        margin: 0;
         .nb{
             position: absolute;
             left: 0;
@@ -131,6 +131,16 @@ $fond :#fffdf0;
             .contentCard{
                 font-size: .75em;
             }
+        }
+    }
+    .etape{
+        .icon{
+            width: 128px;
+            height: auto;
+        }
+        .iconSchema{
+            width: 256px;
+            margin: 0 1em;
         }
     }
 }

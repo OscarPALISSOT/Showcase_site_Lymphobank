@@ -12,7 +12,7 @@ ul{
     flex-direction: column;
     align-items: center;
     .icon{
-        width: 128px;
+        width: 100px;
         height: auto;
     }
     .between{
@@ -29,8 +29,8 @@ ul{
         justify-content: center;
         align-items: center;
         text-align: center;
-        width: 256px;
-        margin: 0 1em;
+        width: 180px;
+        margin: 0;
         .nb{
             position: absolute;
             left: 0;
@@ -49,7 +49,21 @@ ul{
     }
 }
 
+//responsive
 
+// X-Small devices (portrait phones, 360px and up)
+@media (min-width: 390px) {
+    .etape{
+        .icon{
+            width: 128px;
+            height: auto;
+        }
+        .iconSchema{
+            width: 256px;
+            margin: 0 1em;
+        }
+    }
+}
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 

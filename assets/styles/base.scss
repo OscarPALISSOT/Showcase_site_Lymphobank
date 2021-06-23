@@ -520,39 +520,6 @@ p.accordionTitle{
   }
 }
 
-/* Tooltip container */
-.tooltip {
-  display: inline-block;
-  font-weight: bold;
-  border-bottom: 2px solid $pastel;
-  cursor: pointer;
-}
-
-/* Tooltip text */
-.tooltip .tooltipText {
-  font-weight: 400;
-  width: 300px;
-  background-color: $pastel;
-  color: $fond;
-  text-align: left;
-  padding: 15px;
-  border-radius: 6px;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: all 0.35s ease-in-out;
-  /* Position the tooltip text */
-  position: fixed;
-  z-index: 1;
-  top: 25% ;
-  right: 0;
-}
-
-/* Show the tooltip text when you mouse over the tooltip container */
-.tooltip:hover .tooltipText {
-  transform: scaleX(100%);
-}
-
-
 //go to top btn
 .gotoTop{
   visibility: hidden;
