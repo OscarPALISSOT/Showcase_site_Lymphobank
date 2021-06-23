@@ -1,12 +1,74 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}F.A.Q{% endblock %}
+{% block title %}Quand donner ?{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/quand') }}
+{% endblock %}
 
-{% block body %}Des questions{% endblock %}
+{% block body %}
+    <h1>Quand donner ?</h1>
+    <h2>Les étapes du don :</h2>
+    <div class="etapes">
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">1.</h2><img class="icon" src={{ asset ('img/icons/doctor.svg')}}>
+            <h2>Informations sur le don avec une sage-femme</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">2.</h2><img class="icon" src={{ asset ('img/icons/bottle.svg')}}>
+            <h2>Lettre de consentement complétée et signée</h2></div>
+        </div>
+        <i class="fas fa-long-arrow-alt-right fa-4x between"></i>
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">3.</h2><img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
+            <h2>Accouchement<br>cordon coupé</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">4.</h2><img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
+            <h2>Prélèvement du sang de cordon etprise de sang à la maman (VIH, VHB, VHD)</h2></div>
+        </div>
+        <i class="fas fa-long-arrow-alt-right fa-4x between"></i>
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">5.</h2><img class="icon" src={{ asset ('img/icons/cordonIncline.png')}}>
+            <h2>Conservation du don dans un bac isotherme</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">6.</h2><img class="icon" src={{ asset ('img/icons/test-tube.svg')}}>
+            <h2>Transfert sous 24 h à l'EFS</h2></div>
+        </div>
+    </div>
+    <h2>Avant le don</h2>
+    <p>Vous pouvez faire part de votre motivation à donner votre sang de cordon lors de vos rendez-vous médicaux avec votre médecin référent/ sage-femme ou gynécologue. Il/elle se chargera de répondre à toutes vos questions concernant le don de sang de cordon, le déroulement du prélèvement et son devenir. Une fiche d’information ainsi qu’un document de consentement (en 3 exemplaires) vous seront fournis.
+    <br><br>
+    Si vous souhaitez des informations complémentaires, contactez LYMPHOBANK. (Renvoyer à contact footer)
+    <br><br>
+    Selon le don que vous souhaitez effectuer, une sage-femme vous réorientera dans une maternité adéquate puisque seules quelques maternités offrent la possibilité de prélever le sang de cordon, certaines pour un usage thérapeutique, d’autres pour un usage scientifique.
+    </p>
+    <h2>Possibilité de faire un don</h2>
+    <p>Un prélèvement de sang de cordon est réalisable lors d’un accouchement effectué après 37 semaines d’aménorrhées, par voie basse ou lors d’une césarienne programmée.
+    <br>
+    Celui-ci a lieu une fois l’accouchement terminé et le bébé expulsé et après que le cordon ombilical a été coupé. Il peut se faire :
+    <ul>
+        <li>Dans le cas d’un accouchement par voie basse : soit lorsque le placenta est encore en place soit lorsqu’il a été expulsé</li>
+        <li>Dans le cas d’une césarienne programmée : uniquement après que le placenta a été enlevé</li>
+    </ul>
+    <br><br>
+    En cas de problème lié à l’état de la maman ou du bébé ou lié à l’organisation des soins dans le service, l’équipe médicale peut renoncer à effectuer le prélèvement, malgré le consentement donné.
+    </p>
+    <h2>A savoir lors d’un prélèvement</h2>
+    <p>Une fois l’accouchement terminé et le bébé expulsé, une prise de sang vous sera effectuée afin de que l’EFS analyse l’absence de pathogènes tels que virus de l’immunodéficience humaine (VIH), de l’hépatite B (VHB), de l’hépatite C (VHC) et de la syphilis.
+    <br><br>
+    Le prélèvement de sang de cordon se déroulera dans les quelques minutes qui suivent l’accouchement, il dura moins de 5 minutes. Il s’agit d’un prélèvement rapide, et indolore pour l’enfant comme pour la mère.
+    </p>
+    <h2>Après l’accouchement</h2>
+    <p>Le prélèvement de sang de cordon n’entrave aucunement la prise en charge de votre bébé et de vous-même. L’accompagnement reste le même que le prélèvement ait lieu ou non, la sage-femme vous accordera la même attention dans tous les cas. 
+    <br><br>
+    Dans le cas où votre prise de sang se révélerait positive, vous serez contactée par votre maternité et l’EFS demandera à LYMPHOBANK de procéder à la destruction du don de sang de cordon. Vous recevrez alors un document prouvant que le prélèvement a bien été détruit. 
+    <br><br>
+    Nous pouvons vous renseigner sur l’usage scientifique qui a été fait de votre don. Pour cela, vous pouvez vous adresser à l’<span class="tooltip">EFS <span class="tooltipText">03 81 61 56 15</span></span>  qui nous transmettra votre requête et qui vous transmettra notre réponse. Compte tenu du processus d’anonymisation, il est inutile d’adresser votre requête directement à LYMPHOBANK qui n’a pas accès à vos données identifiantes et ne pourra donc pas y répondre.
+    </p>
+    
+
+{% endblock %}
 
 {% block javascripts %}{% endblock %}
 

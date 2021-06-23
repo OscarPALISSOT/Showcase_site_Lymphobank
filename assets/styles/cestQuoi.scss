@@ -61,11 +61,6 @@ $fond :#fffdf0;
     width: 100%;
 }
 
-.icon{
-    width: 64px;
-    height: auto;
-}
-
 .conforme, .pasConforme{
     display: flex;
     flex-direction: column;
@@ -182,10 +177,6 @@ $fond :#fffdf0;
                 font-size: 1em;
             }
         }
-    }
-
-    .icon{
-        width: 128px;
     }
 
     .schemaCard{

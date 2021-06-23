@@ -1,0 +1,70 @@
+$pastel : #cec0d6;
+$pastelHover : #b499c3;
+$fond :#fffdf0;
+
+ul{
+    margin-left: 4em;
+}
+
+//schema étapes
+.etapes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .icon{
+        width: 128px;
+        height: auto;
+    }
+    .between{
+        display: block;
+    }
+    i{
+        margin: 0.5em;
+        transform: rotate(90deg);
+    }
+    .iconSchema{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 256px;
+        margin: 0 1em;
+        .nb{
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding: 0.3em;
+            border-radius: 0 0 0 15px;
+            border-bottom: 4px solid $pastel;
+            border-left: $pastel 4px solid;
+        }
+    }
+    .etape{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 1em;
+    }
+}
+
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+
+    //schema étapes
+    .etapes{
+        .between{
+            display: none;
+        }
+        i{
+            margin: 1em;
+            transform: rotate(0deg);
+        }
+        .etape{
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+}

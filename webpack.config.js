@@ -33,6 +33,7 @@ Encore
     .addStyleEntry('scss/map', './assets/styles/map.scss')
     .addStyleEntry('scss/about', './assets/styles/about.scss')
     .addStyleEntry('scss/carousel', './assets/styles/carousel.scss')
+    .addStyleEntry('scss/quand', './assets/styles/quand.scss')
     .addEntry('js/base', './assets/js/base.js')
     .addEntry('js/schemaToogle', './assets/js/schemaToogle.js')
     .addEntry('js/map', './assets/js/map.js')

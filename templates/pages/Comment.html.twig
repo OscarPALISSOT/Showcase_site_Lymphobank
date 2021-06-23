@@ -35,8 +35,32 @@
     </div>
     <h2>Lors de l’accouchement </h2>
     <p>Une fois l’accouchement terminé : le bébé est expulsé et le cordon coupé, l’équipe médicale passera au prélèvement de sang de cordon ombilical. C’est une procédure simple et rapide.</p>
-    <h2>Etapes du prélèvement :</h2>
-    <h2>Faire schéma</h2>
+    <h2>Les étapes du prélèvement :</h2>
+    <div class="etapes">
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">1.</h2><img class="icon" src={{ asset ('img/icons/entonnoir-a-huile.svg')}}>
+            <h2>Le placenta est suspendu dans un cône de recueil</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">2.</h2><img class="icon" src={{ asset ('img/icons/bottle.svg')}}>
+            <h2>Le cordon ombilical est désinfecté dans une solution antiseptique</h2></div>
+        </div>
+        <i class="fas fa-long-arrow-alt-right fa-4x between"></i>
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">3.</h2><img class="icon" src={{ asset ('img/icons/syringe.svg')}}>
+            <h2>Une aiguille est insérée dans la veine ombilicale</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">4.</h2><img class="icon" src={{ asset ('img/icons/blood-transfusion.svg')}}>
+            <h2>Le sang est recueilli par gravité dans la poche</h2></div>
+        </div>
+        <i class="fas fa-long-arrow-alt-right fa-4x between"></i>
+        <div class="etape">
+            <div class="iconSchema"><h2 class="nb">5.</h2><img class="icon" src={{ asset ('img/icons/cordonIncline.png')}}>
+            <h2>Le cordon apparaît vide et principalement blanc, habituellement après 2-4 minutes</h2></div>
+            <i class="fas fa-long-arrow-alt-right fa-4x"></i>
+            <div class="iconSchema"><h2 class="nb">6.</h2><img class="icon" src={{ asset ('img/icons/test-tube.svg')}}>
+            <h2>Une prise de sang est effectuée sur la maman pour analyses (VIH, VHB, VHD)</h2></div>
+        </div>
+    </div>
     <h2>Après l’accouchement</h2>
     <p>Votre bébé et vous-même êtes pris en charge par l’équipe médicale. En ce qui concerne votre prélèvement, voici son devenir : </p>
     <h2>Faire schéma</h2>
@@ -66,7 +90,7 @@
             </div>
         </div>
     </div>
-    <div id="consentement"><p>Ainsi, même si l’équipe médicale détient votre consentement pour le prélèvement, c’est elle qui décide s’il doit avoir lieu ou non.</p></div>
+    <div class="textPurple"><p>Ainsi, même si l’équipe médicale détient votre consentement pour le prélèvement, c’est elle qui décide s’il doit avoir lieu ou non.</p></div>
     
 
 {% endblock %}
