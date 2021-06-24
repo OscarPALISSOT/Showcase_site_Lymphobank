@@ -122,6 +122,37 @@ $fond :#fffdf0;
     }
 }
 
+//schema devenir
+.schemaDevenir{
+    margin: 2em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .devenir{
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        //icons size
+        .icon{
+            width: 90px;
+            height: auto;
+        }
+    }
+    i{
+        margin: 0 0.2em;
+        transform-origin: center center;
+        transform: rotate(90deg);
+    }
+    #LogoIcon{
+        width: 90%;
+        height: auto;
+    }
+}
+
 //responsive
 
 // X-Small devices (portrait phones, 360px and up)
@@ -153,6 +184,18 @@ $fond :#fffdf0;
             .contentCard{
                 font-size: 1em;
                 margin: 0 4em;
+            }
+        }
+    }
+
+    //schema devenir
+    .schemaDevenir{
+        .devenir{
+            width: 150px;
+            //icons size
+            .icon{
+                width: 128px;
+                height: auto;
             }
         }
     }
@@ -192,5 +235,90 @@ $fond :#fffdf0;
             flex-direction: row;
             align-items: center;
         }
+    }  
+}
+
+// X-Large devices
+@media (min-width: 1300px) {
+
+    //schema devenir
+    .schemaDevenir{
+        margin: 3em 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .devenir{
+            width: 130px;
+            //icons size
+            .icon{
+                width: 80px;
+                height: auto;
+            }
+        }
+        i{
+            transform: rotate(0deg);
+        }
+        h2{
+            font-size: 1em;
+        }
+    }    
+}
+
+// X-Large devices
+@media (min-width: 1436px) {
+
+    //schema devenir
+    .schemaDevenir{
+
+        .devenir{
+            width: 150px;
+            //icons size
+            .icon{
+                width: 90px;
+                height: auto;
+            }
+        }
+        h2{
+            font-size: 1.2em;
+        }
     }
+    
+}
+
+// X-Large devices
+@media (min-width: 1635px) {
+
+    //schema devenir
+    .schemaDevenir{
+
+        .devenir{
+            width: 180px;
+            //icons size
+            .icon{
+                width: 128px;
+                height: auto;
+            }
+        }
+        h2{
+            font-size: 1.2em;
+        }
+    }
+    
+}
+
+// X-Large devices
+@media (min-width: 1762px) {
+
+    //schema devenir
+    .schemaDevenir{
+
+        .devenir{
+            width: 200px;
+        }
+        h2{
+            font-size: 1.25em;
+        }
+    }
+    
 }
