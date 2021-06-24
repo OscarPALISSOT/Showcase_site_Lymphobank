@@ -176,6 +176,10 @@ html, body{
     }
   }
 
+  #nom{
+    transform: translateX(-100vw);
+  }
+
   //réseaux sociaux
   .network{
     display: none;
@@ -324,91 +328,17 @@ html, body{
   transform: rotate(-45deg) translate(35px, 35px);
 }
 
-//cards
-.card{
-  width: 200px;
-  min-height: 340px;
-  max-height: 340px;
-  border-radius: 15px;
-  border: 2px solid rgba(0,0,0,0.2);
-  margin: 1em 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  transition: max-height 0.35s ease-out;
-  .card-title{
-    font-size: 0.6em;
-    height: 50px;
-    text-align: center;
-    h2{
-      margin: 0 0.5em;
-    }
-  }
-  .card-pic{
-    width: 196px;
-    height: 196px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img{
-      width: 70%;
-      height: auto;
-    }
-  }
-}
-
-.btnCard{
-  width: 60%;
-  background-color: $pastel;
-  border-radius: 15px;
-  text-align: left;
-  font-family: 'Karla', sans-serif;
-  font-weight: bold;
-  position: relative;
-  outline: none;
-  cursor: pointer;
-  border: none;
-  padding: 15px;
-  margin-top: 1em;
+//encadrement texte violet
+.textPurple{
+  border-radius: 0 0 0 15px;
+  border-bottom: 4px solid $pastel;
+  border-left: $pastel 4px solid;
+  width: auto;
+  margin-bottom: 1em;
   p{
-    font-size: 0.8em;
-    margin: 0;
-  }
-}
-
-.btnCard:hover{
-  box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
-}
-
-.btnCard:after {
-  font-size: 1.5em;
-  content: '+';
-  color: black;
-  margin-right: 15px;
-  margin-left: 30px;
-  display: block;
-  position: absolute;
-  bottom: 15px;
-  right: 0;
-}
-
-.activeCard:after {
-  content: "-";
-}
-
-//contenu déroullant card
-.panelCard {
-  padding: 0;
-  margin: 1em;
-  background-color: $fond;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease-out;
-  position: relative;
-  p{
-    text-align: center;
-    margin-bottom: 0;
+      font-weight: bold;
+      margin: 1em;
+      width: auto;
   }
 }
 
@@ -431,27 +361,6 @@ html, body{
       }
     }
   }
-
-  //cards
-  .card{
-    width: 240px;
-    min-height: 420px;
-    max-height: 420px;
-    margin: 1em;
-    .card-title{
-      font-size: 0.8em;
-      height: 84px;
-    }
-    .card-pic{
-      width: 236px;
-      height: 236px;
-    }
-  }
-  .btnCard{
-    p{
-      font-size: 1em;
-    }
-  }
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -465,7 +374,6 @@ html, body{
     justify-content: space-between;
     
   }
-
   .navbar{
     .menuItems{
       li{
@@ -476,7 +384,6 @@ html, body{
       }
     }
   }
-  
 }
 
 // Medium devices (tablets, 768px and up)
@@ -540,20 +447,6 @@ html, body{
   .icon{
     width: 128px;
   }
-
-  //encadrement texte violet
-  .textPurple{
-    border-radius: 0 0 0 15px;
-    border-bottom: 4px solid $pastel;
-    border-left: $pastel 4px solid;
-    width: auto;
-    margin-bottom: 1em;
-    p{
-        font-weight: bold;
-        margin: 1em;
-        width: auto;
-    }
-  }
   
   .navbar{
     #logo{
@@ -570,38 +463,6 @@ html, body{
 
   .menu-btn{
     margin: 1.5em;
-  }
-  
-  //cards
-  .card{
-    max-height: 480px;
-    min-height: 480px;
-    width: 300px;
-    margin: 2em;
-    .card-title{
-      font-size: 0.6em;
-      height: 50px;
-      font-size: 0.8em;
-      height: 84px;
-      text-align: center;
-      h2{
-        margin: 0 0.5em;
-      }
-    }
-    .card-pic{
-      width: 296px;
-      height: 296px;
-      img{
-        width: 70%;
-        height: auto;
-      }
-    }
-  }
-
-  .btnCard{
-    p{
-      font-size: 1em;
-    }
   }
 
   //go to top btn
