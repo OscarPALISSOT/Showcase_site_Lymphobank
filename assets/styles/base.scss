@@ -176,8 +176,17 @@ html, body{
     }
   }
 
-  #nom{
+  .headerText{
+    font-family: 'Karla', sans-serif;
     transform: translateX(-100vw);
+  }
+
+  .nom{
+    display: none;
+  }
+
+  .slogan{
+    display: none;
   }
 
   //réseaux sociaux
@@ -388,6 +397,16 @@ html, body{
 
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) {
+
+  .navbar{
+    .nom{
+      display: block;
+      position: absolute;
+      font-size: 2em;
+      top: 56.5px;
+      left: calc(12vw + 100px);
+    }
+  }
   .main{
     //photo gauche paragraphe
     .illustrationLeft{
@@ -409,6 +428,15 @@ html, body{
     }
     .illustrated{
       min-height:290px;
+    }
+  }
+}
+
+// Medium devices
+@media (min-width: 835px) {
+  .navbar{
+    .nom{
+      font-size: 2.5em;
     }
   }
 }
@@ -522,7 +550,9 @@ html, body{
         color: rgba(0, 0, 0, 0.5);
       }
     }
-
+    .nom{
+      top: 28px;
+    }
     #logo{
       transform: translateX(-100vw);
       position: absolute;
@@ -608,6 +638,22 @@ html, body{
       position: absolute;
       right: 0;
       margin: 0;
+    }
+  }
+}
+
+
+// XXX-Large devices
+@media (min-width: 1650px) {
+  .navbar{
+    .slogan{
+      display: block;
+      font-weight: 500;
+      font-size: 1.6em;
+      position: absolute;
+      bottom: 29px;
+      left: calc(12vw + 100px);
+      padding-bottom: 4px;
     }
   }
 }
