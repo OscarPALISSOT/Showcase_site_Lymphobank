@@ -37,12 +37,13 @@ $fond :#fffdf0;
             align-items: center;
         }
     }
-    /* .card:hover{
-        transform: scale(102%);
-        transition: transform .3s ease-in-out;
-    } */
 }
 
+//italique latin
+.latin{
+    font-style: italic;
+    width:min-content;
+}
 
 #cardRechercheTitle{
     margin-top: 2em;
