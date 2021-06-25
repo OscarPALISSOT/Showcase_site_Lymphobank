@@ -58,6 +58,47 @@ $fond :#fffdf0;
     height: auto;
 }
 
+.valeurs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 2em;
+    .card-title{
+        height: auto;
+        margin-bottom: 1em;
+        h2{
+            margin-top: 1em;
+        }
+    }
+    .card{
+        min-height: 0;
+        max-height: none;
+        height: auto;
+        width: auto;
+        background-color: $pastel;
+        box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+        align-items: flex-start;
+        justify-content: space-between;
+        transform: scale(100%);
+        transition: transform .2s ease-in-out;
+        .contentCard{
+            font-size: .8em;
+            font-weight: bold;
+            margin: 0 4em;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            li{
+                margin-bottom: 1em;
+            }
+        }
+    }
+    .card:hover{
+        transform: scale(102%);
+        transition: transform .2s ease-in-out;
+    }
+}
+
 .questions{
     margin-left: 2em;
 }
@@ -146,6 +187,12 @@ $fond :#fffdf0;
     .icon{
         width: 80px;
         height: auto;
+    }
+
+    .valeurs{
+        .contentCard{
+            font-size: 1.5em;
+        }
     }
 }
 
