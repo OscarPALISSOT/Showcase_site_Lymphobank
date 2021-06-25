@@ -2,40 +2,60 @@ $pastel : #cec0d6;
 $pastelHover : #b499c3;
 $fond :#fffdf0;
 
-
-.valeurs{
+.schemaGeant{
+    margin: 2em 1em;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    margin-bottom: 2em;
-    .card-title{
-        height: auto;
-        margin-bottom: 1em;
-        h2{
-            margin-top: 1em;
-        }
-    }
-    .card{
-        min-height: 0;
-        max-height: none;
-        height: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    #goutte{
+        height: 128px;
         width: auto;
-        background-color: $pastel;
-        box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
-        align-items: flex-start;
-        justify-content: space-between;
-        .contentCard{
-            font-size: .8em;
+    }
+    h2{
+        margin-top: 0;
+        .underline{
+            text-decoration: underline $pastel 5px solid;
+            display: inline;
             font-weight: bold;
-            margin: 0 4em;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            li{
-                margin-bottom: 1em;
-            }
+            font-size: 1.5em;
         }
     }
+    i{
+        transform: rotate(90deg);
+    }
+    .tooltipGeant{
+        position: relative;
+    }
+    .tooltipGeant .tooltipGeantText {
+        width: 128px;
+        background-color: $pastel;
+        color: $fond;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+        transform: scaleY(0);
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+        width: 120px;
+        top: 100%;
+        left: 50%;
+        margin-left: -60px;
+        transition: all 0.35s ease-in-out;
+        transform-origin: 50% 0;
+    }
+    
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltipGeant:hover .tooltipGeantText {
+        transform: scaleY(100%);
+    }
+}
+
+//icons size
+.icon{
+    width: 128px;
+    height: auto;
 }
 
 .questions{
@@ -97,11 +117,77 @@ $fond :#fffdf0;
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
-    .valeurs{
-        .card{
-            .contentCard{
-                font-size: 1em;
+    .schemaGeant{
+        margin: 3em 1em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        #goutte{
+            height: 80px;
+            width: auto;
+        }
+        h2{
+            margin-top: 0;
+            font-size: 1em;
+            .underline{
+                text-decoration: underline $pastel 5px solid;
+                display: inline;
+                font-weight: bold;
+                font-size: 1.5em;
             }
         }
+        i{
+            transform: translateY(12.8px);
+            font-size: 2.5em;
+        }
     }
+    //icons size
+    .icon{
+        width: 80px;
+        height: auto;
+    }
+}
+
+// X-Large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+    .schemaGeant{
+        #goutte{
+            height: 90px;
+            width: auto;
+        }
+        h2{
+            font-size: 1.5em;
+        }
+        i{
+            transform: translateY(28.8px);
+            font-size: 3.25em;
+        }
+    }
+    //icons size
+    .icon{
+        width: 90px;
+        height: auto;
+    }
+}
+
+// XX-Large devices (larger desktops, 1400px and up)
+@media (min-width: 1400px) {
+    //icons size
+    .icon{
+        width: 128px;
+        height: auto;
+    }
+
+    .schemaGeant{
+        #goutte{
+            height: 128px;
+            width: auto;
+        }
+        i{
+            font-size: 4em;
+        }
+    }
+
 }

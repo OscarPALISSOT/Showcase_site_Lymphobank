@@ -44,9 +44,6 @@ $fond :#fffdf0;
         flex-direction: column;
         justify-content: center;
         align-items: space-around;
-        #pregnantIcon{
-            transform: scaleX(-1);
-        }
         #goutte{
             height: 128px;
             width: auto;
@@ -154,11 +151,6 @@ $fond :#fffdf0;
     }
 }
 
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-
-}
-
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
 
@@ -170,9 +162,6 @@ $fond :#fffdf0;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            #pregnantIcon{
-                transform: scaleX(-1);
-            }
             #goutte{
                 height: 80px;
                 width: auto;

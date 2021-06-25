@@ -12,6 +12,14 @@ $fond :#fffdf0;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 4em;
+    .card:hover{
+        transform: scale(102%);
+        transition: transform .2s ease-in-out;
+    }
+    .card{
+        transform: scale(100%);
+        transition: transform .2s ease-in-out;
+    }
 }
 
 .cardsConditions{
