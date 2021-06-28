@@ -9,6 +9,11 @@ $fond :#fffdf0;
     overflow: hidden;
 }
 
+.carousel__container{
+    transition: transform 0.5s ease-in-out;
+    transform: translate3d(0, 0, 0);
+}
+
 .carousel__container::after{
     content: '';
     clear: both;
@@ -16,5 +21,27 @@ $fond :#fffdf0;
 }
 
 .carousel__item{
+    padding: 0 40px;
     float: left;
+}
+
+.carousel__next, .carousel__prev{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: $pastel;
+    top: 50%;
+    margin-top: -20px;
+    right: 0;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.carousel__next:hover, .carousel__prev:hover{
+    transform: scale(1.2);
+}
+
+.carousel__prev{
+    right: auto;
+    left: 0;
 }
