@@ -34,6 +34,16 @@ $fond :#fffdf0;
         text-align: center;
         font-weight: bold;
     }
+    #temoignageTitle{
+        margin-top: 2.5em;
+        margin-bottom: 0em;
+    }
+    #temoignageCadre{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
     p{
         text-align: center;
         font-size: 1.2em;

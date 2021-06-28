@@ -71,11 +71,11 @@
             </div>
         </div>
 
-        <h1>Témoignages :</h1>
+        <h1 id="temoignageTitle">Témoignages :</h1>
         
         <div id="temoignage">
             {% for temoignage in temoignages %}
-                <div class="cadre">
+                <div id="temoignageCadre" class="cadre">
                     <h2>{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2>
                     <p>{{temoignage.temoignage}}</p>
                 </div>
