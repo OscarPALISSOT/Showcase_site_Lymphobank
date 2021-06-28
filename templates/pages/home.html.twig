@@ -73,15 +73,13 @@
 
         <h1>Témoignages :</h1>
         
-        <div class="carousel">
-            <figure>
-                {% for temoignage in temoignages %}
-                    <div class="cadre">
+        <div id="temoignage">
+            {% for temoignage in temoignages %}
+                <div class="cadre">
                     <h2>{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2>
                     <p>{{temoignage.temoignage}}</p>
-                    </div>
-                {% endfor %}
-            </figure>
+                </div>
+            {% endfor %}
         </div>
         
         <h1>Actualités :</h1>
@@ -126,5 +124,6 @@
 
 {% block javascripts %}
     {{ encore_entry_script_tags('js/map') }}
+    {{ encore_entry_script_tags('js/carousel') }}
 {% endblock %}
 

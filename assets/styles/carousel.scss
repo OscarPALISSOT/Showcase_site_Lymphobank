@@ -3,11 +3,18 @@ $pastelHover : #b499c3;
 $fond :#fffdf0;
 
 
+
 .carousel{
+    position: relative;
     overflow: hidden;
-    figure{
-        position: relative;
-        margin: 0;
-        left: 0;
-    }
+}
+
+.carousel__container::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.carousel__item{
+    float: left;
 }
