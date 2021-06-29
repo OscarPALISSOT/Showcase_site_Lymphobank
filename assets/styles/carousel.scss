@@ -40,7 +40,7 @@ $fond :#fffdf0;
     margin-top: -20px;
     right: 0;
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s, opacity 0.3s;
     border-radius: 15px 0 0 15px;
     background: $pastel url(next.svg) center center no-repeat;
 }
@@ -82,4 +82,9 @@ $fond :#fffdf0;
 
 .carousel__pagination__button--active, .carousel__pagination__button:hover{
     transform: scale(1.4);
+}
+
+
+.carousel__next--hidden, .carousel__prev--hidden{
+    opacity: 0;
 }

@@ -1,0 +1,51 @@
+$pastel : #cec0d6;
+$pastelHover : #b499c3;
+$fond :#fffdf0;
+
+.cardActu{
+    position: relative;
+    border-radius: 15px;
+    border: solid 4px $pastel;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    .picCadre{
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        height: 200px;
+    }
+    .offrePic{
+        width: 100%;
+        height: auto;
+    }
+    .bottom{
+        position: absolute;
+        width: 100%;
+        height: 80px;
+        background-color: $pastel;
+        bottom: 0;
+        left: 0;
+        .entreprise{
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 0;
+            margin-top: 0.2em;
+        }
+        .titre{
+            text-align: center;
+            font-weight: 500;
+        }
+    }
+}
+.cardActu:hover{
+    box-shadow:
+    rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
+    rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+    transform: scale(102%) perspective(75em) rotateX(15deg);
+    transition: all .3s ease-in-out;
+}

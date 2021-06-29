@@ -8,6 +8,7 @@
     {{ encore_entry_link_tags('scss/home') }}
     {{ encore_entry_link_tags('scss/map') }}
     {{ encore_entry_link_tags('scss/carousel') }}
+    {{ encore_entry_link_tags('scss/cardActu') }}
     {# leaflet map #}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -85,7 +86,12 @@
         <h1>Actualités :</h1>
         <div class="actus">
             <div class="grid-gallery">
-                <div class="grid-item"></div>
+                <div class="grid-item">
+                    <div class="cardActu">
+                        <div class="picCadre"><img class="offrePic" src={{ asset ('img/cesi_Logo.png')}}></div>
+                        <div class="bottom"><h2 class="entreprise">CESI</h2><h2 class="titre">Creation d'un site vitrine</h2></div>
+                    </div>
+                </div>
                 <div class="grid-item"></div>
                 <div class="grid-item"></div>
                 <div class="grid-item"></div>

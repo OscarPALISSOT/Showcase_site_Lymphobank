@@ -7,6 +7,7 @@ class Carousel {
         this.options = Object.assign({}, {
             slideToScroll: 1,
             slideVisibles: 1,
+            loop: false,
             pagination: false
         }, options)
     
@@ -20,19 +21,22 @@ class Carousel {
         this.root.setAttribute('tabindex', '0')
         this.root.appendChild(this.container)
         this.element.appendChild(this.root)
+        this.moveCallBacks = []
         this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
             item.appendChild(child)
             this.container.appendChild(item)
             return item
         })
-        this.setStyle()
+        this.setWith()
+        this.setHeight()
         this.createNavigation()
         if (this.options.pagination){
             this.createPagination()
         }
         
         //événement
+        this.moveCallBacks.forEach( cb => cb(0))
         this.onWindowResize()
         window.addEventListener('resize', this.onWindowResize.bind(this))
         this.root.addEventListener('keyup', (e) => {
@@ -45,10 +49,16 @@ class Carousel {
     }
 
     //définit la width des item et du carousel selon les options
-    setStyle () {
+    setWith () {
         let ratio = this.items.length / this.slideVisibles
         this.container.style.width = (ratio * 100) + "%"
         this.items.forEach(item => item.style.width = ((100 / this.slideVisibles) / ratio) + "%")
+    }
+
+    //définit la height des item et du carousel selon le contenu
+    setHeight () {
+        let height = this.items[this.currentItem].offsetHeight
+        this.root.style.maxHeight = height + "px"
     }
     
     //crée une div avec une classe
@@ -66,6 +76,21 @@ class Carousel {
         this.root.appendChild(prevButton)
         nextButton.addEventListener('click', this.next.bind(this))
         prevButton.addEventListener('click', this.prev.bind(this))
+        if (this.options.loop === true) {
+            return
+        }
+        this.onMove(index => {
+            if (index === 0) {
+                prevButton.classList.add('carousel__prev--hidden')
+            } else {
+                prevButton.classList.remove('carousel__prev--hidden')
+            }
+            if (this.items[this.currentItem + this.options.slideVisibles] === undefined){
+                nextButton.classList.add('carousel__next--hidden')
+            } else {
+                nextButton.classList.remove('carousel__next--hidden')
+            }
+        })
     }
 
     //crée la pagination
@@ -79,6 +104,13 @@ class Carousel {
             pagination.appendChild(button)
             buttons.push(button)
         }
+        this.onMove( index => {
+            let activeButton = buttons[Math.floor(index / this.options.slideToScroll)]
+            if (activeButton) {
+                buttons.forEach(button => button.classList.remove('carousel__pagination__button--active'))
+                activeButton.classList.add('carousel__pagination__button--active')
+            }
+        })
     }
 
     //responsive
@@ -86,7 +118,7 @@ class Carousel {
         let mobile = window.innerWidth < 800
         if(mobile !== this.isMobile) {
             this.isMobile = mobile
-            this.setStyle
+            this.setWith()
         }
     }
 
@@ -116,6 +148,12 @@ class Carousel {
         let translateX = index * -100 / this.items.length
         this.container.style.transform = 'translate3d(' + translateX + '%, 0, 0)'
         this.currentItem = index
+        this.moveCallBacks.forEach( cb => cb(index))
+        this.setHeight()
+    }
+
+    onMove(cb) {
+        this.moveCallBacks.push(cb)
     }
 }
 
@@ -124,5 +162,6 @@ class Carousel {
 new Carousel(document.querySelector('#temoignage'),{
     slideToScroll: 1,
     slideVisibles: 1,
+    loop:true,
     pagination:true
 })

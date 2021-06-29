@@ -8,6 +8,7 @@
 {% block body %}
     <div class="container mt-4">
         <h1>Modifier les informations de l'actualité</h1>
+        <p>photo enregistrée: {{actu.filename}}</p>
         {{ include ("admin/actus/FormActu.html.twig", {form: form, button: 'Enregistrer'}) }}
     </div>
 
