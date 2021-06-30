@@ -89,7 +89,7 @@
             {% for featuredActu in featuredActus %}
                 <div class="grid-item">
                     <div class="cardActu">
-                        <div class="picCadre">{% if featuredActu.filename %}<img class="offrePic" src={{ vich_uploader_asset(featuredActu, 'imageFile') | imagine_filter('thumbs') }}>{% endif %}</div>
+                        <div class="picCadre">{% if featuredActu.filename %}<img class="offrePic" src={{ vich_uploader_asset(featuredActu, 'imageFile')}}>{% endif %}</div>
                         <div class="bottom"><h2 class="titreActu">{{featuredActu.titre}}</h2><h2 class="sousTitre">{{featuredActu.sousTitre}}</h2></div>
                     </div>
                 </div>

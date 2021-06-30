@@ -3,10 +3,24 @@ $pastelHover : #b499c3;
 $fond :#fffdf0;
 
 
-
-//encadrement texte violet
-.textPurple{
-    p{
-        font-weight: normal;
+.pourquoi{
+    h2{
+        position: relative;
+        margin-left: 30px;
     }
+    h2::before{
+        content: '';
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        background: $pastel;
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.ethique{
+    margin-left: 3em;
 }
