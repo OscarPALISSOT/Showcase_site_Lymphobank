@@ -119,12 +119,19 @@ class Actu
         return $this;
     }
 
+    /**
+     * @return null|string
+     */
     public function getFilename(): ?string
     {
         return $this->filename;
     }
 
-    public function setFilename(string $filename): self
+    /**
+     * @param null|string $filename
+     * @return Actu
+     */
+    public function setFilename(?string $filename): Actu
     {
         $this->filename = $filename;
 

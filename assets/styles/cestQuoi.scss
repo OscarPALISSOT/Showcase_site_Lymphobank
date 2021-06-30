@@ -111,16 +111,23 @@ $fond :#fffdf0;
     width: 180px;
 }
 
-#cordon{
+#cordon, #poche{
     box-shadow: none;
-    transform: rotate(45deg);
     width: 80px;
     height: auto;
-    margin-top: 2em;
 }
 
-.prodCordon{
+#cordon{
+    margin-top: 2em;
+    transform: rotate(45deg);
+}
+
+.prodCordon, .prodSang{
     margin-left: 3em;
+}
+
+.prodSang{
+    margin-top: 5em;
 }
 
 

@@ -86,17 +86,14 @@
         <h1>Actualités :</h1>
         <div class="actus">
             <div class="grid-gallery">
+            {% for featuredActu in featuredActus %}
                 <div class="grid-item">
                     <div class="cardActu">
-                        <div class="picCadre"><img class="offrePic" src={{ asset ('img/cesi_Logo.png')}}></div>
-                        <div class="bottom"><h2 class="entreprise">CESI</h2><h2 class="titre">Creation d'un site vitrine</h2></div>
+                        <div class="picCadre">{% if featuredActu.filename %}<img class="offrePic" src={{ vich_uploader_asset(featuredActu, 'imageFile') | imagine_filter('thumbs') }}>{% endif %}</div>
+                        <div class="bottom"><h2 class="titreActu">{{featuredActu.titre}}</h2><h2 class="sousTitre">{{featuredActu.sousTitre}}</h2></div>
                     </div>
                 </div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
-                <div class="grid-item"></div>
+            {% endfor %}
             </div>
         </div>
 

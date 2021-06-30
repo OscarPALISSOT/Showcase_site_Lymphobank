@@ -19,6 +19,22 @@ class ActuRepository extends ServiceEntityRepository
         parent::__construct($registry, Actu::class);
     }
 
+
+
+    /**
+     * @return Actu[] Returns an array of Actu objects
+    */
+
+    public function findFeatured($value)
+    {
+        return $this->createQueryBuilder('a')
+            ->orderBy('a.created_at', 'DESC')
+            ->setMaxResults(6)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Actu[] Returns an array of Actu objects
     //  */
