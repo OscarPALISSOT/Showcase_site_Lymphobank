@@ -24,7 +24,7 @@ class QuandController extends AbstractController
      */
     public function index() : Response{
 
-        return $this->twig->render('pages/Quand.html.twig', [
+        return $this->render('pages/Quand.html.twig', [
             
         ]);
     }
