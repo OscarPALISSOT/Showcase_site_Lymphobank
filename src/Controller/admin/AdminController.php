@@ -23,9 +23,9 @@ class AdminController extends AbstractController {
      */
     public function index() :Response {
 
-        return new Response(content:$this->twig->render('admin/admin.html.twig', [
+        return $this->render('admin/admin.html.twig', [
             'loggedUser' => $this->getUser()
-        ]));
+        ]);
 
     }
 }
