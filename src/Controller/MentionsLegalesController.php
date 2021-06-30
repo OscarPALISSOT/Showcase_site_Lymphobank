@@ -24,9 +24,9 @@ class MentionsLegalesController extends AbstractController
      */
     public function index() : Response{
 
-        return new Response(content: $this->twig->render('pages/MentionsLegales.html.twig', [
+        return $this->render('pages/MentionsLegales.html.twig', [
             
-        ]));
+        ]);
     }
 }
 ?>

@@ -27,9 +27,9 @@ class OuController extends AbstractController
     public function index() : Response{
 
         $etablissements = $this->Repository->findAll();
-        return new Response(content: $this->twig->render('pages/ou.html.twig', [
+        return $this->render('pages/ou.html.twig', [
             'etablissements' => $etablissements
-        ]));
+        ]);
     }
 }
 ?>

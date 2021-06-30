@@ -24,9 +24,9 @@ class PourquoiController extends AbstractController
      */
     public function index() : Response{
 
-        return new Response(content: $this->twig->render('pages/Pourquoi.html.twig', [
+        return $this->render('pages/Pourquoi.html.twig', [
             
-        ]));
+        ]);
     }
 }
 ?>

@@ -24,9 +24,9 @@ class CommentController extends AbstractController
      */
     public function index() : Response{
 
-        return new Response(content: $this->twig->render('pages/Comment.html.twig', [
+        return $this->render('pages/Comment.html.twig', [
             
-        ]));
+        ]);
     }
 }
 ?>
