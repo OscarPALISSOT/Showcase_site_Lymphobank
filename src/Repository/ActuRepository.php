@@ -25,7 +25,7 @@ class ActuRepository extends ServiceEntityRepository
      * @return Actu[] Returns an array of Actu objects
     */
 
-    public function findFeatured($value)
+    public function findFeatured()
     {
         return $this->createQueryBuilder('a')
             ->orderBy('a.created_at', 'DESC')

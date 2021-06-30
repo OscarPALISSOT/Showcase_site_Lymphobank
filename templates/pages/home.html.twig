@@ -87,12 +87,20 @@
         <div class="actus">
             <div class="grid-gallery">
             {% for featuredActu in featuredActus %}
+            <a class="actuLink" href={{ path ('this_actu', {id: featuredActu.id})}}>
                 <div class="grid-item">
                     <div class="cardActu">
-                        <div class="picCadre">{% if featuredActu.filename %}<img class="offrePic" src={{ vich_uploader_asset(featuredActu, 'imageFile')}}>{% endif %}</div>
+                        <div class="picCadre">
+                            {% if featuredActu.filename %}
+                            <img class="offrePic" src={{ vich_uploader_asset(featuredActu, 'imageFile')}}>
+                            {% else %}
+                            <img class="offrePic" src={{ asset ('img/default-pic.png')}}>
+                            {% endif %}
+                        </div>
                         <div class="bottom"><h2 class="titreActu">{{featuredActu.titre}}</h2><h2 class="sousTitre">{{featuredActu.sousTitre}}</h2></div>
                     </div>
                 </div>
+            </a>
             {% endfor %}
             </div>
         </div>

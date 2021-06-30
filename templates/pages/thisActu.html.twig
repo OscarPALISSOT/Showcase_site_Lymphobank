@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Actualité{% endblock %}
+
+
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <h1>{{actu.titre}}</h1>
+    <h2>{{actu.sousTitre}}</h2>
+    <div class="illustrated"><p>
+    {% if actu.filename %}
+        <img class="illustrationLeft" src={{ vich_uploader_asset(actu, 'imageFile')}}>
+    {% else %}
+        <img class="illustrationLeft" src={{ asset ('img/default-pic.png')}}>
+    {% endif %}
+    {{actu.article}}</p></div>
+    
+{% endblock %}
+
+{% block javascripts %}{% endblock %}
+
