@@ -105,30 +105,6 @@ $fond :#fffdf0;
     height: auto;
 }
 
-//actus
-.actus{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 76vw;
-    .grid-gallery{
-        max-width: 1500px;
-        width: 100%;
-        height: auto;
-        margin: 30px auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 280px);
-        justify-content: center;
-        grid-gap: 15px;
-    } 
-    .grid-item{
-        width: 280px;
-        height: 187px;
-    }
-}
-
-
 //map
 .map{
     margin: 0 -12vw;
@@ -144,20 +120,6 @@ $fond :#fffdf0;
 
 
 //responsive
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-    //actus
-    .actus{
-        .grid-gallery{
-            grid-template-columns: repeat(auto-fill, 450px);
-        } 
-        .grid-item{
-            width: 450px;
-            height: 300px;
-        }
-    }
-}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
