@@ -9,8 +9,9 @@
 {% endblock %}
 
 {% block body %}
+    <h1>Comment donner ?</h1>
     <div class="illustrated"><p class="pageTitle"><img class="illustrationLeft" src={{ asset ('img/salleDattente.PNG')}}>Pour faire un don de sang de cordon, les démarches sont simples et rapides. Si vous souhaitez vous inscrire, vous trouverez ci-joint les étapes à suivre pour réaliser ce don, ainsi que les explications relatives au prélèvement. Veuillez tenir compte des conditions indiquées pour effectuer un don.</p></div>
-    <h2>Avant l’accouchement</h2>
+    <div class="bulle"><h2>Avant l’accouchement</h2></div>
     <p>Pour pouvoir donner votre sang de cordon pour un usage scientifique, voici les étapes à suivre afin de pouvoir vous inscrire dans cette démarche.</p>
     <div class="reseau">
         <div id="deroullantMaternité">
@@ -33,8 +34,33 @@
         Dans le cas où ceux-ci seraient oubliés ou perdus de votre part, un nouveau consentement vous sera remis.
         </p>
     </div>
-    <h2>Lors de l’accouchement </h2>
-    <p>Une fois l’accouchement terminé : le bébé est expulsé et le cordon coupé, l’équipe médicale passera au prélèvement de sang de cordon ombilical. C’est une procédure simple et rapide.</p>
+    <div class="bulle"><h2>Lors de l’accouchement :</h2></div>
+    <div class="cardsConditions">
+        <div class="card">
+            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement a lieu :</h2></div>
+            <div class="contentCard">
+                <ul>
+                    <li>Le bébé n’est pas prématuré (37 semaines d’aménorrhées minimun)</li>
+                    <li>Lors d’une césarienne programmée (le prélèvement aura lieu une fois le placenta ait été expulsé)</li>
+                    <li>Lors d’un accouchement par voie basse (soit en attendant que le placenta soit expulsé soit lorsqu’il est déjà sorti)</li>
+                    <li>Une fois que le cordon ombilical est coupé</li>
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement ne peut avoir lieux :</h2></div>
+            <div class="contentCard">
+                <ul>
+                    <li>Les 37 semaines d’aménorrhées ne sont pas respectées (bébé prématuré)</li>
+                    <li>Césarienne non programmée (en urgence)</li>
+                    <li>Toutes situations considérées par l’équipe médicale pouvant présenter potentiellement un risque direct ou indirect pour la maman ou pour l’enfant.
+                    Ex : l’équipe n’a pas le temps de réaliser le prélèvement à cause du nombre élevé d’accouchement le même jour)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="textPurple"><p>Ainsi, même si l’équipe médicale détient votre consentement pour le prélèvement, c’est elle qui décide s’il doit avoir lieu ou non.</p></div>
     <h2>Les étapes du prélèvement :</h2>
     <div class="etapes">
         <div class="etape">
@@ -53,7 +79,7 @@
             <h2>Une prise de sang est effectuée sur la maman pour analyses de sang</h2></div>
         </div>
     </div>
-    <h2>Après l’accouchement</h2>
+    <div class="bulle"><h2>Après l’accouchement</h2></div>
     <p>Votre bébé et vous-même êtes pris en charge par l’équipe médicale. En ce qui concerne votre don, voici son devenir : </p>
         <div class="schemaDevenir">
             <div class="devenir">
@@ -81,33 +107,8 @@
                 <h2>Valorisation du don pour la recherche</h2>
             </div>
         </div>
-    <p>Si vous souhaitez connaître le devenir de votre don, vous pouvez contacter l’EFS-BFC au 03.81.615.675 qui transmettra votre demande à Lymphobank. </p>
-    <div class="cardsConditions">
-        <div class="card">
-            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement a lieu :</h2></div>
-            <div class="contentCard">
-                <ul>
-                    <li>Le bébé n’est pas prématuré (37 semaines d’aménorrhées minimun)</li>
-                    <li>Lors d’une césarienne programmée (le prélèvement aura lieu une fois le placenta ait été expulsé)</li>
-                    <li>Lors d’un accouchement par voie basse (soit en attendant que le placenta soit expulsé soit lorsqu’il est déjà sorti)</li>
-                    <li>Une fois que le cordon ombilical est coupé</li>
-                </ul>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement ne peut avoir lieux :</h2></div>
-            <div class="contentCard">
-                <ul>
-                    <li>Les 37 semaines d’aménorrhées ne sont pas respectées (bébé prématuré)</li>
-                    <li>Césarienne non programmée (en urgence)</li>
-                    <li>Toutes situations considérées par l’équipe médicale pouvant présenter potentiellement un risque direct ou indirect pour la maman ou pour l’enfant.
-                    Ex : l’équipe n’a pas le temps de réaliser le prélèvement à cause du nombre élevé d’accouchement le même jour)
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="textPurple"><p>Ainsi, même si l’équipe médicale détient votre consentement pour le prélèvement, c’est elle qui décide s’il doit avoir lieu ou non.</p></div>
+    <p>Si vous souhaitez connaître le devenir de votre don, vous pouvez contacter l’EFS-BFC au 03 81 615 675 qui transmettra votre demande à Lymphobank. </p>
+    
     
 
 {% endblock %}

@@ -75,6 +75,15 @@ $fond :#fffdf0;
     width: 100%;
 }
 
+.accouchement{
+    margin-bottom: 2em;
+    li{
+        font-weight: bold;
+        font-size: 1.1em;
+        margin-left: 1em;
+    }
+}
+
 .conforme, .pasConforme{
     display: flex;
     flex-direction: column;

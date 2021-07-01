@@ -161,6 +161,25 @@ $fond :#fffdf0;
     }
 }
 
+
+.bulle{
+    h2{
+        position: relative;
+        margin-left: 30px;
+    }
+    h2::before{
+        content: '';
+        border-radius: 50%;
+        height: 20px;
+        width: 20px;
+        background: $pastel;
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
 //responsive
 
 // X-Small devices (portrait phones, 360px and up)

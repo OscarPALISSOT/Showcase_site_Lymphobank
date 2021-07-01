@@ -592,7 +592,7 @@ html, body{
       li{
         float: left;
         margin-bottom: 1.5em;
-        margin-left: 0.5em;
+        margin-left: 1.25em;
         a{
           font-family: 'Karla', sans-serif;
           font-size: 1.6em;
@@ -664,7 +664,7 @@ html, body{
 
 
 // XXX-Large devices
-@media (min-width: 1720px) {
+@media (min-width: 1680px) {
   .navbar{
     .slogan{
       display: block;
