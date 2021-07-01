@@ -44,7 +44,7 @@ class Carousel {
                 this.next()
             } else if (e.key === 'ArrowLeft') {
                 this.prev()
-            }
+            }   
         })
     }
 
