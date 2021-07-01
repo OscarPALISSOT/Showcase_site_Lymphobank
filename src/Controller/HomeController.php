@@ -24,7 +24,7 @@ class HomeController extends AbstractController {
 
         $temoignages = $this->temoignageRepository->findAll();
         $etablissements = $this->etablissementRepository->findAll();
-        $featuredActus = $this->actuRepository->findAll();
+        $featuredActus = $this->actuRepository->findFeatured();
         return $this->render('pages/home.html.twig', [
             'temoignages' => $temoignages,
             'etablissements' => $etablissements,
