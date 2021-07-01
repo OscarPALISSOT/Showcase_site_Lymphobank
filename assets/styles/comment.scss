@@ -128,6 +128,31 @@ $fond :#fffdf0;
         align-items: center;
         margin: 1em;
     }
+    .tooltipGeant{
+        position: relative;
+    }
+    .tooltipGeant .tooltipGeantText {
+        width: 128px;
+        background-color: $pastel;
+        color: $fond;
+        text-align: center;
+        padding: 5px;
+        border-radius: 10px;
+        transform: scaleY(0) translateX(-50%);
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+        width: 256px;
+        top: 100%;
+        left: 50%;
+        transition: all 0.35s ease-in-out;
+        transform-origin: 50% 0;
+    }
+    
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltipGeant:hover .tooltipGeantText {
+        transform: scaleY(100%) translateX(-50%);
+    }
 }
 
 //schema devenir
