@@ -16,8 +16,6 @@ $fond :#fffdf0;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    transition: max-height 0.35s ease-out;
-    /* transition: min-height 0.35s ease-out; */
     .card-title{
         font-size: 0.6em;
         height: 50px;
@@ -85,8 +83,7 @@ $fond :#fffdf0;
         background-color: $fond;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.35s ease-out;
-        /* transition: min-height 0.35s ease-out; */
+        transition: max-height 0.5s ease-out;
         position: relative;
     p{
         text-align: center;
