@@ -1,0 +1,41 @@
+{% extends "base.html.twig" %}
+
+
+{% block title %}Actualité{% endblock %}
+
+
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/cardActu') }}
+{% endblock %}
+
+{% block body %}
+
+    <h1>Actualités :</h1>
+    <div class="actus">
+        <div class="grid-gallery">
+        {% for actu in actus %}
+        <a class="actuLink" href={{ path ('this_actu', {id: actu.id})}}>
+            <div class="grid-item">
+                <div class="cardActu">
+                    <div class="picCadre">
+                        {% if actu.filename %}
+                        <img class="offrePic" src={{ vich_uploader_asset(actu, 'imageFile')}}>
+                        {% else %}
+                        <img class="offrePic" src={{ asset ('img/default-pic.png')}}>
+                        {% endif %}
+                    </div>
+                    <div class="bottom"><h2 class="titreActu">{{actu.titre}}</h2><h2 class="sousTitre">{{actu.sousTitre}}</h2></div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        </div>
+    </div>
+
+    <div class="pagination">
+        {{knp_pagination_render(actus)}}
+    </div>
+    
+{% endblock %}
+
+{% block javascripts %}{% endblock %}

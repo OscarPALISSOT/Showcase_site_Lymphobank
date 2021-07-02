@@ -83,7 +83,10 @@
             {% endfor %}
         </div>
         
-        <h1>Actualités :</h1>
+        <div class="actuHeader">
+            <h1>Actualités :</h1>
+            <div class="center"><a href={{ path ('show_actu')}}><button id="actuBtn">Voir plus d'articles</button></a></div>
+        </div>
         <div class="actus">
             <div class="grid-gallery">
             {% for featuredActu in featuredActus %}
