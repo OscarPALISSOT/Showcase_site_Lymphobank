@@ -53,6 +53,11 @@ class Etablissement
      */
     private $lon;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $num;
+
     public function __construct()
     {
         $this->created_at = new DateTime();
@@ -143,6 +148,18 @@ class Etablissement
     public function setLon(string $lon): self
     {
         $this->lon = $lon;
+
+        return $this;
+    }
+
+    public function getNum(): ?string
+    {
+        return $this->num;
+    }
+
+    public function setNum(?string $num): self
+    {
+        $this->num = $num;
 
         return $this;
     }

@@ -16,6 +16,7 @@ class EtablissementFormType extends AbstractType
             ->add('adresse')
             ->add('ville')
             ->add('codePostal')
+            ->add('num')
         ;
     }
 

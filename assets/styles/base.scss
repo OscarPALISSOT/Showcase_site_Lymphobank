@@ -107,6 +107,8 @@ html, body{
     font-size: 1.2em;
     margin-bottom: 2em;
     font-weight: 600;
+    text-align: justify;
+    text-justify: inter-word;
     a{
       color: $kaki;
       font-weight: bold;
@@ -453,6 +455,12 @@ html, body{
     }
     .illustrated{
       min-height:290px;
+    }
+
+    .columnsText{
+      columns: 3;
+      column-gap: 3em;
+      text-justify: inter-word;
     }
   }
 }
