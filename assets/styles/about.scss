@@ -38,10 +38,10 @@ $fond :#fffdf0;
         /* Position the tooltip text - see examples below! */
         position: absolute;
         z-index: 1;
-        width: 120px;
+        width: 256px;
         top: 100%;
         left: 50%;
-        margin-left: -60px;
+        margin-left: 128px;
         transition: all 0.35s ease-in-out;
         transform-origin: 50% 0;
     }

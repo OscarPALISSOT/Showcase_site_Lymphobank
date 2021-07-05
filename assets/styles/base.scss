@@ -108,7 +108,7 @@ html, body{
     margin-bottom: 2em;
     font-weight: 600;
     a{
-      color: $pastel;
+      color: $kaki;
       font-weight: bold;
       text-decoration-color: black;
     }
@@ -159,7 +159,7 @@ html, body{
     a{
       margin-top: 1em;
       margin-right: 1em;
-      font-family: 'Karla', sans-serif;
+      font-family: 'Raleway', sans-serif;
       font-size: 1em;
       color: black;
       text-decoration: none;
@@ -169,7 +169,7 @@ html, body{
     }
   }
   p{
-    margin-top: 0.5em;
+    margin-top: 0.4em;
     margin-bottom: 0.5em;
   }
 }
@@ -202,7 +202,7 @@ html, body{
   }
 
   .headerText{
-    font-family: 'Karla', sans-serif;
+    font-family: 'Raleway', sans-serif;
     transform: translateX(-100vw);
   }
 
@@ -233,7 +233,7 @@ html, body{
       margin-left: 15%;
       margin-bottom: 2.5em;
       a{
-        font-family: 'Karla', sans-serif;
+        font-family: 'Raleway', sans-serif;
         font-size: 1.25em;
         text-decoration: none;
         color: $fond;
@@ -598,8 +598,13 @@ html, body{
         float: left;
         margin-bottom: 1.5em;
         margin-left: 1.25em;
+        border-top: solid 3px black;
+        border-right:solid 3px black;
+        border-radius: 0 15px 0 0 ;
+        padding-top: 0.5em;
+        padding-right: 0.5em;
         a{
-          font-family: 'Karla', sans-serif;
+          font-family: 'Raleway', sans-serif;
           font-size: 1.6em;
           display: inline-block;
           position: relative;
