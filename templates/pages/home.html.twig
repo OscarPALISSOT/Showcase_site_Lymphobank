@@ -77,7 +77,7 @@
         <div id="temoignage">
             {% for temoignage in temoignages %}
                 <div id="temoignageCadre" class="cadre">
-                    <h2>{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2>
+                    <h2 class="nomTemoin">{{temoignage.temoin}}, {{temoignage.metierTemoin}}</h2>
                     <p>{{temoignage.temoignage}}</p>
                 </div>
             {% endfor %}
@@ -112,7 +112,7 @@
         
         
 
-        <h2>Réseau de maternités partenaires de Lymphobank :</h2>
+        <h1>Réseau de maternités partenaires :</h1>
 
         {% for etablissement in etablissements %}
             <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>

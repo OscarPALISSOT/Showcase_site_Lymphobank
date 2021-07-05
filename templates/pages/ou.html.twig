@@ -16,11 +16,20 @@
 
     <h1>Où donner ?</h1>
 
-    <p class="titlePage">En France, toutes les maternités ne sont pas habilitées au prélèvement de sang placentaire. Seules quelques-unes, publiques ou privées, ont reçu l’autorisation par l’Agende de la Biomédecine pour effectuer ce type de prélèvement.
-    <br> 
-    Ces maternités sont rattachées à des banques de sang placentaire réparties sur le territoire français, où elles enverront les prélèvements effectués. L’ensemble des maternités et des banques de sang placentaire constitue un réseau spécifique appelé le Réseau Français de Sang Placentaire.
+    <p class="titlePage">Les maternités partenaire de notre réseau permettant de faire un don de sang de cordon à usage scientifique sont :
     </p>
 
+    <div class="bulle">
+    {% for etablissement in etablissements %}
+        <h2>{{etablissement.nom}}</h2>
+        <div class="coordonnees">
+        <p>{{etablissement.adresse}}, {{etablissement.ville}}, {{etablissement.codePostal}}</p>
+        </div>
+    {% endfor %}
+    </div>
+    <br>
+    <p>D’autres maternités en région Bourgogne/Franche-Comté vont nous rejoindre prochainement…</p>
+    
 
     {% for etablissement in etablissements %}
         <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
@@ -33,6 +42,9 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
     <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+
+    <br>
+    <p>Pour connaître les maternités du Réseau Français de Sang Placentaire, pour un don de sang à usage thérapeutique, vous pouvez consulter le site de  <a target="_blank" rel="noopener noreferrer" href="https://www.agence-biomedecine.fr/RFSP">l’Agence de la Biomédecine</a></p>
 
 {% endblock %}
 
