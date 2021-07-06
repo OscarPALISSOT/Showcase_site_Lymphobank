@@ -114,6 +114,10 @@ html, body{
       font-weight: bold;
       text-decoration-color: black;
     }
+
+    .underline{
+      text-decoration: underline $kaki;
+    }
   }
 }
 
@@ -457,7 +461,13 @@ html, body{
       min-height:290px;
     }
 
-    .columnsText{
+    .TwoColumnsText{
+      columns: 2;
+      column-gap: 3em;
+      text-justify: inter-word;
+    }
+
+    .ThreeColumnsText{
       columns: 3;
       column-gap: 3em;
       text-justify: inter-word;
@@ -584,7 +594,7 @@ html, body{
       }
     }
     .nom{
-      top: 28px;
+      top: 20px;
     }
     #logo{
       transform: translateX(-100vw);

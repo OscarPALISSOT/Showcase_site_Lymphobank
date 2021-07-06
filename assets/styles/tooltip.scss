@@ -13,7 +13,8 @@ $kaki: rgb(180, 139, 10);
   
   /* Tooltip text */
   .tooltip .tooltipText {
-    font-weight: 400;
+    font-weight: bold;
+    font-size: 0.8em;
     width: 300px;
     background-color: $pastel;
     color: $fond;
