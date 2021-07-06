@@ -149,6 +149,9 @@ $kaki: rgb(180, 139, 10);
         min-height: 0;
         border: none;
         position: relative;
+        .panelCard{
+            width: 100%;
+        }
         .btnCard{
             position: absolute;
             top: 2em;
@@ -162,28 +165,30 @@ $kaki: rgb(180, 139, 10);
             align-items: space-around;
         }
     }
+
+    .flecheGauche{
+        transform: rotate(135deg);
+        margin-right: 1em;
+    }
+    .flecheDroite{
+        transform: rotate(45deg);
+        margin-left: 1em;
+    }
+
+    .doubleFleche, .tripleFleche{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 128px;
+        i{
+            margin: 0.2em;
+        }
+    }
     .schemaDonSteep1{
         width: 100%;
-        .doubleFleche{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 128px;
-            i{
-                margin: 0.2em;
-            }
-            #sangFleche{
-                transform: rotate(135deg);
-                margin-right: 1em;
-            }
-            #cordonFleche{
-                transform: rotate(45deg);
-                margin-left: 1em;
-            }
-        }
         .sangCordon{
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
             .sangSteep1{
                 display: flex;
                 flex-direction: column;
