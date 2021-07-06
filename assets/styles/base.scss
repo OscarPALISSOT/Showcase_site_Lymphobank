@@ -51,7 +51,7 @@ html, body{
     }
   }
   h1{
-    font-family: 'Raleway', sans-serif;
+    font-family:'Poppins', sans-serif;
     font-size: 2.5em;
     margin-bottom: 1.5em;
     margin-top: 1em;
@@ -59,7 +59,7 @@ html, body{
     font-weight: 800;
   }
   h2{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.7em;
     margin-bottom: 1em;
     color: $pastelHover;
@@ -204,7 +204,7 @@ html, body{
   }
 
   .headerText{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Poppins', sans-serif;
     transform: translateX(-100vw);
   }
 
@@ -235,7 +235,7 @@ html, body{
       margin-left: 15%;
       margin-bottom: 2.5em;
       a{
-        font-family: 'Raleway', sans-serif;
+        font-family: 'Poppins', sans-serif;
         font-size: 1.25em;
         text-decoration: none;
         color: $fond;
@@ -612,8 +612,8 @@ html, body{
         padding-top: 0.5em;
         padding-right: 0.5em;
         a{
-          font-family: 'Raleway', sans-serif;
-          font-size: 1.6em;
+          font-family: 'Poppins', sans-serif;
+          font-size: 1.4em;
           display: inline-block;
           position: relative;
           color: black;
