@@ -1,0 +1,28 @@
+$pastel : #cec0d6;
+$pastelHover : #52067a;
+$fond :rgb(255, 248, 219);
+$kaki: rgb(180, 139, 10);
+
+.pagination{
+    height: auto;
+    background-color: $fond;
+    width: max-content;
+    font-size: 1.5em;
+    font-family:'Poppins', sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    border: $kaki 5px solid;
+    span{
+        margin:10px 10px;
+        a{
+            text-decoration: none;
+        }
+    }
+    .current{
+        border-radius: 10px;
+        background-color: $pastel;
+        border-left: none;
+        margin:10px 0;
+        padding: 0 10px;
+    }
+}

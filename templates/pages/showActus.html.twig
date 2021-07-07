@@ -6,6 +6,7 @@
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('scss/cardActu') }}
+    {{ encore_entry_link_tags('scss/pagination') }}
 {% endblock %}
 
 {% block body %}
@@ -32,7 +33,7 @@
         </div>
     </div>
 
-    <div class="pagination">
+    <div class="pages">
         {{knp_pagination_render(actus)}}
     </div>
     
