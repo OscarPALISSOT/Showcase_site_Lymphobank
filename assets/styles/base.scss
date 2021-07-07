@@ -60,7 +60,7 @@ html, body{
   }
   h2{
     font-family: 'Poppins', sans-serif;
-    font-size: 1.7em;
+    font-size: 1.2em;
     margin-bottom: 1em;
     color: $pastelHover;
   }
@@ -116,7 +116,7 @@ html, body{
     }
 
     .underline{
-      text-decoration: underline $kaki;
+      text-decoration: underline $kaki 2px;
     }
   }
 }
@@ -424,6 +424,13 @@ html, body{
       }
     }
   }
+
+  .main{
+
+    h2{
+      font-size: 1.4em;
+    }
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -447,6 +454,10 @@ html, body{
       height: auto;
       border-radius: 15px;
       box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      font-size: 1.7em;
     }
 
     //icon gauche paragraphe

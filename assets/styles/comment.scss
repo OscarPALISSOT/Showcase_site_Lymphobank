@@ -26,15 +26,17 @@ $kaki: rgb(180, 139, 10);
         min-height: 0;
         width: 100%;
         height: auto;
+        max-height: none;
         background-color: $pastel;
         box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
         .card-title{
             h2{
                 margin-top: 2em;
+                font-size: 1.2em;
             }
         }
         .contentCard{
-            font-size: .6em;
+            font-size: .8em;
             font-weight: bold;
             margin: 4em;
             height: 100%;
@@ -210,8 +212,9 @@ $kaki: rgb(180, 139, 10);
 @media (min-width: 390px) {
     .cardsConditions{
         .card{
+            height: auto;
             .contentCard{
-                font-size: .75em;
+                font-size: 1em;
             }
         }
     }
@@ -231,10 +234,15 @@ $kaki: rgb(180, 139, 10);
 @media (min-width: 576px) {
     .cardsConditions{
         .card{
-            height: 400px;
+            height: 380px;
             .contentCard{
-                font-size: 1em;
+                font-size: 1.2em;
                 margin: 0 4em;
+            }
+            .card-title{
+                h2{
+                    font-size: 1.7em;
+                }
             }
         }
     }
@@ -256,10 +264,8 @@ $kaki: rgb(180, 139, 10);
 @media (min-width: 768px) {
     .cardsConditions{
         .card{
+            height: 400px;
             width: 500px;
-            .contentCard{
-                font-size: 1em;
-            }
         }
     }
 
