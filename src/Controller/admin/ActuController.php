@@ -29,7 +29,7 @@ class ActuController extends AbstractController
         $actus = $paginator->paginate(
             $this->repository->findBy(array(), array('created_at' => 'DESC')),
             $request->query->getInt('page', 1),
-            10
+            12
         );
 
         return $this->render('admin/actus/ShowActus.html.twig', [
