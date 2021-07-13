@@ -19,6 +19,23 @@ class FaqRepository extends ServiceEntityRepository
         parent::__construct($registry, Faq::class);
     }
 
+
+
+    /**
+     * @return Faq[] Returns an array of Faq objects
+     */
+    
+    public function findBynextOdre($ordre)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.ordre >= :ordre')
+            ->setParameter('ordre', $ordre)
+            ->orderBy('f.ordre', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Faq[] Returns an array of Faq objects
     //  */
