@@ -62,6 +62,8 @@ class FaqController extends AbstractController
     }
 
 
+
+
     /**
      * @Route ("/Admin/Faqs/{id}", name="edit_faq")
      * @return Response

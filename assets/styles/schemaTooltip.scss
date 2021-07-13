@@ -1,0 +1,31 @@
+$pastel : #cec0d6;
+$pastelHover : #52067a;
+$fond :rgb(255, 248, 219);
+$kaki: rgb(180, 139, 10);
+
+.tooltipGeant{
+    position: relative;
+}
+.tooltipGeant .tooltipGeantText {
+    width: 128px;
+    background-color: $pastel;
+    color: $fond;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    transform: scaleY(0);
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+    width: 256px;
+    top: 100%;
+    left: 50%;
+    margin-left: -128px;
+    transition: all 0.35s ease-in-out;
+    transform-origin: 50% 0;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipGeant:hover .tooltipGeantText {
+    transform: scaleY(100%);
+}
