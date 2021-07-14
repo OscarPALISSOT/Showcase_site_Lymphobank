@@ -63,6 +63,20 @@ class FaqController extends AbstractController
 
 
     /**
+     * permet de savoir si la question n'est pas la derniere à afficher
+     * @return boolean
+     */
+    public function isNotLast($ordreQuest) {
+        $nextQuests = $this->repository->findBynextOdre($ordreQuest);
+        if ($nextQuests){
+            return true;
+        }
+        return false;
+
+    }
+
+
+    /**
      * @Route ("/Admin/Faqs/{id}", name="edit_faq")
      * @return Response
      */

@@ -6,13 +6,13 @@
 
 {% block stylesheets %}
     {{ encore_entry_link_tags('scss/comment') }}
+    {{ encore_entry_link_tags('scss/schemaTooltip') }}
 {% endblock %}
 
 {% block body %}
     <h1>Comment donner ?</h1>
-    <p>Voici les étapes à suivre afin de vous inscrire dans une démarche de don de sang de cordon pour un usage scientifique.</p>
+    <p>Voici les étapes à suivre afin de vous inscrire dans une démarche de don de sang placentaire, de cordon ombilical ou de placenta pour un usage scientifique.</p>
     <div class="bulle"><h2>Avant l’accouchement</h2></div>
-    <p>Pour pouvoir donner votre sang de cordon pour un usage scientifique, voici les étapes à suivre afin de pouvoir vous inscrire dans cette démarche.</p>
     <div class="reseau">
         <div id="deroullantMaternité">
             <button class="accordion"><p class="accordionTitle">1.	Maternités partenaire de notre réseau</p></button>
@@ -63,7 +63,7 @@
             <div class="tooltipGeant">
                 <div class="iconSchema"><h2 class="nb">1.</h2><img class="icon" src={{ asset ('img/icons/test-tube.svg')}}>
                 <h2>Une prise de sang est effectuée sur la maman pour analyses de sang</h2></div>
-                <span class="tooltipGeantText">Une prise de sang vous sera effectuée afin de que l’EFS-BFC analyse l’absence de pathogènes tels que la syphilis et le virus de l’immunodéficience humaine (VIH), de l’hépatite B (VHB), de l’hépatite C (VHC) et de la syphilis.
+                <span class="tooltipGeantText">Une prise de sang vous sera effectuée afin de que l’EFS-BFC analyse l’absence de pathogènes tels que la syphilis et les virus de l’immunodéficience humaine (VIH), de l’hépatite B (VHB), de l’hépatite C (VHC) et de la leucémie T humaine (HTLV).
                 </span>
             </div>
             <i class="fas fa-long-arrow-alt-right fa-4x"></i>
@@ -97,29 +97,39 @@
     Voici le devenir de votre don : 
     </p>
     <div class="schemaDevenir">
-        <div class="devenir">
+        <div class="devenir tooltipGeant">
             <img class="icon" src={{ asset ('img/icons/delivery-truck.svg')}}>
             <h2>Transfert sous 24h à l'EFS-BFC</h2>
+            <span class="tooltipGeantText">Les dons sont livrées à l’EFS-BFC dans des caisses de transport scéllées. Le transporteur n’a donc pas accès aux données personnelles associées aux dons.
+            </span>
         </div>
         <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-        <div class="devenir">
+        <div class="devenir tooltipGeant">
             <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
-            <h2>Anonymisation et qualification du don</h2>
+            <h2>Anonymisation du don</h2>
+            <span class="tooltipGeantText">L’EFS-BFC anonymise le don avant de le transférer à Lymphobank, qui n’a accès à aucune donnée personnelle.
+            </span>
         </div>
         <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-        <div class="devenir">
+        <div class="devenir tooltipGeant">
             <img class="icon" src={{ asset ('img/icons/test-tube.svg')}}>
-            <h2>Test de conformité de la maman</h2>
+            <h2>Analyse du sang de la maman</h2>
+            <span class="tooltipGeantText">En cas de marqueur biologique positif, vous en êtes avertie et le don est détruit. Lymphobank vous adresse, via l’EFS-BFC, un certificat de destruction.
+            </span>
         </div>
         <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-        <div class="devenir">
+        <div class="devenir tooltipGeant">
             <img id="LogoIcon" class="icon" src={{ asset ('img/icons/LogoLymphobank.png')}}>
-            <h2>Valorisation du don pour la recherche</h2>
+            <h2>Préparation du don pour la recherche</h2>
+            <span class="tooltipGeantText">Lymphobank isole les cellules d’intérêt et les congèle en attente de leur utilisation.
+            </span>
         </div>
         <i class="fas fa-long-arrow-alt-right fa-4x"></i>
-        <div class="devenir">
+        <div class="devenir tooltipGeant">
             <img class="icon" src={{ asset ('img/icons/laboratory.svg')}}>
             <h2>Cession aux laboratoires de recherche</h2>
+            <span class="tooltipGeantText">Les cellules sont envoyées aux utilisateurs finaux, exclusivement pour un usage de recherche et développement dans le domaine biomédical.
+            </span>
         </div>
     </div>
 
