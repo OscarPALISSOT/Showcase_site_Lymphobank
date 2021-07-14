@@ -49,6 +49,7 @@ class FaqController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $this->isNotLast($form["ordre"]->getData());
             $em = $this->getDoctrine()->getManager();
             $em->persist($faq);
             $em->flush();
@@ -63,16 +64,16 @@ class FaqController extends AbstractController
 
 
     /**
-     * permet de savoir si la question n'est pas la derniere à afficher
-     * @return boolean
+     * décale l'ordre des questions suivantes
      */
     public function isNotLast($ordreQuest) {
         $nextQuests = $this->repository->findBynextOdre($ordreQuest);
         if ($nextQuests){
-            return true;
+            foreach ($nextQuests as $nextQuest) {
+                $ordre = $nextQuest->getOrdre();
+                $nextQuest->setOrdre($ordre+1);
+            }
         }
-        return false;
-
     }
 
 
@@ -85,6 +86,7 @@ class FaqController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $this->isNotLast($form["ordre"]->getData());
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('gestion_faqs');
