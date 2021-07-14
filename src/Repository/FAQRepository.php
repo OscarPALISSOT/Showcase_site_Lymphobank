@@ -36,6 +36,22 @@ class FaqRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @return Faq[] Returns an array of Faq objects
+     */
+    
+    public function findByBetweenOdre($currentOrdre, $newOrdre)
+    {
+        return $this->createQueryBuilder('f')
+            ->andWhere('f.ordre >= :currentOrdre AND f.ordre <= :newOrdre OR f.ordre <= :currentOrdre AND f.ordre >= :newOrdre')
+            ->setParameter('currentOrdre', $currentOrdre)
+            ->setParameter('newOrdre', $newOrdre)
+            ->orderBy('f.ordre', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Faq[] Returns an array of Faq objects
     //  */

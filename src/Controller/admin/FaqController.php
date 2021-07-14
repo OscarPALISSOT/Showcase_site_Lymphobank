@@ -31,7 +31,6 @@ class FaqController extends AbstractController
             $request->query->getInt('page', 1),
             10
         );
-
         return $this->render('admin/faqs/ShowFaq.html.twig', [
             'faqs' => $faqs,
             'loggedUser' => $this->getUser(),
@@ -49,7 +48,7 @@ class FaqController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            $this->isNotLast($form["ordre"]->getData());
+            $this->isNotLastAdd($form["ordre"]->getData());
             $em = $this->getDoctrine()->getManager();
             $em->persist($faq);
             $em->flush();
@@ -64,14 +63,45 @@ class FaqController extends AbstractController
 
 
     /**
-     * décale l'ordre des questions suivantes
+     * décale l'ordre des questions suivantes de +1
      */
-    public function isNotLast($ordreQuest) {
+    public function isNotLastAdd($ordreQuest) {
         $nextQuests = $this->repository->findBynextOdre($ordreQuest);
         if ($nextQuests){
             foreach ($nextQuests as $nextQuest) {
                 $ordre = $nextQuest->getOrdre();
                 $nextQuest->setOrdre($ordre+1);
+            }
+        }
+    }
+
+    /**
+     * décale l'ordre des questions suivantes de -1
+     */
+    public function isNotLastSub($ordreQuest) {
+        $nextQuests = $this->repository->findBynextOdre($ordreQuest);
+        if ($nextQuests){
+            foreach ($nextQuests as $nextQuest) {
+                $ordre = $nextQuest->getOrdre();
+                $nextQuest->setOrdre($ordre-1);
+            }
+        }
+    }
+
+    /**
+     * décale l'ordre des questions jusqu'au nouvel emplacement
+     */
+    public function isNotLastEdit($currentOrdre, $newOrdre) {
+        $Quests = $this->repository->findByBetweenOdre($currentOrdre, $newOrdre);
+        if (($currentOrdre - $newOrdre) < 0) {
+            foreach ($Quests as $Quest) {
+                $ordre = $Quest->getOrdre();
+                $Quest->setOrdre($ordre-1);
+            }
+        } else if (($currentOrdre - $newOrdre) > 0) {
+            foreach ($Quests as $Quest) {
+                $ordre = $Quest->getOrdre();
+                $Quest->setOrdre($ordre+1);
             }
         }
     }
@@ -84,12 +114,16 @@ class FaqController extends AbstractController
     public function editFaq(Faq $faq, Request $request){
         $form = $this->createForm(FaqFormType::class, $faq);
         $form->handleRequest($request);
-
+        $currentOrdre = $faq->getOrdre();
         if ($form->isSubmitted() && $form->isValid()){
-            $this->isNotLast($form["ordre"]->getData());
+            $newOrdre = $form["ordre"]->getData();
+            $test = $currentOrdre - $newOrdre;
+            $this->isNotLastEdit($currentOrdre, $newOrdre);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            return $this->redirectToRoute('gestion_faqs');
+            return $this->redirectToRoute('gestion_faqs', [
+                'test1' => $test
+            ]);
         }
         return $this->render('admin/faqs/EditFaq.html.twig', [
             'faq' => $faq,
@@ -105,6 +139,7 @@ class FaqController extends AbstractController
     public function deleteFaq(Faq $faq, Request $request){
 
         if ($this->isCsrfTokenValid("delete", $request->get('_token'))){
+            $this->isNotLastSub($faq->getOrdre());
             $em = $this->getDoctrine()->getManager();
             $em->remove($faq);
             $em->flush();
