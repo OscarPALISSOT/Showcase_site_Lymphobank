@@ -240,7 +240,7 @@ html, body{
       margin-bottom: 2.5em;
       a{
         font-family: 'Poppins', sans-serif;
-        font-size: 1.25em;
+        font-size: 1.1em;
         text-decoration: none;
         color: $fond;
         position: relative;
@@ -627,8 +627,8 @@ html, body{
         float: left;
         margin-bottom: 1.5em;
         margin-left: 1.25em;
-        border-top: solid 3px black;
-        border-right:solid 3px black;
+        border-top: solid 3px white;
+        border-right:solid 3px white;
         border-radius: 0 15px 0 0 ;
         padding-top: 0.5em;
         padding-right: 0.5em;
@@ -648,7 +648,8 @@ html, body{
           display: block;
           height: 3px;
           position: absolute;
-          background:$fond;
+          background:white;
+          border: none;
           border-radius: 0;
           bottom: 0;
           top: auto;
