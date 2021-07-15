@@ -21,7 +21,7 @@ $kaki: rgb(180, 139, 10);
     margin-bottom: 2em;
     .card{
         min-height: 0;
-        height: 350px;
+        height: 250px;
         background-color: $pastel;
         box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
         .card-title{
@@ -226,6 +226,7 @@ $kaki: rgb(180, 139, 10);
 @media (min-width: 992px) {
     .cardRecherche{
         .card{
+            width: 350px;
             .contentCard{
                 font-size: 1em;
             }
