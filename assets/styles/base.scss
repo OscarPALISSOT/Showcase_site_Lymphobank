@@ -221,7 +221,7 @@ html, body{
   }
 
   //réseaux sociaux
-  .network{
+  .HeaderTopRight{
     display: none;
   }
 
@@ -588,20 +588,22 @@ html, body{
     top: -80px;
     width: 100%;
     height: 150px;
-    .network{
+    .HeaderTopRight{
       display: block;
       position: absolute;
       right: 12%;
       transform: translateX(-100vw);
+      margin-top: 1em;
       a{
-        color: black;
-        i{
-          margin-left: 0.5em;
-          margin-top: 0.75em;
-        }
+        color: $kaki;
+        font-weight: bold;
+        font-size: 1.3em;
+        font-weight: 600;
+        text-decoration: none;
+        font-family: 'Raleway', sans-serif;
       }
       a:hover{
-        color: rgba(0, 0, 0, 0.5);
+        color: rgba(180, 139, 10, 0.8);;
       }
     }
     .nom{
@@ -704,7 +706,7 @@ html, body{
 
 
 // XXX-Large devices
-@media (min-width: 1680px) {
+@media (min-width: 1780px) {
   .navbar{
     .slogan{
       display: block;
