@@ -108,13 +108,14 @@ class FaqController extends AbstractController
 
 
     /**
-     * @Route ("/Admin/Faqs/{id}", name="edit_faq")
+     * @Route ("/Admin/Faqs/{id}/ordre={ordre}", name="edit_faq")
      * @return Response
      */
     public function editFaq(Faq $faq, Request $request){
         $form = $this->createForm(FaqFormType::class, $faq);
         $form->handleRequest($request);
-        $currentOrdre = $faq->getOrdre();
+        $currentOrdre = (int)$request->get('ordre');;
+        dump($currentOrdre);
         if ($form->isSubmitted() && $form->isValid()){
             $newOrdre = $form["ordre"]->getData();
             $test = $currentOrdre - $newOrdre;
@@ -122,7 +123,9 @@ class FaqController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('gestion_faqs', [
-                'test1' => $test
+                'current' => $currentOrdre,
+                'new'=> $newOrdre,
+                'test' => $test
             ]);
         }
         return $this->render('admin/faqs/EditFaq.html.twig', [
