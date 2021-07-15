@@ -134,12 +134,12 @@ $kaki: rgb(180, 139, 10);
     }
     .tooltipGeant .tooltipGeantText {
         width: 128px;
-        background-color: $pastel;
+        background-color: $pastelHover;
         color: $fond;
         text-align: center;
-        padding: 5px;
+        padding: 10px;
         border-radius: 10px;
-        transform: scaleY(0) translateX(-50%);
+        transform: scaleY(0);
         /* Position the tooltip text - see examples below! */
         position: absolute;
         z-index: 1;
@@ -152,7 +152,7 @@ $kaki: rgb(180, 139, 10);
     
     /* Show the tooltip text when you mouse over the tooltip container */
     .tooltipGeant:hover .tooltipGeantText {
-        transform: scaleY(100%) translateX(-50%);
+        transform: scaleY(100%);
     }
 }
 
