@@ -118,15 +118,11 @@ class FaqController extends AbstractController
         dump($currentOrdre);
         if ($form->isSubmitted() && $form->isValid()){
             $newOrdre = $form["ordre"]->getData();
-            $test = $currentOrdre - $newOrdre;
             $this->isNotLastEdit($currentOrdre, $newOrdre);
+            $faq->setOrdre($newOrdre);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
-            return $this->redirectToRoute('gestion_faqs', [
-                'current' => $currentOrdre,
-                'new'=> $newOrdre,
-                'test' => $test
-            ]);
+            return $this->redirectToRoute('gestion_faqs');
         }
         return $this->render('admin/faqs/EditFaq.html.twig', [
             'faq' => $faq,
