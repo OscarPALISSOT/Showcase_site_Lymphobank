@@ -4,10 +4,23 @@
 {% block title %}Nous contacter{% endblock %}
 
 
-{% block stylesheets %}{% endblock %}
+{% block stylesheets %}
+    {{ encore_entry_link_tags('scss/contact') }}
+{% endblock %}
 
 {% block body %}
     <h1>Nous contacter</h1>
+    <p>Page en cours de création</p>
+    <div class="form">
+        {{form_start (form)}}
+            {{form_row (form.firstName)}}
+            {{form_row (form.lastName)}}
+            {{form_row (form.mail)}}
+            {{form_row (form.message)}}
+            <button class="submit">Envoyer</button>
+        {{form_end (form)}}
+    </div>
+    <p>Aucune donnée personnelle n’est conservée par notre site via ce formulaire</p>
     
 {% endblock %}
 

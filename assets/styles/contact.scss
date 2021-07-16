@@ -1,0 +1,44 @@
+$pastel : #cec0d6;
+$pastelHover : #52067a;
+$fond :rgb(255, 248, 219);
+$kaki: rgb(180, 139, 10);
+
+
+//btn découvrir notre réseau
+.submit{
+    position: static;
+    width: auto;
+    margin-top: 20px;
+    padding: 0 0.5em;
+    background-color: $pastel;
+    border-radius: 15px;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    margin-bottom: 3em;
+}
+
+.submit:hover{
+    box-shadow: inset 2px 4px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+form{
+    input, textarea{
+        background: transparent;
+        border: $pastelHover 3px solid;
+        border-radius: 10px;
+        margin-top: 20px;
+        padding: 0 0.5em;
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        font-size: 1.25em;
+    }
+}
+
+  
