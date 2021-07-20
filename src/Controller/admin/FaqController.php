@@ -115,7 +115,6 @@ class FaqController extends AbstractController
         $form = $this->createForm(FaqFormType::class, $faq);
         $form->handleRequest($request);
         $currentOrdre = (int)$request->get('ordre');;
-        dump($currentOrdre);
         if ($form->isSubmitted() && $form->isValid()){
             $newOrdre = $form["ordre"]->getData();
             $this->isNotLastEdit($currentOrdre, $newOrdre);

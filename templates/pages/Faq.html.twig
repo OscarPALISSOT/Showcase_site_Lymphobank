@@ -12,8 +12,10 @@
     {% for faq in faqs %}
         <button class="accordion"><p class="accordionTitle">{{faq.ordre}}. {{faq.question}}</p></button>
         <div class="panel">
-            <p>{{faq.reponse}}</p>
-            <p>Plus d'information : <a href={{faq.lien}} target="_blank" rel="noopener noreferrer">{{faq.NomLien}}</a></p>
+            <p class="TwoColumnsText">{{faq.reponse}}</p>
+            {% if faq.lien %}
+                <p>Plus d'information : <a href={{faq.lien}} target="_blank" rel="noopener noreferrer">{{faq.NomLien}}</a></p>
+            {% endif %}
         </div>
     {% endfor %}
 {% endblock %}

@@ -14,6 +14,7 @@ $kaki: rgb(180, 139, 10);
         width: auto;
     }
     h2{
+        color: black;
         margin-top: 0;
         .underline{
             text-decoration: underline $pastel 5px solid;
@@ -26,6 +27,13 @@ $kaki: rgb(180, 139, 10);
         transform: rotate(90deg);
     }
 }
+
+.main{
+    .titleGeant{
+        color: black;
+    }
+}
+
 
 //icons size
 .icon{
