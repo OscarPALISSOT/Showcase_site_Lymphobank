@@ -45,6 +45,18 @@ $kaki: rgb(180, 139, 10);
         align-items: center;
         justify-content: space-around;
     }
+    #logoPartenaire{
+        .carousel{
+            margin-bottom: 2em;
+        }
+        .carousel__item{
+            padding: 2.5em 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+    }
     p{
         text-align: center;
         font-size: 1.2em;

@@ -165,3 +165,11 @@ new Carousel(document.querySelector('#temoignage'),{
     loop:true,
     pagination:true
 })
+
+//carousel partenaires
+new Carousel(document.querySelector('#logoPartenaire'),{
+    slideToScroll: 2,
+    slideVisibles: 2,
+    loop:true,
+    pagination:true
+})
