@@ -52,7 +52,7 @@ html, body{
   }
   h1{
     font-family:'Poppins', sans-serif;
-    font-size: 2.5em;
+    font-size: 1.75em;
     margin-bottom: 1.5em;
     margin-top: 1em;
     color: rgb(180, 139, 10);
@@ -240,7 +240,7 @@ html, body{
       margin-bottom: 2.5em;
       a{
         font-family: 'Poppins', sans-serif;
-        font-size: 1.1em;
+        font-size: 1em;
         text-decoration: none;
         color: $fond;
         position: relative;
@@ -396,6 +396,18 @@ html, body{
     .menuItems{
       li{
         a{
+          font-size: 1.25em;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 390px) {
+  .navbar{
+    .menuItems{
+      li{
+        a{
           font-size: 1.5em;
         }
       }
@@ -426,7 +438,9 @@ html, body{
   }
 
   .main{
-
+    h1{
+      font-size: 2.5em;
+    }
     h2{
       font-size: 1.4em;
     }

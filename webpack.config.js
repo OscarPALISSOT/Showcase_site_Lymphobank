@@ -39,6 +39,7 @@ Encore
     .addStyleEntry('scss/carousel', './assets/styles/carousel.scss')
     .addStyleEntry('scss/cardActu', './assets/styles/cardActu.scss')
     .addStyleEntry('scss/pagination', './assets/styles/pagination.scss')
+    .addStyleEntry('scss/paginationAdmin', './assets/styles/paginationAdmin.scss')
     .addStyleEntry('scss/schemaTooltip', './assets/styles/schemaTooltip.scss')
     .addStyleEntry('scss/contact', './assets/styles/contact.scss')
     .addEntry('js/base', './assets/js/base.js')
