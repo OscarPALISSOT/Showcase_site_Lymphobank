@@ -7,13 +7,13 @@ $kaki: rgb(180, 139, 10);
     height: auto;
     background-color: white;
     width: max-content;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family:'Poppins', sans-serif;
     border-radius: 10px;
     padding: 5px;
-    border: black 5px solid;
+    border: black 3px solid;
     span{
-        margin:10px 10px;
+        margin:5px 10px;
         a{
             text-decoration: none;
             color: black;
@@ -24,7 +24,7 @@ $kaki: rgb(180, 139, 10);
         background-color: black;
         color: white;
         border-left: none;
-        margin:10px 0;
+        margin:5px 0;
         padding: 0 10px;
     }
 }
