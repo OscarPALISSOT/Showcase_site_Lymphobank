@@ -19,6 +19,37 @@ class TemoignageRepository extends ServiceEntityRepository
         parent::__construct($registry, Temoignage::class);
     }
 
+    /**
+     * @return Faq[] Returns an array of Faq objects
+     */
+    
+    public function findBynextOdre($ordre)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.ordre >= :ordre')
+            ->setParameter('ordre', $ordre)
+            ->orderBy('t.ordre', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    /**
+     * @return Faq[] Returns an array of Faq objects
+     */
+    
+    public function findByBetweenOdre($currentOrdre, $newOrdre)
+    {
+        return $this->createQueryBuilder('t')
+            ->andWhere('t.ordre >= :currentOrdre AND t.ordre <= :newOrdre OR t.ordre <= :currentOrdre AND t.ordre >= :newOrdre')
+            ->setParameter('currentOrdre', $currentOrdre)
+            ->setParameter('newOrdre', $newOrdre)
+            ->orderBy('t.ordre', 'ASC')
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
     // /**
     //  * @return Temoignage[] Returns an array of Temoignage objects
     //  */

@@ -22,7 +22,7 @@ class HomeController extends AbstractController {
 
     public function index() : Response{
 
-        $temoignages = $this->temoignageRepository->findAll();
+        $temoignages = $this->temoignageRepository->findBy(array(), array('ordre' => 'ASC'));
         $etablissements = $this->etablissementRepository->findAll();
         $featuredActus = $this->actuRepository->findFeatured();
         return $this->render('pages/home.html.twig', [
