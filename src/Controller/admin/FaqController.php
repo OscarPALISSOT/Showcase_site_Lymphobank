@@ -108,13 +108,13 @@ class FaqController extends AbstractController
 
 
     /**
-     * @Route ("/Admin/Faqs/{id}/ordre={ordre}", name="edit_faq")
+     * @Route ("/Admin/Faqs/{id}", name="edit_faq")
      * @return Response
      */
     public function editFaq(Faq $faq, Request $request){
         $form = $this->createForm(FaqFormType::class, $faq);
         $form->handleRequest($request);
-        $currentOrdre = (int)$request->get('ordre');;
+        $currentOrdre = (int)$request->get('ordre');
         if ($form->isSubmitted() && $form->isValid()){
             $newOrdre = $form["ordre"]->getData();
             $this->isNotLastEdit($currentOrdre, $newOrdre);

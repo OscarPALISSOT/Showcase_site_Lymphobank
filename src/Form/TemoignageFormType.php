@@ -15,6 +15,7 @@ class TemoignageFormType extends AbstractType
             ->add('temoin')
             ->add('metierTemoin')
             ->add('temoignage')
+            ->add('ordre')
         ;
     }
 

@@ -38,6 +38,11 @@ class Temoignage
      */
     private $created_at;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $ordre;
+
     public function __construct()
     {
         $this->created_at = new DateTime();
@@ -92,6 +97,18 @@ class Temoignage
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
+
+        return $this;
+    }
+
+    public function getOrdre(): ?int
+    {
+        return $this->ordre;
+    }
+
+    public function setOrdre(int $ordre): self
+    {
+        $this->ordre = $ordre;
 
         return $this;
     }

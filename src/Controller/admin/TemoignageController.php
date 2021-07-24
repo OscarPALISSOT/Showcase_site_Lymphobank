@@ -49,6 +49,7 @@ class TemoignageController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
+            $this->isNotLastAdd($form["ordre"]->getData());
             $em = $this->getDoctrine()->getManager();
             $em->persist($temoignage);
             $em->flush();
@@ -62,6 +63,51 @@ class TemoignageController extends AbstractController
     }
 
 
+
+    /**
+     * décale l'ordre des questions suivantes de +1
+     */
+    public function isNotLastAdd($ordreQuest) {
+        $nextQuests = $this->repository->findBynextOdre($ordreQuest);
+        if ($nextQuests){
+            foreach ($nextQuests as $nextQuest) {
+                $ordre = $nextQuest->getOrdre();
+                $nextQuest->setOrdre($ordre+1);
+            }
+        }
+    }
+
+    /**
+     * décale l'ordre des questions suivantes de -1
+     */
+    public function isNotLastSub($ordreQuest) {
+        $nextQuests = $this->repository->findBynextOdre($ordreQuest);
+        if ($nextQuests){
+            foreach ($nextQuests as $nextQuest) {
+                $ordre = $nextQuest->getOrdre();
+                $nextQuest->setOrdre($ordre-1);
+            }
+        }
+    }
+
+    /**
+     * décale l'ordre des questions jusqu'au nouvel emplacement
+     */
+    public function isNotLastEdit($currentOrdre, $newOrdre) {
+        $Quests = $this->repository->findByBetweenOdre($currentOrdre, $newOrdre);
+        if (($currentOrdre - $newOrdre) < 0) {
+            foreach ($Quests as $Quest) {
+                $ordre = $Quest->getOrdre();
+                $Quest->setOrdre($ordre-1);
+            }
+        } else if (($currentOrdre - $newOrdre) > 0) {
+            foreach ($Quests as $Quest) {
+                $ordre = $Quest->getOrdre();
+                $Quest->setOrdre($ordre+1);
+            }
+        }
+    }
+
     /**
      * @Route ("/Admin/Temoignages/{id}", name="edit_temoignage")
      * @return Response
@@ -69,8 +115,11 @@ class TemoignageController extends AbstractController
     public function editTemoignage(Temoignage $temoignage, Request $request){
         $form = $this->createForm(TemoignageFormType::class, $temoignage);
         $form->handleRequest($request);
-
+        $currentOrdre = (int)$request->get('ordre');
         if ($form->isSubmitted() && $form->isValid()){
+            $newOrdre = $form["ordre"]->getData();
+            $this->isNotLastEdit($currentOrdre, $newOrdre);
+            $temoignage->setOrdre($newOrdre);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
             return $this->redirectToRoute('gestion_temoignages');
@@ -89,6 +138,7 @@ class TemoignageController extends AbstractController
     public function deleteTemoignage(Temoignage $temoignage, Request $request){
 
         if ($this->isCsrfTokenValid("delete", $request->get('_token'))){
+            $this->isNotLastSub($temoignage->getOrdre());
             $em = $this->getDoctrine()->getManager();
             $em->remove($temoignage);
             $em->flush();
