@@ -27,7 +27,7 @@ class TemoignageController extends AbstractController
     {
 
         $temoignages = $paginator->paginate(
-            $this->repository->findBy(array(), array('created_at' => 'DESC')),
+            $this->repository->findBy(array(), array('ordre' => 'ASC')),
             $request->query->getInt('page', 1),
             10
         );

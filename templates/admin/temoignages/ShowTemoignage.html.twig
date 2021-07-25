@@ -19,6 +19,7 @@
                 <tr>
                 <th scope="col">Témoin</th>
                 <th scope="col">Métier du témoin</th>
+                <th scope="col">Ordre</th>
                 <th scope="col">Modifier</th>
                 <th scope="col">Supprimer</th>
                 </tr>
@@ -31,6 +32,9 @@
                         </th>
                         <th>
                             {{temoignage.metierTemoin}}
+                        </th>
+                        <th>
+                            {{temoignage.ordre}}
                         </th>
                         <td>
                             <a href={{ path ('edit_temoignage', {id: temoignage.id})}} type="button" class="btn btn-warning"><i class="fas fa-cog"></i></a>
