@@ -20,28 +20,28 @@
             <ul class="nav flex-column text-white w-100">
                 <a class="nav-link h3 text-white my-2 navbar-brand" href={{path ('home')}}><i class="fas fa-home"></i>HomePage</a>
                 <hr class="sidebar-divider my-0">
-                <li href="#" class="nav-link">
-                <span class="mx-2">Tableau de bord</span>
+                <li>
+                    <a href={{path ('admin')}} class="nav-link text-white"><i class="fas fa-info"></i>Tableau de bord</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{path ('gestion_admins')}} class="nav-link"><i class="fas fa-user-shield"></i>Admins</a>
+                    <a href={{path ('gestion_admins')}} class="nav-link text-white"><i class="fas fa-user-shield"></i>Admins</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_etablissements')}} class="nav-link"><i class="fas fa-building"></i>Maternités</a>
+                    <a href={{ path ('gestion_etablissements')}} class="nav-link text-white"><i class="fas fa-building"></i>Maternités</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_temoignages')}} class="nav-link"><i class="fas fa-comment-alt"></i>témoignages</a>
+                    <a href={{ path ('gestion_temoignages')}} class="nav-link text-white"><i class="fas fa-comment-alt"></i>témoignages</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_actus')}} class="nav-link"><i class="far fa-newspaper"></i>actualités</a>
+                    <a href={{ path ('gestion_actus')}} class="nav-link text-white"><i class="far fa-newspaper"></i>actualités</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 <li>
-                    <a href={{ path ('gestion_faqs')}} class="nav-link"><i class="far fa-question-circle"></i>F.A.Q</a>
+                    <a href={{ path ('gestion_faqs')}} class="nav-link text-white"><i class="far fa-question-circle"></i>F.A.Q</a>
                 </li>
                 <hr class="sidebar-divider my-0">
                 
