@@ -1,8 +1,8 @@
 <?php
 
-/* namespace App\Notification;
+namespace App\Notification;
 
-use App\Entity\Contact;
+/* use App\Entity\Contact;
 use Twig\Environment; */
 
 class Contact {
