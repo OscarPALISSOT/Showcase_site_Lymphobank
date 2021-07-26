@@ -5,7 +5,7 @@
 use App\Entity\Contact;
 use Twig\Environment; */
 
-class ContactNotification {
+class Contact {
 
 
     /* public function __construct(\Swift_Mailer $mailer, Environment $renderer)
