@@ -30,11 +30,13 @@ $kaki: rgb(180, 139, 10);
     margin-bottom: 5px;
     position: absolute;
     left: 5px;
-    top: 10px; 
+    top: 10px;
+    right: 2em;
+    text-align: left !important;
 }
 p.accordionTitle{
     font-size: 0.7em;
-} 
+}
 
 //animation déroullant
 .accordion:hover{
