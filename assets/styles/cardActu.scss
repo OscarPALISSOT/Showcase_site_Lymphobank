@@ -57,17 +57,17 @@ $kaki: rgb(180, 139, 10);
         left: 0;
         .titreActu{
             text-align: center;
-            font-size: 1em;
-            margin-bottom: 0.1em;
+            font-size: 0.8em;
+            margin-bottom: 0.35em;
             margin-top: 0.25em;
-            color: black;
+            color: $pastelHover;
         }
         .sousTitre{
             text-align: center;
             font-weight: 500;
-            font-size: 1em;
+            font-size: 0.8em;
             font-weight: bold;
-            color: black;
+            color: $kaki;
         }
     }
 }
@@ -99,11 +99,11 @@ a{
         .bottom{
             height: 64px;
             .titreActu{
-                font-size: 1.3em;
+                font-size: 1em;
                 margin-top: 0.2em;
             }
             .sousTitre{
-                font-size: 1.1em;
+                font-size: 1em;
             }
         }
     }
@@ -126,11 +126,11 @@ a{
         .bottom{
             height: 80px;
             .titreActu{
-                font-size: 1.7em;
-                margin-top: 0.25em;
+                font-size: 1.3em;
+                margin-top: 0.2em;
             }
             .sousTitre{
-                font-size: 1.2em;
+                font-size: 1.1em;
             }
         }
     }
