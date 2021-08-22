@@ -35,7 +35,7 @@ $kaki: rgb(180, 139, 10);
     text-align: left !important;
 }
 p.accordionTitle{
-    font-size: 0.7em;
+    font-size: 1em;
 }
 
 //animation déroullant
@@ -127,7 +127,7 @@ p.accordionTitle{
         width: 300px;
     }
     p.accordionTitle{
-        font-size: 1em;
+        font-size: 1.25em;
     } 
 }
 
@@ -137,7 +137,9 @@ p.accordionTitle{
         width: 420px;
         font-size: 1.25em;
     }
-
+    p.accordionTitle{
+        font-size: 1em;
+    } 
     //contenu déroullant
     .panel {
         .illustrationAccordeon{
