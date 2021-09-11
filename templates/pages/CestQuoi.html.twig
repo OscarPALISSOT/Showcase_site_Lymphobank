@@ -38,7 +38,7 @@
     <div class="cardsHosto">
         <div class="card">
             <div class="card-pic">
-                <img src={{ asset ('img/icons/hospital.png')}}>
+                <img src={{ asset ('img/icons/laboratory.svg')}}>
             </div>
             <div class="card-title"><h2>Prélèvement à usage scientifique </h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
@@ -85,7 +85,7 @@
     <div class="cardsHosto">
         <div class="card">
             <div class="card-pic">
-                <img src={{ asset ('img/icons/hospital.png')}}>
+                <img src={{ asset ('img/icons/centre-medical.png')}}>
             </div>
             <div class="card-title"><h2>Prélèvement à usage thérapeutique</h2></div>
             <button class="btnCard"><p>En savoir plus</p></button>
@@ -266,6 +266,7 @@
 {% endblock %}
     
 {% block javascripts %}
-
+    {{ encore_entry_script_tags('js/accordeon') }}
+    {{ encore_entry_script_tags('js/btnCard') }}
 {% endblock %}
 

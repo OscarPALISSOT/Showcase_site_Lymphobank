@@ -47,6 +47,8 @@ Encore
     .addEntry('js/addAdmin', './assets/js/addAdmin.js')
     .addEntry('js/carousel', './assets/js/carousel.js')
     .addEntry('js/btnFaq', './assets/js/btnFaq.js')
+    .addEntry('js/btnCard', './assets/js/btnCard.js')
+    .addEntry('js/accordeon', './assets/js/accordeon.js')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
