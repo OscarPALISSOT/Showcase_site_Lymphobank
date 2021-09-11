@@ -152,7 +152,77 @@ $kaki: rgb(180, 139, 10);
 
 
 //schema que peut on donner ?
-#schemaDon{
+
+.schemaDon{
+    margin-bottom: 2em;
+    .root{
+        margin: auto;
+        width: min-content;
+        height: min-content;
+        img{
+            width: 200px;
+            height: auto;
+        }
+    }
+    
+    .link{
+        background-color: $pastelHover;
+        height: 90px;
+        width: 18px;
+        margin: -10px auto;
+    }
+
+    .item{
+        width: 200px;
+        text-align: center;
+        border: $kaki 5px solid;
+        border-radius: 15px;
+        margin: 0;
+        h2{
+            font-size: 1.2em;
+        }
+        img{
+            margin: 5px 0;
+        }
+    }
+    
+    .node{
+        margin: auto;
+        .left{
+            background-color: $pastel;
+            height: 18px;
+            width: 15%;
+            position: relative;
+            top: 0;
+            right: -35%;
+            margin: 0;
+            .link{
+                background-color: $pastel;
+                margin: 0;
+            }
+            .item{
+                margin-left: -91px;
+            }
+        }
+        .right{
+            background-color: $pastel;
+            height: 18px;
+            width: 15%;
+            position: relative;
+            top: -18px;
+            left: 50%;
+            .link{
+                background-color: $pastel;
+                margin: 0 calc(100% - 18px);
+            }
+            .item{
+                margin-left: 50%;
+            }
+        }
+    }
+}
+
+/* #schemaDon{
     .card{
         width: 100%;
         height: auto;
@@ -217,7 +287,7 @@ $kaki: rgb(180, 139, 10);
             }
         }
     }
-}
+} */
 
     
 
