@@ -152,7 +152,7 @@ $kaki: rgb(180, 139, 10);
 
 
 //schema que peut on donner ?
-
+$horizontalLinkLength: 210px;
 .schemaDon{
     margin-bottom: 2em;
     .root{
@@ -188,35 +188,48 @@ $kaki: rgb(180, 139, 10);
     
     .node{
         margin: auto;
-        .left{
-            background-color: $pastel;
+        display: flex;
+        justify-content: center;
+        .horizontalLink{
             height: 18px;
-            width: 15%;
-            position: relative;
-            top: 0;
-            right: -35%;
+            width: $horizontalLinkLength;
+            background-color: $pastel;
             margin: 0;
+            position: relative;
+        }
+        .left, .right{
+            margin: 0;
+            width: 50%;
             .link{
+                position: relative;
                 background-color: $pastel;
                 margin: 0;
             }
             .item{
+                position: relative;
+            }
+        }
+        .left{
+            .horizontalLink , link{
+                left: calc(100% - #{$horizontalLinkLength});
+            }
+            .link{
+                left: calc(100% - #{$horizontalLinkLength});
+            }
+            .item{
+                left: calc(100% - #{$horizontalLinkLength});
                 margin-left: -91px;
             }
         }
         .right{
-            background-color: $pastel;
-            height: 18px;
-            width: 15%;
-            position: relative;
-            top: -18px;
-            left: 50%;
+            .horizontalLink{
+                right: 0;
+            }
             .link{
-                background-color: $pastel;
-                margin: 0 calc(100% - 18px);
+                left: calc(#{$horizontalLinkLength} - 18px);
             }
             .item{
-                margin-left: 50%;
+                left: calc(#{$horizontalLinkLength}/2);
             }
         }
     }
