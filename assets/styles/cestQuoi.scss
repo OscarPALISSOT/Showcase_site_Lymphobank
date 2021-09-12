@@ -156,6 +156,7 @@ $horizontalLinkLength: 210px;
 .schemaDon{
     margin-bottom: 2em;
     .root{
+        cursor: pointer;
         margin: auto;
         width: min-content;
         height: min-content;
@@ -186,6 +187,11 @@ $horizontalLinkLength: 210px;
         }
     }
     
+    .firstStep{
+        max-height: 0;
+        transition: max-height 0.35s ease-out;
+        overflow: hidden;
+    }
     .node{
         margin: auto;
         display: flex;
