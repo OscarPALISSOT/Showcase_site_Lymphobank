@@ -9,11 +9,10 @@ $kaki: rgb(180, 139, 10);
     justify-content: space-evenly;
     .card:hover{
         transform: scale(102%);
-        transition: transform .2s ease-in-out;
     }
     .card{
         transform: scale(100%);
-        transition: transform .2s ease-in-out;
+        transition: transform .2s ease-in-out, max-height 0.35s ease-out;
     }
 }
 
@@ -153,7 +152,120 @@ $kaki: rgb(180, 139, 10);
 
 
 //schema que peut on donner ?
-#schemaDon{
+$horizontalLinkLength: 210px;
+.schemaDon{
+    margin-bottom: 2em;
+    .root{
+        cursor: pointer;
+        margin: auto;
+        width: min-content;
+        height: min-content;
+        img{
+            width: 200px;
+            height: auto;
+        }
+    }
+    
+    .link{
+        background-color: $pastelHover;
+        height: 90px;
+        width: 18px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .horizontalLink{
+        height: 18px;
+        width: $horizontalLinkLength;
+        background-color: $pastel;
+        margin: 0;
+        position: relative;
+    }
+
+    .item{
+        width: 200px;
+        text-align: center;
+        border: $kaki 5px solid;
+        border-radius: 15px;
+        margin: 0;
+        h2{
+            font-size: 1.2em;
+        }
+        img{
+            margin: 5px 0;
+        }
+    }
+    
+    .firstStep{
+        max-height: 0;
+        transition: max-height 0.35s ease-out;
+        overflow: hidden;
+    }
+    .node{
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        .left, .right{
+            margin: 0;
+            width: 50%;
+            .link{
+                background-color: $pastel;
+                margin: 0;
+            }
+            .item{
+                position: relative;
+            }
+        }
+        .left{
+            .horizontalLink , link{
+                left: calc(100% - #{$horizontalLinkLength});
+            }
+            .link{
+                left: calc(100% - #{$horizontalLinkLength});
+            }
+            .item{
+                left: calc(100% - #{$horizontalLinkLength});
+                margin-left: -91px;
+            }
+        }
+        .right{
+            .horizontalLink{
+                right: 0;
+            }
+            .link{
+                left: calc(#{$horizontalLinkLength} - 18px);
+            }
+            .item{
+                left: calc(#{$horizontalLinkLength}/2);
+            }
+        }
+    }
+
+    .delta{
+        .link{
+            margin-top: -18px;
+            background-color: $pastel;
+        }
+        .horizontal{
+            display: flex;
+            justify-content: center;
+        }
+       
+    }
+    .sangNode{
+        .center{
+            .link{
+                background-color: $pastel;
+                right: calc(#{$horizontalLinkLength} - 18px/2);
+            }
+            .horizontalLink{
+                left: calc(50% - #{$horizontalLinkLength});
+            }
+        }
+    }
+}
+
+/* #schemaDon{
     .card{
         width: 100%;
         height: auto;
@@ -218,7 +330,7 @@ $kaki: rgb(180, 139, 10);
             }
         }
     }
-}
+} */
 
     
 

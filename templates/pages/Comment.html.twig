@@ -24,7 +24,7 @@
     </div>
     <button class="accordion btn2"><p class="accordionTitle">2.	Documents fournis lors du RDV <br> à la maternité</p></button>
     <div class="panel">
-        <p class="TwoColumnsText">Lors d’un rendez-vous à votre maternité, votre sage-femme vous remettra une <a href="" target="_blank" rel="noopener noreferrer">lettre d’information</a>, ainsi qu’un <a href="" target="_blank" rel="noopener noreferrer">formulaire de consentement</a>, fourni en trois exemplaires et répondra à toutes vos questions.
+        <p class="TwoColumnsText">Lors d’un rendez-vous à votre maternité, votre sage-femme vous remettra une <a href="" target="_blank" rel="noopener noreferrer">lettre d’information</a>, ainsi qu’un <a href={{ asset ('pdf/Consentement.pdf')}} target="_blank" rel="noopener noreferrer">formulaire de consentement</a>, fourni en trois exemplaires et répondra à toutes vos questions.
         </p>
     </div>
     <button class="accordion"><p class="accordionTitle">3.	Documents signés et complétés</p></button>
@@ -46,17 +46,17 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-title"><h2>Conditions pour lesquelles le prélèvement ne peut avoir lieu :</h2></div>
+            <div class="card-title"><h2>Contre-indications au don :</h2></div>
             <div class="contentCard">
                 <ul>
-                    <li>Toute situation considérée par l’équipe médicale comme pouvant présenter potentiellement un risque direct ou indirect pour la maman ou pour l’enfant </li>
                     <li>Accouchement prématuré</li>
-                    <li>Accouchement par césarienne, programmée ou non programmée (en urgence)</li> 
+                    <li>Accouchement par césarienne, programmée ou non programmée (en urgence)</li>
+                    <li>Mère mineure, sous tutelle ou curatelle ou accouchement anonyme</li> 
                 </ul>
             </div>
         </div>
     </div>
-    <div class="textPurple"><p>Même si vous avez donné votre consentement pour le prélèvement, l’équipe médicale décidera en dernier lieu s’il peut avoir lieu ou non.</p></div>
+    <div class="textPurple"><p>Toute situation considérée par l’équipe médicale comme pouvant présenter potentiellement un risque direct ou indirect pour la maman ou pour l’enfant sera un contre-indication au don. Ainsi même si vous avez donné votre consentement pour le prélèvement, l’équipe médicale décidera en dernier lieu s’il peut avoir lieu ou non.</p></div>
     <h2>Les étapes du prélèvement :</h2>
     <div class="etapes">
         <div class="etape">
@@ -137,5 +137,7 @@
 
 {% endblock %}
 
-{% block javascripts %}{% endblock %}
+{% block javascripts %}
+    {{ encore_entry_script_tags('js/accordeon') }}
+{% endblock %}
 

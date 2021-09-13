@@ -85,6 +85,7 @@ $kaki: rgb(180, 139, 10);
         max-height: 0;
         overflow: hidden;
         position: relative;
+        transition: max-height 0.35s ease-out;
     p{
         text-align: center;
         margin-bottom: 0;
