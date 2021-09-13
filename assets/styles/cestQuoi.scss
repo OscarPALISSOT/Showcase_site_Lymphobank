@@ -193,6 +193,7 @@ $horizontalLinkLength: 210px;
         }
         img{
             margin: 5px 0;
+            cursor: pointer;
         }
     }
     
@@ -253,6 +254,9 @@ $horizontalLinkLength: 210px;
        
     }
     .sangNode{
+        max-height: 0;
+        transition: max-height 0.35s ease-out;
+        overflow: hidden;
         .center{
             .link{
                 background-color: $pastel;
