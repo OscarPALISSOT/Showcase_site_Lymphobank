@@ -189,7 +189,7 @@ $horizontalLinkLength: 210px;
         border-radius: 15px;
         margin: 0;
         h2{
-            font-size: 1.2em;
+            font-size: 1.1em;
         }
         img{
             margin: 5px 0;
@@ -286,77 +286,40 @@ $horizontalLinkLength: 210px;
             }
         }
     }
-}
-
-/* #schemaDon{
-    .card{
-        width: 100%;
-        height: auto;
-        min-height: 0;
-        border: none;
-        position: relative;
-        .panelCard{
-            width: 100%;
+    .cordonNode{
+        max-height: 0;
+        transition: max-height 0.35s ease-out;
+        overflow: hidden;
+        .center{
+            .link{
+                background-color: $pastel;
+                left: calc(#{$horizontalLinkLength} - 18px/2);
+            }
+            .horizontalLink{
+                left: 50%;
+            }
         }
-        .btnCard{
-            position: absolute;
-            top: 2em;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            opacity: 0;
-        }
-        .schemaCard{
-            align-items: space-around;
-        }
-    }
-
-    .flecheGauche{
-        transform: rotate(135deg);
-        margin-right: 1em;
-    }
-    .flecheDroite{
-        transform: rotate(45deg);
-        margin-left: 1em;
-    }
-
-    .doubleFleche, .tripleFleche{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 128px;
-        i{
-            margin: 0.2em;
-        }
-    }
-    .schemaDonSteep1{
-        width: 100%;
-        .sangCordon{
+        .double{
             display: flex;
-            justify-content: space-around;
-            .sangSteep1{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            justify-content: space-between;
+            width: 2*$horizontalLinkLength;
+            margin: auto;
+            .link{
+                background-color: $pastel;
+                margin: 0;
+                margin-top: -10px;
             }
-            .cordonSteep1{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
+            .itemLeft{
+                position: relative;
+                left: -91px;
             }
-            h2{
-                vertical-align: top;
-            }
-            .icon{
-                margin: 0 1em;
+            .itemRight{
+                position: relative;
+                left: 91px;
             }
         }
     }
-} */
-
-    
-
+}
 
 
 //responsive
