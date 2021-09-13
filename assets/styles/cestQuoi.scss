@@ -262,6 +262,25 @@ $horizontalLinkLength: 210px;
                 left: calc(50% - #{$horizontalLinkLength});
             }
         }
+        .triple{
+            display: flex;
+            justify-content: space-between;
+            width: 3*$horizontalLinkLength;
+            margin: auto;
+            .link{
+                background-color: $pastel;
+                margin: 0;
+                margin-top: -10px;
+            }
+            .itemLeft{
+                position: relative;
+                left: -91px;
+            }
+            .itemRight{
+                position: relative;
+                left: 91px;
+            }
+        }
     }
 }
 
