@@ -92,7 +92,7 @@ pathCordonLeftItem.push(doubleLink.getElementsByClassName("leftLink")[0]);
 var pathCordonRightItem = [];
 pathCordonRightItem.push(deltaCordon.getElementsByClassName("horizontalLinkRight")[0]);
 pathCordonRightItem.push(doubleLink.getElementsByClassName("rightLink")[0]);
-debugger
+
 //active premiere étape ou enroule tout schéma
 root.addEventListener("click", function() {
     const firstStep = this.nextElementSibling;
@@ -159,11 +159,14 @@ cordonBtn.addEventListener("click", function() {
 //active chemin item gauche partie gauche
 var itemLeft = triple.getElementsByClassName("itemLeft")[0];
 itemLeft.addEventListener("click", function() {
-    var activePath = tripleLink.getElementsByClassName("leftLink")[0];
-    if (activePath.classList.contains('activeLink')) {
+    var textItem = itemLeft.getElementsByClassName("textItem")[0];
+    if (textItem.style.maxHeight) {
+        textItem.style.maxHeight = null;
         shutDown(pathSangCommon)
         shutDown(pathSangLeftItem)
+        debugger
     } else {
+        textItem.style.maxHeight = textItem.scrollHeight + "px";
         highlight(pathSangCommon)
         highlight(pathSangLeftItem)
         shutDown(pathSangMiddleItem)

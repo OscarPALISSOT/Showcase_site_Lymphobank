@@ -153,6 +153,7 @@ $kaki: rgb(180, 139, 10);
 
 //schema que peut on donner ?
 $horizontalLinkLength: 210px;
+$itemWith: 200px;
 .schemaDon{
     margin-bottom: 2em;
     .root{
@@ -183,7 +184,7 @@ $horizontalLinkLength: 210px;
     }
 
     .item{
-        width: 200px;
+        width: $itemWith;
         text-align: center;
         border: $kaki 5px solid;
         border-radius: 15px;
@@ -194,6 +195,16 @@ $horizontalLinkLength: 210px;
         img{
             margin: 5px 0;
             cursor: pointer;
+        }
+    }
+    .textItem{
+        text-align: center;
+        margin: 0;
+        max-height: 0;
+        overflow: hidden;
+        h2{
+            color: $kaki;
+            font-size: 1.1em;
         }
     }
     
@@ -288,7 +299,7 @@ $horizontalLinkLength: 210px;
                 margin: 0;
                 margin-top: -10px;
             }
-            .itemLeft{
+            .itemLeft, .textItemLeft{
                 position: relative;
                 left: -91px;
             }
