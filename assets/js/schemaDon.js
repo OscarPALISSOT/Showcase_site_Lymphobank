@@ -87,3 +87,30 @@ cordonBtn.addEventListener("click", function() {
         });
     } 
 });
+
+var sangNode = document.getElementsByClassName("sangNode")[0];
+var triple = sangNode.getElementsByClassName("tripleItem")[0];
+var centerSang = sangNode.getElementsByClassName("center")[0];
+var centerLink = centerSang.getElementsByClassName("link")[0];
+var centerHorizontal = centerSang.getElementsByClassName("horizontalLink")[0];
+var deltaSang = sangNode.getElementsByClassName("deltaSang")[0];
+var deltaLink = deltaSang.getElementsByClassName("link")[0];
+var deltaHorizontal = deltaSang.getElementsByClassName("horizontalLink")[0];
+
+
+var itemLeft = triple.getElementsByClassName("itemLeft")[0];
+itemLeft.addEventListener("click", function() {
+    var activeCenter = centerSang.getElementsByClassName("activeLink")[0];
+    debugger
+    if (activeCenter) {
+        centerLink.classList.remove('activeLink')
+        centerHorizontal.classList.remove('activeLink')
+        deltaLink.classList.remove('activeLink')
+        deltaHorizontal.classList.remove('activeLink')
+    } else {
+        centerLink.classList.add('activeLink')
+        centerHorizontal.classList.add('activeLink')
+        deltaLink.classList.add('activeLink')
+        deltaHorizontal.classList.add('activeLink')
+    }
+});
