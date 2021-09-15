@@ -152,8 +152,22 @@ $kaki: rgb(180, 139, 10);
 
 
 //schema que peut on donner ?
-$horizontalLinkLength: 210px;
-$itemWith: 200px;
+$itemWith: (
+    1200: 200px,
+    992: 170px,
+    768: 140px,
+    576: 120px,
+    360: 100px,
+);
+
+$horizontalLinkLength: (
+  1200: 210px,
+  992: 180px,
+  768: 140px,
+  576: 120px,
+  360: 100px,
+);
+
 .schemaDon{
     margin-bottom: 2em;
     .root{
@@ -177,14 +191,14 @@ $itemWith: 200px;
 
     .horizontalLink{
         height: 18px;
-        width: $horizontalLinkLength;
+        width: map-get($horizontalLinkLength, 1200);
         background-color: $pastel;
         margin: 0;
         position: relative;
     }
 
     .item{
-        width: $itemWith;
+        width: map-get($itemWith, 1200);
         max-height: 225px;
         text-align: center;
         border: $kaki 5px solid;
@@ -243,13 +257,13 @@ $itemWith: 200px;
         }
         .left{
             .horizontalLink , link{
-                left: calc(100% - #{$horizontalLinkLength});
+                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
             }
             .link{
-                left: calc(100% - #{$horizontalLinkLength});
+                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
             }
             .item{
-                left: calc(100% - #{$horizontalLinkLength});
+                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
                 margin-left: -91px;
             }
         }
@@ -258,10 +272,10 @@ $itemWith: 200px;
                 right: 0;
             }
             .link{
-                left: calc(#{$horizontalLinkLength} - 18px);
+                left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px);
             }
             .item{
-                left: calc(#{$horizontalLinkLength}/2);
+                left: calc(#{map-get($horizontalLinkLength, 1200)}/2);
             }
         }
     }
@@ -286,16 +300,16 @@ $itemWith: 200px;
         .center{
             .link{
                 background-color: $pastel;
-                right: calc(#{$horizontalLinkLength} - 18px/2);
+                right: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
             }
             .horizontalLink{
-                left: calc(50% - #{$horizontalLinkLength});
+                left: calc(50% - #{map-get($horizontalLinkLength, 1200)});
             }
         }
         .triple{
             display: flex;
             justify-content: space-between;
-            width: 3*$horizontalLinkLength;
+            width: 3*map-get($horizontalLinkLength, 1200);
             margin: auto;
             .link{
                 background-color: $pastel;
@@ -314,7 +328,7 @@ $itemWith: 200px;
         .delta{
             .horizontal{
                 .horizontalLinkLeft, .horizontalLinkRight{
-                    width: calc(1.5*#{$horizontalLinkLength});
+                    width: calc(1.5*#{map-get($horizontalLinkLength, 1200)});
                 }
             }
         }
@@ -326,7 +340,7 @@ $itemWith: 200px;
         .center{
             .link{
                 background-color: $pastel;
-                left: calc(#{$horizontalLinkLength} - 18px/2);
+                left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
             }
             .horizontalLink{
                 left: 50%;
@@ -335,7 +349,7 @@ $itemWith: 200px;
         .double{
             display: flex;
             justify-content: space-between;
-            width: 2*$horizontalLinkLength;
+            width: 2*map-get($horizontalLinkLength, 1200);
             margin: auto;
             .link{
                 background-color: $pastel;
@@ -379,5 +393,3 @@ $itemWith: 200px;
         width: 250px;
     }
 }
-  
-  
