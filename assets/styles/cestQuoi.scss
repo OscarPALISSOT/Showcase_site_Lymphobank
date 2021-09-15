@@ -185,10 +185,12 @@ $itemWith: 200px;
 
     .item{
         width: $itemWith;
+        max-height: 225px;
         text-align: center;
         border: $kaki 5px solid;
         border-radius: 15px;
         margin: 0;
+        transition: max-height 0.35s ease-out;
         h2{
             font-size: 1.1em;
         }
@@ -202,6 +204,7 @@ $itemWith: 200px;
         margin: 0;
         max-height: 0;
         overflow: hidden;
+        transition: max-height 0.35s ease-out;
         h2{
             color: $kaki;
             font-size: 1.1em;
@@ -299,7 +302,7 @@ $itemWith: 200px;
                 margin: 0;
                 margin-top: -10px;
             }
-            .itemLeft, .textItemLeft{
+            .itemLeft{
                 position: relative;
                 left: -91px;
             }

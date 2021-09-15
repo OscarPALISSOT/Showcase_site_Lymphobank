@@ -159,14 +159,11 @@ cordonBtn.addEventListener("click", function() {
 //active chemin item gauche partie gauche
 var itemLeft = triple.getElementsByClassName("itemLeft")[0];
 itemLeft.addEventListener("click", function() {
-    var textItem = itemLeft.getElementsByClassName("textItem")[0];
-    if (textItem.style.maxHeight) {
-        textItem.style.maxHeight = null;
+    var activePath = tripleLink.getElementsByClassName("leftLink")[0];
+    if (activePath.classList.contains('activeLink')) {
         shutDown(pathSangCommon)
         shutDown(pathSangLeftItem)
-        debugger
     } else {
-        textItem.style.maxHeight = textItem.scrollHeight + "px";
         highlight(pathSangCommon)
         highlight(pathSangLeftItem)
         shutDown(pathSangMiddleItem)
@@ -232,3 +229,30 @@ itemRight.addEventListener("click", function() {
         shutDown(pathCordonLeftItem)
     }
 });
+
+//active item text sang
+var itemSang = sangNode.getElementsByClassName("item");
+var textItemArray = sangNode.getElementsByClassName("textItem");
+for(let i = 0; i < itemSang.length; i++){
+    itemSang[i].addEventListener("click", function(){
+        var textItem = itemSang[i].getElementsByClassName("textItem")[0];
+        var currentItem = Array.prototype.slice.call(itemSang);
+        currentTextItem = Array.prototype.slice.call(textItemArray);
+        currentTextItem.splice(i, 1);
+        currentItem.splice(i, 1);
+        if (textItem.style.maxHeight) {
+            textItem.style.maxHeight = null;
+            itemSang[i].style.maxHeight = null;
+        } else {
+            textItem.style.maxHeight = textItem.scrollHeight + "px";
+            itemSang[i].style.maxHeight = textItem.scrollHeight + itemSang[i].scrollHeight + "px";
+            sangNode.style.maxHeight = sangNode.scrollHeight + itemSang[i].scrollHeight + "px";
+            currentTextItem.forEach(item => {
+                item.style.maxHeight = null;
+            });
+            currentItem.forEach(item => {
+                item.style.maxHeight = null;
+            });
+        }
+    })
+}
