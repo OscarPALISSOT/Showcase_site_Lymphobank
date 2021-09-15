@@ -158,6 +158,7 @@ $itemWith: (
     768: 140px,
     576: 120px,
     360: 100px,
+    320: 80px
 );
 
 $horizontalLinkLength: (
@@ -166,6 +167,14 @@ $horizontalLinkLength: (
   768: 140px,
   576: 120px,
   360: 100px,
+  320: 80px
+);
+
+$Linkwidth: (
+  992: 18px,
+  768: 14px,
+  576: 12px,
+  320: 10px
 );
 
 .schemaDon{
@@ -176,7 +185,7 @@ $horizontalLinkLength: (
         width: min-content;
         height: min-content;
         img{
-            width: 200px;
+            width: 125px;
             height: auto;
         }
     }
@@ -184,21 +193,21 @@ $horizontalLinkLength: (
     .link{
         background-color: $pastelHover;
         height: 90px;
-        width: 18px;
+        width: map-get($Linkwidth, 320);
         margin: 0 auto;
         position: relative;
     }
 
     .horizontalLink{
-        height: 18px;
-        width: map-get($horizontalLinkLength, 1200);
+        height: map-get($Linkwidth, 320);
+        width: map-get($horizontalLinkLength, 320);
         background-color: $pastel;
         margin: 0;
         position: relative;
     }
 
     .item{
-        width: map-get($itemWith, 1200);
+        width: map-get($itemWith, 320);
         max-height: 225px;
         text-align: center;
         border: $kaki 5px solid;
@@ -235,7 +244,7 @@ $horizontalLinkLength: (
         overflow: hidden;
         .firstLink{
             position: relative;
-            top: 18px;
+            top: map-get($Linkwidth, 320);
             z-index: 1;
             background-color: $pastel;
         }
@@ -257,13 +266,13 @@ $horizontalLinkLength: (
         }
         .left{
             .horizontalLink , link{
-                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                left: calc(100% - #{map-get($horizontalLinkLength, 320)});
             }
             .link{
-                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                left: calc(100% - #{map-get($horizontalLinkLength, 320)});
             }
             .item{
-                left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                left: calc(100% - #{map-get($horizontalLinkLength, 320)});
                 margin-left: -91px;
             }
         }
@@ -272,18 +281,18 @@ $horizontalLinkLength: (
                 right: 0;
             }
             .link{
-                left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px);
+                left: calc(#{map-get($horizontalLinkLength, 320)} - #{map-get($Linkwidth, 320)});
             }
             .item{
-                left: calc(#{map-get($horizontalLinkLength, 1200)}/2);
+                left: calc(#{map-get($horizontalLinkLength, 320)}/2);
             }
         }
     }
 
     .delta{
         .link{
-            margin-top: -18px;
-            margin-bottom: -18px;
+            margin-top: - map-get($Linkwidth, 320);
+            margin-bottom: - map-get($Linkwidth, 320);
             background-color: $pastel;
             z-index: 1;
         }
@@ -300,16 +309,16 @@ $horizontalLinkLength: (
         .center{
             .link{
                 background-color: $pastel;
-                right: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                right: calc(#{map-get($horizontalLinkLength, 320)} - 18px/2);
             }
             .horizontalLink{
-                left: calc(50% - #{map-get($horizontalLinkLength, 1200)});
+                left: calc(50% - #{map-get($horizontalLinkLength, 320)});
             }
         }
         .triple{
             display: flex;
             justify-content: space-between;
-            width: 3*map-get($horizontalLinkLength, 1200);
+            width: 3*map-get($horizontalLinkLength, 320);
             margin: auto;
             .link{
                 background-color: $pastel;
@@ -328,7 +337,7 @@ $horizontalLinkLength: (
         .delta{
             .horizontal{
                 .horizontalLinkLeft, .horizontalLinkRight{
-                    width: calc(1.5*#{map-get($horizontalLinkLength, 1200)});
+                    width: calc(1.5*#{map-get($horizontalLinkLength, 320)});
                 }
             }
         }
@@ -340,7 +349,7 @@ $horizontalLinkLength: (
         .center{
             .link{
                 background-color: $pastel;
-                left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                left: calc(#{map-get($horizontalLinkLength, 320)} - 18px/2);
             }
             .horizontalLink{
                 left: 50%;
@@ -349,7 +358,7 @@ $horizontalLinkLength: (
         .double{
             display: flex;
             justify-content: space-between;
-            width: 2*map-get($horizontalLinkLength, 1200);
+            width: 2*map-get($horizontalLinkLength, 320);
             margin: auto;
             .link{
                 background-color: $pastel;
@@ -370,6 +379,130 @@ $horizontalLinkLength: (
 
 
 //responsive
+
+// Small devices (landscape phones, 576px and up)
+/* @media (min-width: 576px) {
+
+    .schemaDon{
+        .root{
+            img{
+                width: 100px;
+            }
+        }
+        
+        .link{
+            height: 90px;
+            width: 18px;
+        }
+
+        .horizontalLink{
+            height: 18px;
+            width: map-get($horizontalLinkLength, 1200);
+        }
+
+        .item{
+            width: map-get($itemWith, 1200);
+            max-height: 225px;
+            h2{
+                font-size: 1.1em;
+            }
+            img{
+                margin: 5px 0;
+            }
+        }
+        .textItem{
+            h2{
+                font-size: 1.1em;
+            }
+        }
+
+        .firstStep{
+            .firstLink{
+                top: 18px;
+            }
+        }
+        .node{
+            .left{
+                .horizontalLink , link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                }
+                .link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                }
+                .item{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                    margin-left: -91px;
+                }
+            }
+            .right{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px);
+                }
+                .item{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)}/2);
+                }
+            }
+        }
+
+        .delta{
+            .link{
+                margin-top: -18px;
+                margin-bottom: -18px;
+            }
+        }
+        .sangNode{
+            .center{
+                .link{
+                    right: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                }
+                .horizontalLink{
+                    left: calc(50% - #{map-get($horizontalLinkLength, 1200)});
+                }
+            }
+            .triple{
+                width: 3*map-get($horizontalLinkLength, 1200);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: -91px;
+                }
+                .itemRight{
+                    left: 91px;
+                }
+            }
+            .delta{
+                .horizontal{
+                    .horizontalLinkLeft, .horizontalLinkRight{
+                        width: calc(1.5*#{map-get($horizontalLinkLength, 1200)});
+                    }
+                }
+            }
+        }
+        .cordonNode{
+            .center{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                }
+                .horizontalLink{
+                    left: 50%;
+                }
+            }
+            .double{
+                width: 2*map-get($horizontalLinkLength, 1200);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: -91px;
+                }
+                .itemRight{
+                    left: 91px;
+                }
+            }
+        }
+    }
+} */
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -393,3 +526,4 @@ $horizontalLinkLength: (
         width: 250px;
     }
 }
+
