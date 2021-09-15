@@ -93,6 +93,14 @@ var pathCordonRightItem = [];
 pathCordonRightItem.push(deltaCordon.getElementsByClassName("horizontalLinkRight")[0]);
 pathCordonRightItem.push(doubleLink.getElementsByClassName("rightLink")[0]);
 
+//variable text item gauche
+var itemSang = sangNode.getElementsByClassName("item");
+var textItemArraySang = sangNode.getElementsByClassName("textItem");
+
+//varible text item droite
+var itemCordon = cordonNode.getElementsByClassName("item");
+var textItemArrayCordon = cordonNode.getElementsByClassName("textItem");
+
 //active premiere étape ou enroule tout schéma
 root.addEventListener("click", function() {
     const firstStep = this.nextElementSibling;
@@ -100,6 +108,12 @@ root.addEventListener("click", function() {
         firstStep.style.maxHeight = null;
         sangNode.style.maxHeight = null;
         cordonNode.style.maxHeight = null;
+        textItemArrayCordon.forEach(item => {
+            item.style.maxHeight = null;
+        });
+        textItemArraySang.forEach(item => {
+            item.style.maxHeight = null;
+        });
         shutDown(firstLink)
         shutDown(pathSangMiddleItem)
         shutDown(pathSangLeftItem)
@@ -120,6 +134,12 @@ var sangCordonBtn = document.getElementsByClassName("sangCordonBtn")[0];
 sangCordonBtn.addEventListener("click", function() {
     if (sangNode.style.maxHeight) {
         sangNode.style.maxHeight = null;
+        textItemArrayCordon.forEach(item => {
+            item.style.maxHeight = null;
+        });
+        textItemArraySang.forEach(item => {
+            item.style.maxHeight = null;
+        });
         shutDown(firstLink)
         shutdownArray(pathTopLeft)
     } else {
@@ -140,6 +160,12 @@ var cordonBtn = document.getElementsByClassName("cordonBtn")[0];
 cordonBtn.addEventListener("click", function() {
     if (cordonNode.style.maxHeight) {
         cordonNode.style.maxHeight = null;
+        textItemArrayCordon.forEach(item => {
+            item.style.maxHeight = null;
+        });
+        textItemArraySang.forEach(item => {
+            item.style.maxHeight = null;
+        });
         shutDown(firstLink)
         shutdownArray(pathTopRight)
     } else {
@@ -231,13 +257,11 @@ itemRight.addEventListener("click", function() {
 });
 
 //active item text sang
-var itemSang = sangNode.getElementsByClassName("item");
-var textItemArray = sangNode.getElementsByClassName("textItem");
 for(let i = 0; i < itemSang.length; i++){
     itemSang[i].addEventListener("click", function(){
         var textItem = itemSang[i].getElementsByClassName("textItem")[0];
         var currentItem = Array.prototype.slice.call(itemSang);
-        currentTextItem = Array.prototype.slice.call(textItemArray);
+        currentTextItem = Array.prototype.slice.call(textItemArraySang);
         currentTextItem.splice(i, 1);
         currentItem.splice(i, 1);
         if (textItem.style.maxHeight) {
@@ -247,6 +271,31 @@ for(let i = 0; i < itemSang.length; i++){
             textItem.style.maxHeight = textItem.scrollHeight + "px";
             itemSang[i].style.maxHeight = textItem.scrollHeight + itemSang[i].scrollHeight + "px";
             sangNode.style.maxHeight = sangNode.scrollHeight + itemSang[i].scrollHeight + "px";
+            currentTextItem.forEach(item => {
+                item.style.maxHeight = null;
+            });
+            currentItem.forEach(item => {
+                item.style.maxHeight = null;
+            });
+        }
+    })
+}
+
+//active item text 
+for(let i = 0; i < itemCordon.length; i++){
+    itemCordon[i].addEventListener("click", function(){
+        var textItem = itemCordon[i].getElementsByClassName("textItem")[0];
+        var currentItem = Array.prototype.slice.call(itemCordon);
+        currentTextItem = Array.prototype.slice.call(textItemArrayCordon);
+        currentTextItem.splice(i, 1);
+        currentItem.splice(i, 1);
+        if (textItem.style.maxHeight) {
+            textItem.style.maxHeight = null;
+            itemCordon[i].style.maxHeight = null;
+        } else {
+            textItem.style.maxHeight = textItem.scrollHeight + "px";
+            itemCordon[i].style.maxHeight = textItem.scrollHeight + itemCordon[i].scrollHeight + "px";
+            cordonNode.style.maxHeight = cordonNode.scrollHeight + itemCordon[i].scrollHeight + "px";
             currentTextItem.forEach(item => {
                 item.style.maxHeight = null;
             });
