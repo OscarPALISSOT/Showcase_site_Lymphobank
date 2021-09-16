@@ -157,8 +157,8 @@ $itemWith: (
     992: 170px,
     768: 140px,
     576: 120px,
-    360: 100px,
-    320: 80px
+    360: 85px,
+    320: 70px
 );
 
 $horizontalLinkLength: (
@@ -171,9 +171,11 @@ $horizontalLinkLength: (
 );
 
 $Linkwidth: (
+  1200: 18px,
   992: 18px,
   768: 14px,
   576: 12px,
+  360: 10px,
   320: 10px
 );
 
@@ -210,10 +212,11 @@ $Linkwidth: (
         width: map-get($itemWith, 320);
         max-height: 140px;
         text-align: center;
-        border: $kaki 2px solid;
+        border: $kaki 5px solid;
         border-radius: 15px;
         margin: 0;
         transition: max-height 0.35s ease-out;
+        word-wrap: break-word;
         h2{
             font-size: 0.6em;
         }
@@ -325,17 +328,17 @@ $Linkwidth: (
                 margin: 0;
                 margin-top: -10px;
             }
-            /* .itemLeft{
+            .itemLeft{
                 position: relative;
                 left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
+            .itemMiddle{
+                position: relative;
+                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)});
+            }
             .itemRight{
                 position: relative;
-                left: calc( #{map-get($itemWith, 320)}/2 - #{map-get($Linkwidth, 320)}/2);
-            } */
-            .item{
-                position: relative;
-                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
+                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}*1.5);
             }
         }
         .delta{
@@ -383,32 +386,31 @@ $Linkwidth: (
 
 
 //responsive
-
-// Small devices (landscape phones, 576px and up)
-/* @media (min-width: 576px) {
-
+// X-Small devices (portrait phones, 360px and up)
+@media (min-width: 360px) {
     .schemaDon{
         .root{
             img{
-                width: 100px;
+                width: 125px;
+                height: auto;
             }
         }
         
         .link{
             height: 90px;
-            width: 18px;
+            width: map-get($Linkwidth, 360);
         }
-
+    
         .horizontalLink{
-            height: 18px;
-            width: map-get($horizontalLinkLength, 1200);
+            height: map-get($Linkwidth, 360);
+            width: map-get($horizontalLinkLength, 360);
         }
-
+    
         .item{
-            width: map-get($itemWith, 1200);
-            max-height: 225px;
+            width: map-get($itemWith, 360);
+            max-height: 155px;
             h2{
-                font-size: 1.1em;
+                font-size: 0.6em;
             }
             img{
                 margin: 5px 0;
@@ -416,69 +418,73 @@ $Linkwidth: (
         }
         .textItem{
             h2{
-                font-size: 1.1em;
+                font-size: 0.6em;
             }
         }
-
+    
         .firstStep{
             .firstLink{
-                top: 18px;
+                top: map-get($Linkwidth, 360);
             }
         }
         .node{
             .left{
                 .horizontalLink , link{
-                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                    left: calc(100% - #{map-get($horizontalLinkLength, 360)});
                 }
                 .link{
-                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                    left: calc(100% - #{map-get($horizontalLinkLength, 360)});
                 }
                 .item{
-                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
-                    margin-left: -91px;
+                    left: calc(100% - #{map-get($horizontalLinkLength, 360)});
+                    margin-left: calc( - #{map-get($itemWith, 360)}/2 + #{map-get($Linkwidth, 360)}/2);
                 }
             }
             .right{
+                .horizontalLink{
+                    right: 0;
+                }
                 .link{
-                    left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px);
+                    left: calc(#{map-get($horizontalLinkLength, 360)} - #{map-get($Linkwidth, 360)});
                 }
                 .item{
-                    left: calc(#{map-get($horizontalLinkLength, 1200)}/2);
+                    left: calc(#{map-get($horizontalLinkLength, 360)}/2);
                 }
             }
         }
-
+    
         .delta{
             .link{
-                margin-top: -18px;
-                margin-bottom: -18px;
+                margin-top: - map-get($Linkwidth, 360);
+                margin-bottom: - map-get($Linkwidth, 360);
             }
+           
         }
         .sangNode{
             .center{
                 .link{
-                    right: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                    right: calc(#{map-get($horizontalLinkLength, 360)} - #{map-get($Linkwidth, 360)}/2);
                 }
                 .horizontalLink{
-                    left: calc(50% - #{map-get($horizontalLinkLength, 1200)});
+                    left: calc(50% - #{map-get($horizontalLinkLength, 360)});
                 }
             }
             .triple{
-                width: 3*map-get($horizontalLinkLength, 1200);
+                width: 2*map-get($horizontalLinkLength, 360);
                 .link{
                     margin-top: -10px;
                 }
                 .itemLeft{
-                    left: -91px;
+                    left: calc( -#{map-get($itemWith, 360)}/2 + #{map-get($Linkwidth, 360)}/2);
                 }
                 .itemRight{
-                    left: 91px;
+                    left: calc( -#{map-get($Linkwidth, 360)}*1.5);
                 }
             }
             .delta{
                 .horizontal{
                     .horizontalLinkLeft, .horizontalLinkRight{
-                        width: calc(1.5*#{map-get($horizontalLinkLength, 1200)});
+                        width: calc(1*#{map-get($horizontalLinkLength, 360)});
                     }
                 }
             }
@@ -486,27 +492,286 @@ $Linkwidth: (
         .cordonNode{
             .center{
                 .link{
-                    left: calc(#{map-get($horizontalLinkLength, 1200)} - 18px/2);
+                    left: calc(#{map-get($horizontalLinkLength, 360)} - #{map-get($Linkwidth, 360)}/2);
                 }
                 .horizontalLink{
                     left: 50%;
                 }
             }
             .double{
-                width: 2*map-get($horizontalLinkLength, 1200);
+                width: 2*map-get($horizontalLinkLength, 360);
                 .link{
                     margin-top: -10px;
                 }
                 .itemLeft{
-                    left: -91px;
+                    left: calc( -#{map-get($itemWith, 360)}/2 + #{map-get($Linkwidth, 360)}/2);
                 }
                 .itemRight{
-                    left: 91px;
+                    left: calc( #{map-get($itemWith, 360)}/2 - #{map-get($Linkwidth, 360)}/2);
                 }
             }
         }
     }
-} */
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .schemaDon{
+        .root{
+            img{
+                width: 125px;
+                height: auto;
+            }
+        }
+        
+        .link{
+            height: 90px;
+            width: map-get($Linkwidth, 576);
+        }
+    
+        .horizontalLink{
+            height: map-get($Linkwidth, 576);
+            width: map-get($horizontalLinkLength, 576);
+        }
+    
+        .item{
+            width: map-get($itemWith, 576);
+            max-height: 127px;
+            h2{
+                font-size: 0.6em;
+            }
+            img{
+                margin: 5px 0;
+            }
+        }
+        .textItem{
+            h2{
+                font-size: 0.6em;
+            }
+        }
+    
+        .firstStep{
+            .firstLink{
+                top: map-get($Linkwidth, 576);
+            }
+        }
+        .node{
+            .left{
+                .horizontalLink , link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 576)});
+                }
+                .link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 576)});
+                }
+                .item{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 576)});
+                    margin-left: calc( -#{map-get($itemWith, 576)}/2 + #{map-get($Linkwidth, 576)}/2);
+                }
+            }
+            .right{
+                .horizontalLink{
+                    right: 0;
+                }
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 576)} - #{map-get($Linkwidth, 576)});
+                }
+            }
+        }
+    
+        .delta{
+            .link{
+                margin-top: - map-get($Linkwidth, 576);
+                margin-bottom: - map-get($Linkwidth, 576);
+            }
+           
+        }
+        .sangNode{
+            .center{
+                .link{
+                    right: calc(#{map-get($horizontalLinkLength, 576)} - #{map-get($Linkwidth, 576)}/2);
+                }
+                .horizontalLink{
+                    left: calc(50% - #{map-get($horizontalLinkLength, 576)});
+                }
+            }
+            .triple{
+                width: 2*map-get($horizontalLinkLength, 576);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc(#{map-get($itemWith, 576)}/2 - 15px);
+                }
+                .itemMiddle{
+                    left: 0;
+                }
+                .itemRight{
+                    left: calc( -#{map-get($itemWith, 576)}/2 + 15px);
+                }
+            }
+            .tripleItem{
+                width: 100%;
+            }
+            .delta{
+                .horizontal{
+                    .horizontalLinkLeft, .horizontalLinkRight{
+                        width: calc(1*#{map-get($horizontalLinkLength, 576)});
+                    }
+                }
+            }
+        }
+        .cordonNode{
+            .center{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 576)} - #{map-get($Linkwidth, 576)}/2);
+                }
+                .horizontalLink{
+                    left: 50%;
+                }
+            }
+            .double{
+                width: 2*map-get($horizontalLinkLength, 576);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc( -#{map-get($itemWith, 576)}/2 + #{map-get($Linkwidth, 576)}/2);
+                }
+                .itemRight{
+                    left: calc( #{map-get($itemWith, 576)}/2 - #{map-get($Linkwidth, 576)}/2);
+                }
+            }
+        }
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+    .schemaDon{
+        .root{
+            img{
+                width: 150px;
+                height: auto;
+            }
+        }
+        
+        .link{
+            height: 90px;
+            width: map-get($Linkwidth, 768);
+        }
+    
+        .horizontalLink{
+            height: map-get($Linkwidth, 768);
+            width: map-get($horizontalLinkLength, 768);
+        }
+    
+        .item{
+            width: map-get($itemWith, 768);
+            max-height: 141px;
+            h2{
+                font-size: 0.8em;
+            }
+            img{
+                margin: 5px 0;
+            }
+        }
+        .textItem{
+            h2{
+                font-size: 0.8em;
+            }
+        }
+    
+        .firstStep{
+            .firstLink{
+                top: map-get($Linkwidth, 768);
+            }
+        }
+        .node{
+            .left{
+                .horizontalLink , link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 768)});
+                }
+                .link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 768)});
+                }
+                .item{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 768)});
+                    margin-left: calc( -#{map-get($itemWith, 768)}/2 + #{map-get($Linkwidth, 768)}/2);
+                }
+            }
+            .right{
+                .horizontalLink{
+                    right: 0;
+                }
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 768)} - #{map-get($Linkwidth, 768)});
+                }
+            }
+        }
+    
+        .delta{
+            .link{
+                margin-top: - map-get($Linkwidth, 768);
+                margin-bottom: - map-get($Linkwidth, 768);
+            }
+           
+        }
+        .sangNode{
+            .center{
+                .link{
+                    right: calc(#{map-get($horizontalLinkLength, 768)} - #{map-get($Linkwidth, 768)}/2);
+                }
+                .horizontalLink{
+                    left: calc(50% - #{map-get($horizontalLinkLength, 768)});
+                }
+            }
+            .triple{
+                width: 3*map-get($horizontalLinkLength, 768);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc(-#{map-get($itemWith, 768)}/2);
+                }
+                .itemMiddle{
+                    left: 0;
+                }
+                .itemRight{
+                    left: calc(#{map-get($itemWith, 768)}/2);
+                }
+            }
+            .delta{
+                .horizontal{
+                    .horizontalLinkLeft, .horizontalLinkRight{
+                        width: calc(1.5*#{map-get($horizontalLinkLength, 768)});
+                    }
+                }
+            }
+        }
+        .cordonNode{
+            .center{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 768)} - #{map-get($Linkwidth, 768)}/2);
+                }
+                .horizontalLink{
+                    left: 50%;
+                }
+            }
+            .double{
+                width: 2*map-get($horizontalLinkLength, 768);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc( -#{map-get($itemWith, 768)}/2 + #{map-get($Linkwidth, 768)}/2);
+                }
+                .itemRight{
+                    left: calc( #{map-get($itemWith, 768)}/2 - #{map-get($Linkwidth, 576)}/2);
+                }
+            }
+        }
+    }
+}
 
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
@@ -529,5 +794,264 @@ $Linkwidth: (
         height: auto;
         width: 250px;
     }
+
+    .schemaDon{
+        .root{
+            img{
+                width: 150px;
+                height: auto;
+            }
+        }
+        
+        .link{
+            height: 90px;
+            width: map-get($Linkwidth, 992);
+        }
+    
+        .horizontalLink{
+            height: map-get($Linkwidth, 992);
+            width: map-get($horizontalLinkLength, 992);
+        }
+    
+        .item{
+            width: map-get($itemWith, 992);
+            max-height: 216px;
+            h2{
+                font-size: 1em;
+            }
+            img{
+                margin: 5px 0;
+            }
+        }
+        .textItem{
+            h2{
+                font-size: 1em;
+            }
+        }
+    
+        .firstStep{
+            .firstLink{
+                top: map-get($Linkwidth, 992);
+            }
+        }
+        .node{
+            .left{
+                .horizontalLink , link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 992)});
+                }
+                .link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 992)});
+                }
+                .item{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 992)});
+                    margin-left: calc( -#{map-get($itemWith, 992)}/2 + #{map-get($Linkwidth, 992)}/2);
+                }
+            }
+            .right{
+                .horizontalLink{
+                    right: 0;
+                }
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 992)} - #{map-get($Linkwidth, 992)});
+                }
+                .item{
+                    left: calc(#{map-get($horizontalLinkLength, 992)}/2);
+                }
+            }
+        }
+    
+        .delta{
+            .link{
+                margin-top: - map-get($Linkwidth, 992);
+                margin-bottom: - map-get($Linkwidth, 992);
+            }
+           
+        }
+        .sangNode{
+            .center{
+                .link{
+                    right: calc(#{map-get($horizontalLinkLength, 992)} - #{map-get($Linkwidth, 992)}/2);
+                }
+                .horizontalLink{
+                    left: calc(50% - #{map-get($horizontalLinkLength, 992)});
+                }
+            }
+            .triple{
+                width: 3*map-get($horizontalLinkLength, 992);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc(-#{map-get($itemWith, 992)}/2);
+                }
+                .itemMiddle{
+                    left: 0;
+                }
+                .itemRight{
+                    left: calc(#{map-get($itemWith, 992)}/2);
+                }
+            }
+            .delta{
+                .horizontal{
+                    .horizontalLinkLeft, .horizontalLinkRight{
+                        width: calc(1.5*#{map-get($horizontalLinkLength, 992)});
+                    }
+                }
+            }
+        }
+        .cordonNode{
+            .center{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 992)} - #{map-get($Linkwidth, 992)}/2);
+                }
+                .horizontalLink{
+                    left: 50%;
+                }
+            }
+            .double{
+                width: 2*map-get($horizontalLinkLength, 992);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc( -#{map-get($itemWith, 992)}/2 + #{map-get($Linkwidth, 992)}/2);
+                }
+                .itemRight{
+                    left: calc( #{map-get($itemWith, 992)}/2 - #{map-get($Linkwidth, 576)}/2);
+                }
+            }
+        }
+    }
 }
 
+// Large devices (desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+    .schemaDon{
+        .root{
+            img{
+                width: 200px;
+                height: auto;
+            }
+        }
+        
+        .link{
+            height: 90px;
+            width: map-get($Linkwidth, 1200);
+        }
+    
+        .horizontalLink{
+            height: map-get($Linkwidth, 1200);
+            width: map-get($horizontalLinkLength, 1200);
+        }
+    
+        .item{
+            width: map-get($itemWith, 1200);
+            max-height: 216px;
+            h2{
+                font-size: 1.1em;
+            }
+            img{
+                margin: 5px 0;
+            }
+        }
+        .textItem{
+            h2{
+                font-size: 1.1em;
+            }
+        }
+    
+        .firstStep{
+            .firstLink{
+                top: map-get($Linkwidth, 1200);
+            }
+        }
+        .node{
+            .left{
+                .horizontalLink , link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                }
+                .link{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                }
+                .item{
+                    left: calc(100% - #{map-get($horizontalLinkLength, 1200)});
+                    margin-left: calc( -#{map-get($itemWith, 1200)}/2 + #{map-get($Linkwidth, 1200)}/2);
+                }
+            }
+            .right{
+                .horizontalLink{
+                    right: 0;
+                }
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)} - #{map-get($Linkwidth, 1200)});
+                }
+                .item{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)}/2);
+                }
+            }
+        }
+    
+        .delta{
+            .link{
+                margin-top: - map-get($Linkwidth, 1200);
+                margin-bottom: - map-get($Linkwidth, 1200);
+            }
+           
+        }
+        .sangNode{
+            .center{
+                .link{
+                    right: calc(#{map-get($horizontalLinkLength, 1200)} - #{map-get($Linkwidth, 1200)}/2);
+                }
+                .horizontalLink{
+                    left: calc(50% - #{map-get($horizontalLinkLength, 1200)});
+                }
+            }
+            .triple{
+                width: 3*map-get($horizontalLinkLength, 1200);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc(-#{map-get($itemWith, 1200)}/2);
+                }
+                .itemMiddle{
+                    left: 0;
+                }
+                .itemRight{
+                    left: calc(#{map-get($itemWith, 1200)}/2);
+                }
+            }
+            .delta{
+                .horizontal{
+                    .horizontalLinkLeft, .horizontalLinkRight{
+                        width: calc(1.5*#{map-get($horizontalLinkLength, 1200)});
+                    }
+                }
+            }
+        }
+        .cordonNode{
+            .center{
+                .link{
+                    left: calc(#{map-get($horizontalLinkLength, 1200)} - #{map-get($Linkwidth, 1200)}/2);
+                }
+                .horizontalLink{
+                    left: 50%;
+                }
+            }
+            .double{
+                width: 2*map-get($horizontalLinkLength, 1200);
+                .link{
+                    margin-top: -10px;
+                }
+                .itemLeft{
+                    left: calc( -#{map-get($itemWith, 1200)}/2 + #{map-get($Linkwidth, 1200)}/2);
+                }
+                .itemRight{
+                    left: calc( #{map-get($itemWith, 1200)}/2 - #{map-get($Linkwidth, 576)}/2);
+                }
+            }
+        }
+    }
+}

@@ -85,7 +85,6 @@ html, body{
     margin-bottom: 2em;
     width: 100%;
     height: auto;
-    float: left;
     border-radius: 15px;
     box-shadow: 5px 5px 6px rgba(0,0,0,0.2);
     transform: scale(100%);
@@ -558,6 +557,9 @@ html, body{
   .main{
     .cadre{
       padding: 0 2em;
+    }
+    .illustrationLeft{
+      float: left;
     }
   }
 
