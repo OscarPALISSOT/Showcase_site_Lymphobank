@@ -208,9 +208,9 @@ $Linkwidth: (
 
     .item{
         width: map-get($itemWith, 320);
-        max-height: 225px;
+        max-height: 140px;
         text-align: center;
-        border: $kaki 5px solid;
+        border: $kaki 2px solid;
         border-radius: 15px;
         margin: 0;
         transition: max-height 0.35s ease-out;
@@ -318,26 +318,30 @@ $Linkwidth: (
         .triple{
             display: flex;
             justify-content: space-between;
-            width: 3*map-get($horizontalLinkLength, 320);
+            width: 2*map-get($horizontalLinkLength, 320);
             margin: auto;
             .link{
                 background-color: $pastel;
                 margin: 0;
                 margin-top: -10px;
             }
-            .itemLeft{
+            /* .itemLeft{
                 position: relative;
                 left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
             .itemRight{
                 position: relative;
                 left: calc( #{map-get($itemWith, 320)}/2 - #{map-get($Linkwidth, 320)}/2);
+            } */
+            .item{
+                position: relative;
+                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
         }
         .delta{
             .horizontal{
                 .horizontalLinkLeft, .horizontalLinkRight{
-                    width: calc(1.5*#{map-get($horizontalLinkLength, 320)});
+                    width: calc(1*#{map-get($horizontalLinkLength, 320)});
                 }
             }
         }
