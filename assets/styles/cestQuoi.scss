@@ -215,7 +215,7 @@ $Linkwidth: (
         margin: 0;
         transition: max-height 0.35s ease-out;
         h2{
-            font-size: 1.1em;
+            font-size: 0.6em;
         }
         img{
             margin: 5px 0;
@@ -230,7 +230,7 @@ $Linkwidth: (
         transition: max-height 0.35s ease-out;
         h2{
             color: $kaki;
-            font-size: 1.1em;
+            font-size: 0.6em;
         }
     }
     
@@ -273,7 +273,7 @@ $Linkwidth: (
             }
             .item{
                 left: calc(100% - #{map-get($horizontalLinkLength, 320)});
-                margin-left: -91px;
+                margin-left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
         }
         .right{
@@ -309,7 +309,7 @@ $Linkwidth: (
         .center{
             .link{
                 background-color: $pastel;
-                right: calc(#{map-get($horizontalLinkLength, 320)} - 18px/2);
+                right: calc(#{map-get($horizontalLinkLength, 320)} - #{map-get($Linkwidth, 320)}/2);
             }
             .horizontalLink{
                 left: calc(50% - #{map-get($horizontalLinkLength, 320)});
@@ -327,11 +327,11 @@ $Linkwidth: (
             }
             .itemLeft{
                 position: relative;
-                left: -91px;
+                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
             .itemRight{
                 position: relative;
-                left: 91px;
+                left: calc( #{map-get($itemWith, 320)}/2 - #{map-get($Linkwidth, 320)}/2);
             }
         }
         .delta{
@@ -349,7 +349,7 @@ $Linkwidth: (
         .center{
             .link{
                 background-color: $pastel;
-                left: calc(#{map-get($horizontalLinkLength, 320)} - 18px/2);
+                left: calc(#{map-get($horizontalLinkLength, 320)} - #{map-get($Linkwidth, 320)}/2);
             }
             .horizontalLink{
                 left: 50%;
@@ -367,11 +367,11 @@ $Linkwidth: (
             }
             .itemLeft{
                 position: relative;
-                left: -91px;
+                left: calc( -#{map-get($itemWith, 320)}/2 + #{map-get($Linkwidth, 320)}/2);
             }
             .itemRight{
                 position: relative;
-                left: 91px;
+                left: calc( #{map-get($itemWith, 320)}/2 - #{map-get($Linkwidth, 320)}/2);
             }
         }
     }
