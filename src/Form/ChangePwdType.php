@@ -17,7 +17,10 @@ class ChangePwdType extends AbstractType
         $builder
         ->add('oldPassword', PasswordType::class, array(
 
-            'mapped' => false
+            'mapped' => false,
+            'attr' => [
+                'placeholder' => 'Ancien mot de passe',
+            ]
 
         ))
 

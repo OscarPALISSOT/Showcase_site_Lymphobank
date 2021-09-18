@@ -26,19 +26,17 @@ class ContactController extends AbstractController
      * @Route ("/nousContacter", name="contact")
      * @return Response
      */
-    public function index(Request $request, /* ContactNotification $Notification */) : Response{
+    public function index(Request $request, ContactNotification $Notification) : Response{
 
         $Contact = new Contact();
         $form = $this->createForm(ContactFormType::class, $Contact);
         $form->handleRequest($request);
 
-        /* if ($form->isSubmitted() && $form->isValid()){
+        if ($form->isSubmitted() && $form->isValid()){
             $Notification->notify($Contact);
             $this->addFlash('succes', 'Votre message a bien été envoyé.');
-            return $this->redirectToRoute('pages/contact.html.twig', [
-                'form' => $form->createView()
-            ]);
-        } */
+            return $this->redirectToRoute('contact');
+        }
         return $this->render('pages/contact.html.twig', [
             'form' => $form->createView()
         ]);

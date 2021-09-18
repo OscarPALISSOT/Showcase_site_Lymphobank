@@ -38,6 +38,39 @@ form{
         font-family: 'Raleway', sans-serif;
         color: black;
         font-size: 1.25em;
+        width: 100%;
+    }
+    input:focus-visible, textarea:focus-visible{
+        outline: none;
+        box-shadow: 3px 3px 12px 8px $pastel;
+    }
+    input{
+        height: 40px;
+    }
+    
+    //responsive
+    @media (min-width: 360px) {
+        textarea{
+            height: 200px;
+            width: 100%;
+        }
+        input{
+            height: 40px;
+            width: 300px;
+        }
+    }
+
+    //responsive
+    @media (min-width: 798px) {
+        textarea{
+            width: 75%;
+        }
+    }
+
+    @media (min-width: 992px) {
+        textarea{
+            width: 50%;
+        }
     }
 }
 
