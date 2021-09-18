@@ -204,6 +204,7 @@ html, body{
     margin: 1.5em;
     margin-left: 0;
     transform: translateX(-100vw);
+    transition: all 0.15s ease-out;
     img{
       width: 100px;
       height: auto;
@@ -631,8 +632,13 @@ html, body{
     }
     #logo{
       transform: translateX(-100vw);
-      position: absolute;
+      position: sticky;
       left: 12%;
+      top: 1em;
+      img{
+        width: 100%;
+        height: auto;
+      }
     }
     .menuItems{
       transform: translateX(-100vw);

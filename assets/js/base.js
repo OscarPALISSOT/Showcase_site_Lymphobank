@@ -17,3 +17,22 @@
     });
     // fin btn menu burger
 
+
+    //taille logo
+
+    document.body.addEventListener('scroll',()=>{
+        if( window.innerWidth > 1200){
+            scrollFunction()
+        }
+    })
+
+    function scrollFunction() {
+        var logo = document.getElementById("logo");
+        if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+            logo.style.height = "40px";
+            logo.style.width = "40px";
+        } else {
+            logo.style.height = "100px";
+            logo.style.width = "100px";
+        }
+    }
