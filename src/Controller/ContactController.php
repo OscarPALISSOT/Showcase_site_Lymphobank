@@ -33,8 +33,8 @@ class ContactController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-            /* $Notification->notify($Contact);
-            $this->addFlash('succes', 'Votre message a bien été envoyé.'); */
+            $Notification->sendEmail($Contact);
+            $this->addFlash('succes', 'Votre message a bien été envoyé.');
             return $this->redirectToRoute('contact');
         }
         return $this->render('pages/contact.html.twig', [
