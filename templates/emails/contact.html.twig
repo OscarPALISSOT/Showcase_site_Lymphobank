@@ -1,12 +1,59 @@
 <mjml>
-  <mj-body>
-    <mj-section>
-      <mj-column>
-        {{contact.firstname}}
-        {{contact.lastname}}
-        {{contact.mail}}
-        {{contact.message|nl2br}}
-      </mj-column>
-    </mj-section>
-  </mj-body>
+	<mj-body>
+		<mj-section>
+			<mj-column>
+        <style type="text/css">
+					.tg {
+						border-collapse: collapse;
+						border-spacing: 0;
+					}
+					.tg td {
+						font-family: Arial, sans-serif;
+						font-size: 14px;
+						overflow: hidden;
+						padding: 10px 5px;
+						word-break: normal;
+					}
+					.tg th {
+						font-family: Arial, sans-serif;
+						font-size: 14px;
+						font-weight: normal;
+						overflow: hidden;
+						padding: 10px 5px;
+						word-break: normal;
+					}
+					.tg .tg-0lax {
+						text-align: left;
+						vertical-align: top
+					}
+          .h2{
+            font-family: Arial, sans-serif;
+          }
+				</style>
+				<h2>Nouveau contact</h2>
+				<table class="tg">
+					<thead>
+						<tr>
+							<th class="tg-0lax">Prénom :</th>
+							<th class="tg-0lax">{{contact.firstname}}</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="tg-0lax">Nom :</td>
+							<td class="tg-0lax">{{contact.lastname}}</td>
+						</tr>
+						<tr>
+							<td class="tg-0lax">Adresse mail :</td>
+							<td class="tg-0lax">{{contact.mail}}</td>
+						</tr>
+						<tr>
+							<td class="tg-0lax">Message :</td>
+							<td class="tg-0lax">{{contact.message|nl2br}}</td>
+						</tr>
+					</tbody>
+				</table>
+			</mj-column>
+		</mj-section>
+	</mj-body>
 </mjml>
