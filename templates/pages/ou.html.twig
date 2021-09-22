@@ -26,6 +26,11 @@
         <p>{{etablissement.adresse}}, {{etablissement.ville}}, {{etablissement.codePostal}}</p>
         <p>{{etablissement.num}}</p>
         </div>
+        <div class="logoPartenaire">
+        {% if etablissement.filename %}
+            <img src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
+        {% endif %}
+        </div>
     {% endfor %}
     </div>
     <br>
