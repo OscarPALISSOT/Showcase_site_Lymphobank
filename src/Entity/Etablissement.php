@@ -12,6 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass=EtablissementRepository::class)
+ * @Vich\Uploadable
  */
 class Etablissement
 {
@@ -22,7 +23,7 @@ class Etablissement
      */
     private $id;
 
-    
+
     /**
      * @var string|null
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -31,7 +32,7 @@ class Etablissement
 
     /**
      * @var File|null
-     * @Vich\UploadableField(mapping="actu_image", fileNameProperty="filename")
+     * @Vich\UploadableField(mapping="etablissement_image", fileNameProperty="filename")
      */
     private $imageFile;
 
@@ -75,9 +76,15 @@ class Etablissement
      */
     private $num;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $Updated_at;
+
     public function __construct()
     {
         $this->created_at = new DateTime();
+        $this->Updated_at = new DateTime();
     }
 
     public function getId(): ?int
@@ -181,7 +188,7 @@ class Etablissement
         return $this;
     }
 
-    
+
     /**
      * @return null|string
      */
@@ -192,7 +199,7 @@ class Etablissement
 
     /**
      * @param null|string $filename
-     * @return Actu
+     * @return Etablissement
      */
     public function setFilename(?string $filename): Etablissement
     {
@@ -212,6 +219,18 @@ class Etablissement
         if ($this->imageFile instanceof UploadedFile) {
             $this->Updated_at = new \DateTime('now');
         }
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->Updated_at;
+    }
+
+    public function setUpdatedAt(\DateTimeInterface $Updated_at): self
+    {
+        $this->Updated_at = $Updated_at;
 
         return $this;
     }
