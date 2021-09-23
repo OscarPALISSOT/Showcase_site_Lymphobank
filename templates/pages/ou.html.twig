@@ -23,13 +23,11 @@
     {% for etablissement in etablissements %}
         <h2>{{etablissement.nom}}</h2>
         <div class="coordonnees">
-        <p>{{etablissement.adresse}}, {{etablissement.ville}}, {{etablissement.codePostal}}</p>
-        <p>{{etablissement.num}}</p>
-        </div>
-        <div class="logoPartenaire">
-        {% if etablissement.filename %}
-            <img src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
-        {% endif %}
+            <p>{{etablissement.adresse}}, {{etablissement.ville}}, {{etablissement.codePostal}}</p>
+            <p>{{etablissement.num}}</p>
+            {% if etablissement.filename %}
+                <img class="logoPartenaire" src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
+            {% endif %}
         </div>
     {% endfor %}
     </div>

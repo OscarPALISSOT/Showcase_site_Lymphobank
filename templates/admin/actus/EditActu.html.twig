@@ -9,7 +9,7 @@
     <div class="container mt-4">
         <h1>Modifier les informations de l'actualité</h1>
         {% if actu.filename %}
-            <img class="imgSelect" src={{ vich_uploader_asset(actu, 'imageFile')}}>
+            <img class="imageFile" src={{ vich_uploader_asset(actu, 'imageFile')}}>
         {% else %}
             <p>Pas de photo enregistrée</p>
         {% endif %}

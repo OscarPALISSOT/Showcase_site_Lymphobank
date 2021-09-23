@@ -29,3 +29,34 @@ $kaki: rgb(180, 139, 10);
         transform: translateY(-50%);
     }
 }
+
+.logoPartenaire{
+    width: 220px;
+    height: auto;
+}
+
+//responsive
+
+// X-Small devices (portrait phones, 360px and up)
+@media (min-width: 360px) {
+    .logoPartenaire{
+        width: 300px;
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    .logoPartenaire{
+        width: 480px;
+    }
+}
+
+@media (min-width: 992px) {
+    .logoPartenaire{
+        width: 400px;
+    }
+    .coordonnees{
+        width: 100%;
+        float: right;
+    }
+}
