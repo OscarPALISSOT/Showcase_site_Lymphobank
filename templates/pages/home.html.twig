@@ -10,6 +10,7 @@
     {{ encore_entry_link_tags('scss/carousel') }}
     {{ encore_entry_link_tags('scss/cardActu') }}
     {{ encore_entry_link_tags('scss/schemaTooltip') }}
+    {{ encore_entry_link_tags('scss/partenaires') }}
     {# leaflet map #}
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
@@ -110,12 +111,23 @@
         </div>
 
         <h1>Partenaires :</h1>
-        <div id="logoPartenaire">
-            <img class="icon" src={{ asset ('img/logoPartenaires/region.png')}}>
-            <img class="icon" src={{ asset ('img/icons/EFSlogo.png')}}>
+        <div class="logoPartenaire">
+            <div class="grid-gallery">
+                <div class="grid-item">
+                    <img class="logoMat" src={{ asset ('img/logoPartenaires/region.png')}}>
+                </div>
+                <div class="grid-item">
+                    <img class="logoMat" src={{ asset ('img/icons/EFSlogo.png')}}>
+                </div>
             {% for etablissement in etablissements %}
-            
+                {% if etablissement.filename %}
+                    <div class="grid-item">
+                        <img class="logoMat" src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
+                    </div>    
+                {% endif %}
+                
             {% endfor %}
+            </div>
         </div>
         
 

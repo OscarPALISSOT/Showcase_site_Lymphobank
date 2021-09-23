@@ -24,6 +24,56 @@
     .grid-item{
         width: 280px;
         height: 190px;
-        background-color: chocolate;
+        position: relative;
+    }
+
+
+    .logoMat{
+        max-width:100%;
+        max-height:100%;
+        transform: scale(100%);
+        transition: transform .2s ease-in-out;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+    }
+    .logoMat:hover{
+        transform: scale(105%);
+        transition: transform .2s ease-in-out;
+    }
+}
+
+
+
+//responsive
+
+// Small devices
+@media (min-width: 360px) {
+    //actus
+    .logoPartenaire{
+        .grid-gallery{
+            grid-template-columns: repeat(auto-fill, 360px);
+        } 
+        .grid-item{
+            width: 360px;
+            height: 240px;
+        }
+    }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+    //actus
+    .logoPartenaire{
+        .grid-gallery{
+            grid-template-columns: repeat(auto-fill, 450px);
+        } 
+        .grid-item{
+            width: 450px;
+            height: 300px;
+        }
     }
 }
