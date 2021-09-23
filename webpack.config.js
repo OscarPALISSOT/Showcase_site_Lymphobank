@@ -42,6 +42,8 @@ Encore
     .addStyleEntry('scss/paginationAdmin', './assets/styles/paginationAdmin.scss')
     .addStyleEntry('scss/schemaTooltip', './assets/styles/schemaTooltip.scss')
     .addStyleEntry('scss/contact', './assets/styles/contact.scss')
+    .addStyleEntry('scss/partenaires', './assets/styles/partenaires.scss')
+
     .addEntry('js/base', './assets/js/base.js')
     .addEntry('js/map', './assets/js/map.js')
     .addEntry('js/addAdmin', './assets/js/addAdmin.js')

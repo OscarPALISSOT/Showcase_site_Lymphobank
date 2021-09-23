@@ -30,33 +30,33 @@ $kaki: rgb(180, 139, 10);
     }
 }
 
+.main{
+    .adresse{
+        margin-bottom: 0;
+    }
+}
+
+
 .logoPartenaire{
-    width: 220px;
+    width: 100%;
     height: auto;
 }
 
 //responsive
 
-// X-Small devices (portrait phones, 360px and up)
-@media (min-width: 360px) {
-    .logoPartenaire{
-        width: 300px;
-    }
-}
-
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
     .logoPartenaire{
-        width: 480px;
+        width: 400px;
     }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
     .logoPartenaire{
-        width: 400px;
+        float: left;
+        margin-right: 2em;
     }
     .coordonnees{
-        width: 100%;
-        float: right;
+        overflow: hidden;
     }
 }

@@ -1,58 +1,60 @@
 {% extends "base.html.twig" %}
 
 
-{% block title %}Notre réseau{% endblock %}
+{% block title %}Notre réseau
+{% endblock %}
 
 
 {% block stylesheets %}
-{{ encore_entry_link_tags('scss/ou') }}
-    {{ encore_entry_link_tags('scss/map') }}
-    {# leaflet map #}
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
+	{{ encore_entry_link_tags('scss/ou') }}
+	{{ encore_entry_link_tags('scss/map') }}
+	{# leaflet map #}
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 {% endblock %}
 
 {% block body %}
 
-    <h1>Où donner ?</h1>
+	<h1>Où donner ?</h1>
 
-    <p class="titlePage">Les maternités partenaire de notre réseau permettant de faire un don de sang de cordon à usage scientifique sont :
-    </p>
+	<p class="titlePage">Les maternités partenaire de notre réseau permettant de faire un don de sang de cordon à usage scientifique sont :
+	</p>
 
-    <div class="bulle">
-    {% for etablissement in etablissements %}
-        <h2>{{etablissement.nom}}</h2>
-        <div class="coordonnees">
-            <p>{{etablissement.adresse}}, {{etablissement.ville}}, {{etablissement.codePostal}}</p>
-            <p>{{etablissement.num}}</p>
-            {% if etablissement.filename %}
-                <img class="logoPartenaire" src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
-            {% endif %}
-        </div>
-    {% endfor %}
-    </div>
-    <br>
-    <p>D’autres maternités en région Bourgogne/Franche-Comté vont nous rejoindre prochainement…</p>
-    
+	<div class="bulle">
+		{% for etablissement in etablissements %}
+			<h2>{{etablissement.nom}}</h2>
+			<div class="coordonnees">
+                {% if etablissement.filename %}
+					<img class="logoPartenaire" src={{ vich_uploader_asset(etablissement, 'imageFile')}}>
+				{% endif %}
+				<p class="adresse">{{etablissement.adresse}},
+					{{etablissement.ville}},
+					{{etablissement.codePostal}}</p>
+				<p>{{etablissement.num}}</p>
+				
+			</div>
+		{% endfor %}
+	</div>
+	<br>
+	<p>D’autres maternités en région Bourgogne/Franche-Comté vont nous rejoindre prochainement…</p>
 
-    {% for etablissement in etablissements %}
-        <div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
-    {% endfor %}
 
-    <div id="map"></div>
-    {# map #}
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""></script>
-    <script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+	{% for etablissement in etablissements %}
+		<div class="js-marker" data-lat="{{etablissement.lat}}" data-lon="{{etablissement.lon}}" data-text="{{etablissement.Nom}}"></div>
+	{% endfor %}
 
-    <br>
-    <p>Pour connaître les maternités du Réseau Français de Sang Placentaire, pour un don de sang à usage thérapeutique, vous pouvez consulter le site de  <a target="_blank" rel="noopener noreferrer" href="https://www.agence-biomedecine.fr/RFSP">l’Agence de la Biomédecine</a></p>
+	<div id="map"></div>
+	{# map #}
+	<!-- Make sure you put this AFTER Leaflet's CSS -->
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+	<script type="text/javascript" src="https://stamen-maps.a.ssl.fastly.net/js/tile.stamen.js?v1.3.0"></script>
+
+	<br>
+	<p>Pour connaître les maternités du Réseau Français de Sang Placentaire, pour un don de sang à usage thérapeutique, vous pouvez consulter le site de
+		<a target="_blank" rel="noopener noreferrer" href="https://www.agence-biomedecine.fr/RFSP">l’Agence de la Biomédecine</a>
+	</p>
 
 {% endblock %}
 
 {% block javascripts %}
-    {{ encore_entry_script_tags('js/map') }}
+	{{ encore_entry_script_tags('js/map') }}
 {% endblock %}
-
