@@ -1,0 +1,1 @@
+robocopy C:\Users\Oscar\WebstormProjects\cordons mn5z2_cordonprecieux@mon-cordon-precieux.fr:~/moncordonprecieux  [<options>]
