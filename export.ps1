@@ -1,1 +1,1 @@
-robocopy C:\Users\Oscar\WebstormProjects\cordons mn5z2_cordonprecieux@mon-cordon-precieux.fr:~/moncordonprecieux  [<options>]
+robocopy D:\Cordons \\mn5z2_cordonprecieux@mn5z2.ftp.infomaniak.com:~/moncordonprecieux  /xd "var" "vendor" "node_modules" "public/build/" "test" /xf ".env"
