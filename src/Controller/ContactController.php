@@ -21,9 +21,10 @@ class ContactController extends AbstractController
     }
 
 
-
     /**
      * @Route ("/nousContacter", name="contact")
+     * @param Request $request
+     * @param ContactNotification $Notification
      * @return Response
      */
     public function index(Request $request, ContactNotification $Notification) : Response{
@@ -42,4 +43,3 @@ class ContactController extends AbstractController
         ]);
     }
 }
-?>

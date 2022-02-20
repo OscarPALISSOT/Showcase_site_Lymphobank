@@ -75,7 +75,6 @@ class EtablissementController extends AbstractController
             $em->persist($etablissement);
             $em->flush();
             return $this->redirectToRoute('gestion_etablissements');
-            return $this->json($apiResult, 200);
         }
         return $this->render('admin/etablissements/CreateEtablissement.html.twig', [
             'etablissement' => $etablissement,
